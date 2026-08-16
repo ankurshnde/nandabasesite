@@ -1,0 +1,101 @@
+site_name: NANDA
+site_url: https://nanda.ai
+site_description: "NANDA - Autonomous Networked Distributed Architectures Research & Documentation"
+site_author: "NANDA Initiative"
+repo_name: "projnanda"
+repo_url: "https://github.com/projnanda"
+edit_uri: ""
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  font:
+    text: Poppins
+    code: Fira Code
+  palette:
+    # Single clean light theme
+    scheme: default
+    primary: white
+    accent: slate
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - content.code.copy
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/extra.js
+
+extra:
+  generator: false
+
+plugins: []
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: "¶"
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Research:
+    - Overview: research/index.md
+    - Publication: publication/index.md
+    - Writing Lab: publication/writing-lab.md
+    - NANDA Index: publication/nanda-index.md
+  - Projects:
+    - Overview: projects/index.md
+  - Community:
+    - Overview: community/index.md
+    - Events: community/events.md
+    - Global Chapter: community/global-chapter.md
+    - Youth Chapter: community/youth-chapter.md
+  - Developer:
+    - Overview: developer/index.md
+    - Build w/ NANDA: developer/build-with-nanda.md
+    - Implementation: developer/reference-implementation.md
+    - Contributions: developer/open-source.md
+  - People:
+    - Advisors: people/advisors.md
+    - Team: people/team.md
+  - Resources:
+    - FAQ: resources/faq.md
+    - Previous work: resources/previous-work.md
+    - Video Vault: resources/video-vault.md
+    - Media Kit: resources/media-kit.md

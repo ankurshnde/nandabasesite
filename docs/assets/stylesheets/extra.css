@@ -1,0 +1,1847 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --md-default-bg-color: #FAFAF9;
+  --md-default-fg-color: #18181b;
+  --md-default-fg-color--light: #52525b;
+  --md-default-fg-color--lighter: #71717a;
+  --md-default-fg-color--lightest: #a1a1aa;
+  --md-primary-fg-color: #FAFAF9;
+  --md-primary-bg-color: #FAFAF9;
+  --md-accent-fg-color: #18181b;
+  --nanda-border: #e4e4e7;
+  --nanda-sidebar-bg: #F2F2F0;
+  --nanda-content-bg: #FAFAF9;
+  --nanda-hover-bg: rgba(0, 0, 0, 0.04);
+}
+
+/* Base typography */
+body, .md-typeset {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--md-default-fg-color);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   BRAND HIGHLIGHTER TEXT SELECTION (WARM RICE-PAPER / ENERGETIC GOLDEN YELLOW)
+   ========================================================================== */
+
+::selection {
+  background-color: #FDE047 !important; /* Luminous Canary Highlighter Yellow */
+  color: #0F172A !important;            /* Deep Crisp Slate Black Text */
+}
+
+::-moz-selection {
+  background-color: #FDE047 !important;
+  color: #0F172A !important;
+}
+
+mark,
+.md-typeset mark {
+  background-color: rgba(254, 224, 71, 0.5) !important;
+  color: inherit !important;
+  padding: 0.1em 0.3em !important;
+  border-radius: 3px !important;
+}
+
+code, kbd, pre, .highlight {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85em;
+}
+
+/* ==========================================================================
+   FLOATING BACK TO TOP CAPSULE BUTTON (BOTTOM RIGHT CORNER)
+   ========================================================================== */
+
+.md-top,
+[data-md-component="top"] {
+  display: none !important;
+}
+
+.nanda-back-to-top {
+  position: fixed !important;
+  bottom: 2rem !important;
+  right: 2rem !important;
+  z-index: 9999 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.38rem !important;
+  padding: 0.45rem 1rem 0.45rem 0.8rem !important;
+  background-color: #ffffff !important;
+  color: #64748b !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  cursor: pointer !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(12px) !important;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease, box-shadow 0.15s ease !important;
+  user-select: none !important;
+}
+
+.nanda-back-to-top.nanda-back-to-top--visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.nanda-back-to-top:hover {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+.nanda-back-to-top:active {
+  transform: translateY(0) !important;
+}
+
+.nanda-back-to-top svg {
+  width: 14px !important;
+  height: 14px !important;
+  stroke: currentColor !important;
+  flex-shrink: 0 !important;
+}
+
+@media screen and (max-width: 76.24em) {
+  .nanda-back-to-top {
+    bottom: 1.25rem !important;
+    right: 1.25rem !important;
+    padding: 0.4rem 0.85rem 0.4rem 0.7rem !important;
+    font-size: 0.74rem !important;
+  }
+}
+
+/* ==========================================================================
+   HEADER / MENU BAR - ABSOLUTE (ONLY VISIBLE ON TOP, SCROLLS OFF)
+   ========================================================================== */
+
+.md-header {
+  position: absolute !important;
+  top: 0 !important;
+  width: 100% !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  height: 3.25rem !important;
+  z-index: 25 !important;
+  display: block !important;
+  pointer-events: none !important;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-header {
+    margin-left: 12.5rem !important;
+    width: calc(100% - 12.5rem) !important;
+    padding-left: 0 !important;
+  }
+}
+
+.md-header__inner {
+  padding: 0 2rem 0 1.5rem !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  pointer-events: auto !important;
+}
+
+/* Hide Logo, Title, Dark Mode toggle, Search Bar */
+.md-header .md-logo,
+.md-header .md-header__button.md-logo,
+.md-header__title,
+.md-header__topic,
+.md-header__option,
+.md-search,
+[data-md-component="search"],
+[data-md-component="palette"] {
+  display: none !important;
+}
+
+.md-header__button[for="__drawer"] {
+  display: none !important;
+}
+
+@media screen and (max-width: 76.24em) {
+  .md-header {
+    position: sticky !important;
+  }
+  .md-header__button[for="__drawer"] {
+    display: inline-flex !important;
+    margin-right: auto !important;
+  }
+}
+
+/* ==========================================================================
+   HEADER ACTIONS (LINKEDIN & GIT ICONS - VISIBLE ONLY AT TOP)
+   ========================================================================== */
+
+.md-header__source {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nanda-header-actions {
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  height: 100% !important;
+  text-decoration: none !important;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nanda-header-actions,
+.nanda-header-actions * {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.nanda-header-actions a {
+  text-decoration: none !important;
+  color: var(--md-default-fg-color) !important;
+}
+
+.nanda-header-actions a::after {
+  content: "" !important;
+  display: none !important;
+}
+
+/* LinkedIn Icon Link - Exact Same Height (25px) as Git Diamond */
+.nanda-header-linkedin {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--md-default-fg-color) !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 25px !important;
+  width: 25px !important;
+  min-width: 25px !important;
+  min-height: 25px !important;
+  max-width: 25px !important;
+  max-height: 25px !important;
+  flex-shrink: 0 !important;
+  transition: opacity 0.15s ease, transform 0.15s ease !important;
+}
+
+.nanda-header-linkedin:hover {
+  opacity: 0.7 !important;
+  transform: translateY(-1px);
+}
+
+.nanda-header-linkedin svg {
+  display: block !important;
+  width: 25px !important;
+  height: 25px !important;
+  fill: currentColor !important;
+}
+
+/* GitHub Widget Link */
+.nanda-header-github {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  color: var(--md-default-fg-color) !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+  transition: opacity 0.15s ease !important;
+}
+
+.nanda-header-github:hover {
+  opacity: 0.7 !important;
+  color: var(--md-default-fg-color) !important;
+  text-decoration: none !important;
+}
+
+/* Git Diamond Icon - Exact Same Height (25px) as LinkedIn */
+.nanda-header-git-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 25px !important;
+  height: 25px !important;
+  min-width: 25px !important;
+  min-height: 25px !important;
+  max-width: 25px !important;
+  max-height: 25px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.nanda-header-git-icon svg {
+  width: 25px !important;
+  height: 25px !important;
+  display: block !important;
+  fill: currentColor !important;
+}
+
+.nanda-header-git-text {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  line-height: 1.15 !important;
+}
+
+.nanda-header-git-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.2 !important;
+}
+
+.nanda-header-git-facts {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  margin: 0.12rem 0 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  line-height: 1.1 !important;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nanda-header-git-facts--loaded {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.nanda-header-git-fact {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.22rem !important;
+}
+
+.nanda-header-git-fact::before {
+  display: none !important;
+}
+
+.nanda-header-git-fact svg {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+}
+
+.md-source__repository {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  max-width: none !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+  line-height: 1.15 !important;
+}
+
+/* Size scaled exactly like sidebar sub-options (0.78rem) */
+.md-source__repo-name {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.2 !important;
+}
+
+/* Animated facts subtitle */
+.md-source__facts {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  margin: 0.15rem 0 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  line-height: 1.1 !important;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.md-source__facts--loaded {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.md-source__fact {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.22rem !important;
+}
+
+.md-source__fact::before {
+  display: none !important;
+}
+
+.md-source__fact svg {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+}
+
+/* LinkedIn Icon Button */
+.nanda-header-linkedin {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  text-decoration: none !important;
+  padding: 0.2rem !important;
+  border-radius: 4px !important;
+  height: 1.65rem !important;
+  width: 1.65rem !important;
+  transition: color 0.15s ease, opacity 0.15s ease !important;
+}
+
+.nanda-header-linkedin:hover {
+  color: #0a66c2 !important;
+  opacity: 0.85 !important;
+}
+
+.nanda-header-linkedin svg {
+  display: block !important;
+  width: 1.28rem !important;
+  height: 1.28rem !important;
+}
+
+.md-source {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  color: var(--md-default-fg-color) !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  max-width: none !important;
+  width: auto !important;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.md-source:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  opacity: 0.75;
+}
+
+/* Full Git Diamond Logo sized proportionately */
+.md-source__icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.65rem !important;
+  height: 1.65rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.md-source__icon svg {
+  width: 1.65rem !important;
+  height: 1.65rem !important;
+  display: block !important;
+  fill: currentColor !important;
+}
+
+.md-source__repository {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  max-width: none !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+  line-height: 1.15 !important;
+}
+
+/* Size scaled exactly like sidebar sub-options (0.78rem) */
+.md-source__repo-name {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important; /* Poppins Medium strictly */
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.2 !important;
+}
+
+/* Animated facts subtitle */
+.md-source__facts {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  margin: 0.1rem 0 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 400 !important; /* Poppins Regular strictly */
+  color: var(--md-default-fg-color--lighter) !important;
+  line-height: 1.1 !important;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.md-source__facts--loaded {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.md-source__fact {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.22rem !important;
+}
+
+.md-source__fact::before {
+  display: none !important;
+}
+
+.md-source__fact svg {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+}
+
+/* ==========================================================================
+   HIDE TABLE OF CONTENTS & ENTIRE FOOTER
+   ========================================================================== */
+
+.md-sidebar--secondary,
+[data-md-type="toc"],
+footer.md-footer,
+.md-footer,
+.md-footer-meta,
+.md-footer-meta__inner,
+.md-footer-nav,
+.md-copyright {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* ==========================================================================
+   SIDEBAR: DESKTOP (> 76.25em) FIXED FLUSH WITH INVISIBLE SCROLLBAR
+   ========================================================================== */
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 12.5rem !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    background-color: var(--nanda-sidebar-bg) !important;
+    border-right: 1px solid var(--nanda-border) !important;
+    z-index: 40 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    visibility: visible !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    position: relative !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .md-sidebar--primary::-webkit-scrollbar,
+  .md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar {
+    width: 0px !important;
+    height: 0px !important;
+    display: none !important;
+    background: transparent !important;
+  }
+
+  .md-sidebar--primary::-webkit-scrollbar-track,
+  .md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-track {
+    background: var(--nanda-sidebar-bg) !important;
+  }
+
+  .md-sidebar--primary::-webkit-scrollbar-thumb,
+  .md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+    background: var(--nanda-sidebar-bg) !important;
+    border: none !important;
+  }
+
+  .md-sidebar--primary::-webkit-scrollbar-button,
+  .md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .md-main__inner {
+    margin-left: 12.5rem !important;
+    padding-top: 1.75rem !important;
+    padding-left: 2.25rem !important;
+    padding-right: 2.25rem !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Hide duplicate/unwanted elements inside sidebar */
+.md-sidebar--primary .md-nav__source,
+.md-sidebar--primary > .md-nav__title,
+.md-sidebar--primary label.md-nav__title,
+.md-sidebar--primary .md-nav--secondary,
+.md-sidebar--primary label.md-nav__link[for="__toc"],
+.md-sidebar--primary input#__toc ~ label.md-nav__link {
+  display: none !important;
+}
+
+/* Logo Header inside Sidebar - CENTERED */
+.nanda-sidebar-header {
+  padding: 1.25rem 0.75rem 0.75rem 0.75rem;
+  border-bottom: none !important;
+  background-color: var(--nanda-sidebar-bg);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100%;
+}
+
+.nanda-sidebar-logo {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-decoration: none;
+  color: var(--md-default-fg-color);
+  width: 100%;
+  max-width: 125px;
+}
+
+.nanda-sidebar-logo img,
+.nanda-sidebar-logo svg,
+.nanda-sidebar-logo-img {
+  width: 100% !important;
+  max-width: 125px !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto !important;
+}
+
+/* ==========================================================================
+   CLEAN MINIMAL NAVIGATION WITH PROMINENT INDENTATION FOR SUB-OPTIONS
+   ========================================================================== */
+
+.md-nav--primary {
+  padding: 0.6rem 0.65rem 2rem 0.65rem !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: var(--nanda-sidebar-bg) !important;
+}
+
+.md-nav--primary .md-nav__list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: var(--nanda-sidebar-bg) !important;
+}
+
+/* Main Section Header (Poppins Semi-Bold - 0.88rem) */
+.md-nav--primary > .md-nav__list > .md-nav__item {
+  margin-bottom: 0.45rem;
+  border: none !important;
+  background-color: var(--nanda-sidebar-bg) !important;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
+.md-nav--primary > .md-nav__list > .md-nav__item > label.md-nav__link,
+.md-nav--primary .md-nav__item--nested > label.md-nav__link {
+  font-weight: 600 !important; /* Poppins Semi Bold */
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--md-default-fg-color);
+  padding: 0.25rem 0.35rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  user-select: none;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  transition: opacity 0.15s ease;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link:hover,
+.md-nav--primary > .md-nav__list > .md-nav__item > label.md-nav__link:hover,
+.md-nav--primary .md-nav__item--nested > label.md-nav__link:hover {
+  opacity: 0.8;
+}
+
+/* Hide default Material icon inside toggle label */
+.md-nav--primary .md-nav__icon {
+  display: none !important;
+}
+
+/* Tree disclosure arrow */
+.md-nav--primary .md-nav__item--nested > label.md-nav__link::before {
+  content: "▸";
+  display: inline-block;
+  font-size: 0.62rem;
+  width: 10px;
+  color: var(--md-default-fg-color--lighter);
+  flex-shrink: 0;
+}
+
+.md-nav--primary .md-nav__item--nested > input.md-nav__toggle:checked ~ label.md-nav__link::before {
+  content: "▾";
+}
+
+/* Collapse / Expand container */
+.md-nav--primary .md-nav__item--nested > input.md-nav__toggle:not(:checked) ~ .md-nav {
+  display: none !important;
+}
+
+.md-nav--primary .md-nav__item--nested > input.md-nav__toggle:checked ~ .md-nav {
+  display: block !important;
+}
+
+/* ==========================================================================
+   SUB-OPTIONS INDENTATION & STRUCTURE
+   ========================================================================== */
+
+/* Sub-items Container (Level 1 nested nav) */
+.md-nav--primary .md-nav__item--nested > .md-nav,
+.md-nav--primary .md-nav[data-md-level="1"] {
+  position: relative !important;
+  margin: 0.25rem 0 0.55rem 0 !important;
+  padding: 0 !important;
+  border-left: none !important;
+  border: none !important;
+  background-color: var(--nanda-sidebar-bg) !important;
+  background: var(--nanda-sidebar-bg) !important;
+}
+
+.md-nav--primary .md-nav__item--nested > .md-nav .md-nav__list,
+.md-nav--primary .md-nav[data-md-level="1"] > .md-nav__list {
+  padding-left: 1.5rem !important;
+  border: none !important;
+  background-color: var(--nanda-sidebar-bg) !important;
+}
+
+.md-nav--primary .md-nav__item--nested > .md-nav .md-nav__item {
+  position: relative;
+  margin: 0.22rem 0;
+  border: none !important;
+  background-color: var(--nanda-sidebar-bg) !important;
+}
+
+.md-nav--primary .md-nav__item--nested > .md-nav .md-nav__item::before {
+  display: none !important;
+}
+
+/* Sub-option Link (Poppins Regular - 0.78rem) */
+.md-nav--primary .md-nav__item--nested > .md-nav .md-nav__link,
+.md-nav--primary .md-nav[data-md-level="1"] .md-nav__link {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  font-weight: 400 !important; /* Poppins Regular */
+  color: var(--md-default-fg-color--light);
+  padding: 0.16rem 0.3rem;
+  border-radius: 4px;
+  display: block;
+  text-decoration: none;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.md-nav--primary .md-nav__item--nested > .md-nav .md-nav__link:hover,
+.md-nav--primary .md-nav[data-md-level="1"] .md-nav__link:hover {
+  color: var(--md-default-fg-color);
+}
+
+/* Active Selected Sub-option: POPPINS MEDIUM */
+.md-nav--primary .md-nav__item--nested > .md-nav a.md-nav__link--active,
+.md-nav--primary .md-nav[data-md-level="1"] a.md-nav__link--active,
+.md-nav--primary .md-nav__item--nested > .md-nav .md-nav__item--active > a.md-nav__link {
+  font-weight: 500 !important; /* Poppins Medium */
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET OPTIMIZATION (< 76.25em)
+   ========================================================================== */
+
+@media screen and (max-width: 76.24em) {
+  /* Hide GitHub widget on mobile */
+  .md-header__source,
+  .md-source {
+    display: none !important;
+  }
+
+  /* Header on Mobile */
+  .md-header {
+    padding-left: 0 !important;
+    background-color: var(--md-default-bg-color) !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    height: 3.25rem !important;
+  }
+
+  .md-header__inner {
+    padding: 0 1rem !important;
+  }
+
+  .md-header__button[for="__drawer"] {
+    display: inline-flex !important;
+    color: var(--md-default-fg-color) !important;
+    margin-right: auto !important;
+  }
+
+  /* Completely hide mobile sidebar drawer when closed */
+  input#__drawer:not(:checked) ~ .md-container .md-sidebar--primary,
+  [data-md-toggle="drawer"]:not(:checked) ~ .md-container .md-sidebar--primary {
+    transform: translateX(-100%) !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Show mobile sidebar drawer when opened */
+  input#__drawer:checked ~ .md-container .md-sidebar--primary,
+  [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* Lock background site scroll when mobile drawer is open */
+  html.nanda-drawer-open,
+  body.nanda-drawer-open,
+  html:has(input#__drawer:checked),
+  body:has(input#__drawer:checked) {
+    overflow: hidden !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    touch-action: none !important;
+    overscroll-behavior: none !important;
+  }
+
+  input#__drawer:checked ~ .md-container {
+    pointer-events: none !important;
+  }
+
+  /* Mobile Drawer Container */
+  .md-sidebar--primary {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 14rem !important;
+    max-width: 80vw !important;
+    height: 100vh !important;
+    background-color: var(--nanda-sidebar-bg) !important;
+    background: var(--nanda-sidebar-bg) !important;
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.08) !important;
+    border: none !important;
+    z-index: 30 !important;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.25s !important;
+    pointer-events: auto !important;
+    overscroll-behavior: contain !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    background-color: var(--nanda-sidebar-bg) !important;
+    background: var(--nanda-sidebar-bg) !important;
+    height: 100% !important;
+    border: none !important;
+    overflow-y: auto !important;
+    scrollbar-width: none !important;
+    position: relative !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner {
+    background-color: var(--nanda-sidebar-bg) !important;
+    background: var(--nanda-sidebar-bg) !important;
+    border: none !important;
+    height: 100% !important;
+  }
+
+  /* Unset absolute position on mobile nav so it flows in single vertical stream */
+  .md-sidebar--primary .md-nav--primary {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    background-color: var(--nanda-sidebar-bg) !important;
+    background: var(--nanda-sidebar-bg) !important;
+    padding: 0 0.75rem 2.5rem 0.75rem !important;
+    border: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Force background color on all mobile items and lists */
+  .md-sidebar--primary .md-nav,
+  .md-sidebar--primary .md-nav[data-md-level],
+  .md-sidebar--primary .md-nav__list,
+  .md-sidebar--primary .md-nav__item {
+    background-color: var(--nanda-sidebar-bg) !important;
+    background: var(--nanda-sidebar-bg) !important;
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Make nested sub-options open inline as an accordion on mobile */
+  .md-sidebar--primary .md-nav[data-md-level="1"] {
+    position: static !important;
+    height: auto !important;
+    width: 100% !important;
+    display: none !important;
+    padding: 0 !important;
+    background-color: var(--nanda-sidebar-bg) !important;
+    background: var(--nanda-sidebar-bg) !important;
+  }
+
+  .md-sidebar--primary .md-nav__item--nested > input.md-nav__toggle:checked ~ .md-nav {
+    display: block !important;
+  }
+
+  /* Logo Header inside Mobile Sidebar */
+  .md-sidebar--primary .nanda-sidebar-header {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 1.5rem 1rem 0.85rem 1rem !important;
+    background-color: var(--nanda-sidebar-bg) !important;
+    background: var(--nanda-sidebar-bg) !important;
+    border-bottom: none !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  .md-sidebar--primary .nanda-sidebar-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 120px !important;
+  }
+
+  .md-sidebar--primary .nanda-sidebar-logo img,
+  .md-sidebar--primary .nanda-sidebar-logo svg {
+    width: 100% !important;
+    max-width: 120px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  /* Mobile Content area */
+  .md-main__inner {
+    margin-left: 0 !important;
+    padding-top: 1rem !important;
+  }
+
+  .md-content {
+    max-width: 100% !important;
+    padding: 1rem 1.25rem 4rem 1.25rem !important;
+  }
+
+  .md-typeset h1 {
+    font-size: 1.65rem !important;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.18rem !important;
+  }
+}
+
+/* ==========================================================================
+   CONTENT AREA
+   ========================================================================== */
+
+.md-content {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1.5rem 3rem 6rem 3rem;
+}
+
+.md-typeset h1 {
+  font-size: 1.85rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin-top: 0 !important;
+  margin-bottom: 1.25rem;
+  color: var(--md-default-fg-color);
+  border-bottom: 1px solid var(--nanda-border);
+  padding-bottom: 0.5rem;
+}
+
+.md-typeset h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset h3 {
+  font-size: 1.02rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+  color: var(--md-default-fg-color);
+}
+
+/* Heading Permanent Links (¶) */
+.md-typeset .headerlink {
+  color: #eab308 !important;
+  opacity: 0;
+  margin-left: 0.45rem !important;
+  text-decoration: none !important;
+  font-weight: 400 !important;
+  font-family: system-ui, -apple-system, sans-serif !important;
+  display: inline-block !important;
+  transition: opacity 0.15s ease, color 0.15s ease !important;
+}
+
+.md-typeset h1:hover .headerlink,
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink,
+.md-typeset h4:hover .headerlink,
+.md-typeset h5:hover .headerlink,
+.md-typeset h6:hover .headerlink,
+.md-typeset .headerlink:focus,
+.md-typeset .headerlink:hover {
+  opacity: 1 !important;
+  color: #ca8a04 !important;
+}
+
+.md-typeset p {
+  margin-bottom: 1.1rem;
+  color: var(--md-default-fg-color);
+}
+
+/* Reduced bold weight across the entire site */
+.md-typeset strong,
+.md-typeset b {
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset hr {
+  margin: 2.5rem 0;
+  border-top: 1px solid var(--nanda-border);
+}
+
+/* Structured tables */
+.md-typeset table:not([class]) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-size: 0.85rem;
+  border: 1px solid var(--nanda-border);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: #ffffff;
+  color: var(--md-default-fg-color);
+  font-weight: 500 !important;
+  font-size: 0.82rem;
+  text-align: left;
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--nanda-border);
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.6rem 0.85rem;
+  border-bottom: 1px solid var(--nanda-border);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  background-color: transparent;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Text links across all content */
+.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill) {
+  color: var(--md-default-fg-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--md-default-fg-color--lighter);
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):hover {
+  color: #b45309;
+  text-decoration-color: #f59e0b;
+}
+
+.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill)::after {
+  content: " ↗";
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1;
+  text-decoration: none !important;
+  margin-left: 0.16rem;
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   PAGE-END NAVIGATION (PREVIOUS / NEXT CARDS)
+   ========================================================================== */
+
+.nanda-page-nav {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
+  gap: 1.25rem !important;
+  margin-top: 3.5rem !important;
+  padding-top: 1.75rem !important;
+  border-top: 1px solid var(--nanda-border) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.nanda-page-nav__spacer {
+  flex: 1 1 0 !important;
+}
+
+.nanda-page-nav__link {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 1 0 !important;
+  padding: 0.85rem 1.15rem !important;
+  background-color: #ffffff !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease !important;
+  cursor: pointer !important;
+}
+
+.nanda-page-nav__link:hover {
+  border-color: #cbd5e1 !important;
+  background-color: #ffffff !important;
+  text-decoration: none !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nanda-page-nav__link--prev {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.nanda-page-nav__link--next {
+  align-items: flex-end !important;
+  text-align: right !important;
+}
+
+.nanda-page-nav__direction {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.nanda-page-nav__title {
+  font-size: 0.86rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.3 !important;
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-page-nav {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .nanda-page-nav__link--next {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+/* ==========================================================================
+   PUBLICATIONS EDITORIAL LIST UI
+   ========================================================================== */
+
+.nanda-pub-subtitle {
+  font-size: 0.95rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: -0.65rem;
+  margin-bottom: 2.25rem;
+  font-weight: 400;
+}
+
+.nanda-pub-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nanda-pub-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding: 1.45rem 0;
+  border-bottom: 1px solid var(--nanda-border);
+}
+
+.nanda-pub-item:first-child {
+  padding-top: 0.25rem;
+}
+
+.nanda-pub-date {
+  flex: 0 0 105px;
+  font-size: 0.86rem;
+  color: var(--md-default-fg-color--lighter);
+  font-weight: 400;
+  padding-top: 0.15rem;
+  white-space: nowrap;
+}
+
+.nanda-pub-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nanda-pub-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color) !important;
+  text-decoration: none !important;
+  line-height: 1.45;
+  transition: color 0.15s ease;
+}
+
+.nanda-pub-title:hover {
+  color: #2563eb !important;
+  text-decoration: none !important;
+}
+
+.nanda-pub-authors {
+  font-size: 0.84rem;
+  color: var(--md-default-fg-color--lighter);
+  font-weight: 400;
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-pub-item {
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.25rem 0;
+  }
+
+  .nanda-pub-date {
+    flex: none;
+    font-size: 0.8rem;
+  }
+
+  .nanda-pub-title {
+    font-size: 0.98rem;
+  }
+}
+
+/* ==========================================================================
+   PORTRAIT EDITORIAL ADVISORS GRID (3-4 IN A ROW)
+   ========================================================================== */
+
+.nanda-advisors-intro {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 2rem;
+}
+
+.nanda-portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.25rem 1.25rem;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+@media screen and (max-width: 72em) {
+  .nanda-portrait-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem 1.15rem;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-portrait-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.65rem 0.95rem;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .nanda-portrait-grid {
+    grid-template-columns: 1fr;
+    gap: 1.65rem;
+  }
+}
+
+.nanda-portrait-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.nanda-portrait-card:hover {
+  transform: translateY(-3px);
+}
+
+.nanda-portrait-media {
+  width: 100%;
+  aspect-ratio: 3.2 / 4;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #f1f1ee;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.75rem;
+}
+
+.nanda-portrait-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.nanda-portrait-card:hover .nanda-portrait-img {
+  transform: scale(1.02);
+}
+
+.nanda-portrait-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nanda-portrait-name {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  line-height: 1.3;
+}
+
+.nanda-portrait-role {
+  font-size: 0.77rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.35;
+}
+
+.nanda-portrait-org {
+  font-size: 0.74rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color--lighter);
+  line-height: 1.35;
+}
+
+.nanda-advisor-talk-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #2563eb !important;
+  background-color: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  padding: 0.18rem 0.5rem;
+  border-radius: 12px;
+  margin-top: 0.35rem;
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.nanda-advisor-talk-pill:hover {
+  background-color: rgba(37, 99, 235, 0.16);
+  border-color: rgba(37, 99, 235, 0.3);
+  color: #1d4ed8 !important;
+}
+
+.nanda-advisor-talk-pill svg {
+  flex-shrink: 0;
+}
+
+.nanda-advisor-talk-pill span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nanda-team-section-intro {
+  font-size: 0.88rem;
+  color: var(--md-default-fg-color--lighter);
+  margin-top: -0.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.nanda-portrait-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: var(--md-default-fg-color--light);
+  user-select: none;
+}
+
+.nanda-portrait-initials {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.nanda-portrait-bio {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.45;
+  margin-top: 0.35rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   NANDA ECOSYSTEM TRIGGER BUTTON & FULLSCREEN OVERLAY WINDOW
+   ========================================================================== */
+
+.nanda-ecosystem-trigger {
+  position: fixed !important;
+  bottom: 2rem !important;
+  left: 12.5rem !important;
+  transform: translateX(-50%) !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--nanda-border) !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  color: var(--md-default-fg-color) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 60 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease !important;
+}
+
+.nanda-ecosystem-trigger:hover {
+  transform: translateX(-50%) scale(1.08) !important;
+  border-color: rgba(0, 0, 0, 0.28) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12) !important;
+  color: #000000 !important;
+}
+
+.nanda-ecosystem-trigger:active {
+  transform: translateX(-50%) scale(0.95) !important;
+}
+
+@media screen and (max-width: 76.24em) {
+  .nanda-ecosystem-trigger {
+    left: 1.25rem !important;
+    bottom: 1.5rem !important;
+    transform: none !important;
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .nanda-ecosystem-trigger:hover {
+    transform: scale(1.08) !important;
+  }
+  .nanda-ecosystem-trigger:active {
+    transform: scale(0.95) !important;
+  }
+}
+
+/* Modal Overlay Window */
+.nanda-ecosystem-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 99999 !important;
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.nanda-ecosystem-modal.nanda-ecosystem-modal--open {
+  display: flex !important;
+}
+
+.nanda-ecosystem-backdrop {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(250, 250, 249, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  z-index: 1 !important;
+  opacity: 0;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nanda-ecosystem-modal.nanda-ecosystem-modal--visible .nanda-ecosystem-backdrop {
+  opacity: 1 !important;
+}
+
+.nanda-ecosystem-container {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 90% !important;
+  max-width: 44rem !important;
+  max-height: 85vh !important;
+  overflow-y: auto !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 16px !important;
+  padding: 2.25rem 2.5rem !important;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nanda-ecosystem-modal.nanda-ecosystem-modal--visible .nanda-ecosystem-container {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.nanda-ecosystem-header {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  padding-bottom: 1.25rem !important;
+  border-bottom: 1px solid var(--nanda-border) !important;
+}
+
+.nanda-ecosystem-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 1.45rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  line-height: 1.25 !important;
+}
+
+.nanda-ecosystem-subtitle {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.84rem !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  margin: 0.35rem 0 0 0 !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+}
+
+.nanda-ecosystem-close-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.22rem !important;
+  flex-shrink: 0 !important;
+}
+
+.nanda-ecosystem-close {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  border: 1px solid var(--nanda-border) !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--md-default-fg-color--light) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease !important;
+}
+
+.nanda-ecosystem-close:hover {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(0, 0, 0, 0.22) !important;
+  color: #000000 !important;
+}
+
+.nanda-ecosystem-esc-hint {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.6rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  user-select: none !important;
+}
+
+.nanda-ecosystem-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 0.85rem !important;
+  margin-top: 1.5rem !important;
+}
+
+.nanda-ecosystem-card {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1rem 1.15rem !important;
+  background: #FAFAF9 !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease !important;
+}
+
+.nanda-ecosystem-card:hover {
+  background-color: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.24) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+.nanda-ecosystem-card-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  line-height: 1.2 !important;
+}
+
+.nanda-ecosystem-arrow {
+  font-size: 0.85rem !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  transition: transform 0.15s ease, color 0.15s ease !important;
+}
+
+.nanda-ecosystem-card:hover .nanda-ecosystem-arrow {
+  transform: translate(2px, -2px) !important;
+  color: #000000 !important;
+}
+
+.nanda-ecosystem-card-desc {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.76rem !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  font-weight: 400 !important;
+  margin-top: 0.35rem !important;
+  line-height: 1.35 !important;
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-ecosystem-trigger {
+    left: 1.25rem !important;
+    bottom: 1.5rem !important;
+    transform: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14) !important;
+  }
+
+  .nanda-ecosystem-container {
+    width: calc(100% - 1.5rem) !important;
+    max-width: calc(100% - 1.5rem) !important;
+    max-height: 88vh !important;
+    padding: 1.5rem 1.25rem !important;
+    border-radius: 16px !important;
+    margin: auto 0.75rem !important;
+  }
+
+  .nanda-ecosystem-title {
+    font-size: 1.25rem !important;
+  }
+
+  .nanda-ecosystem-subtitle {
+    font-size: 0.78rem !important;
+  }
+
+  .nanda-ecosystem-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+
+  .nanda-ecosystem-card {
+    padding: 0.85rem 1rem !important;
+  }
+}
+
+/* ==========================================================================
+   HOMEPAGE COMMUNITY STATISTICS GRID
+   ========================================================================== */
+
+.nanda-stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0.85rem !important;
+  margin: 2rem 0 2.25rem 0 !important;
+}
+
+.nanda-stats-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 12px !important;
+  padding: 1.25rem 1.15rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.nanda-stats-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(0, 0, 0, 0.22) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05) !important;
+}
+
+.nanda-stats-number {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 1.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.15 !important;
+}
+
+.nanda-stats-label {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  color: var(--md-default-fg-color) !important;
+  margin-top: 0.55rem !important;
+  line-height: 1.25 !important;
+}
+
+.nanda-stats-desc {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.76rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  margin-top: 0.15rem !important;
+  line-height: 1.35 !important;
+}
+
+@media screen and (max-width: 64em) {
+  .nanda-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 36em) {
+  .nanda-stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

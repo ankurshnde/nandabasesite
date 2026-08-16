@@ -1,2 +1,5 @@
-node_modules/
-CLAUDE.md
+site/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
