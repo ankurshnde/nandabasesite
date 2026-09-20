@@ -12,6 +12,7 @@ theme:
   logo: assets/logo.svg
   favicon: assets/logo.svg
   font:
+    text: Poppins
     code: Fira Code
   palette:
     # Single clean light theme
