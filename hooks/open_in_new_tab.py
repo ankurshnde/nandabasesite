@@ -11,7 +11,7 @@ def is_external_url(href):
     parsed = urlparse(href)
     if parsed.scheme in ("http", "https"):
         netloc = parsed.netloc.lower()
-        if netloc in ("nanda.ai", "www.nanda.ai", "localhost", "127.0.0.1"):
+        if netloc in ("projectnanda.org", "www.projectnanda.org", "nanda.ai", "www.nanda.ai", "localhost", "127.0.0.1"):
             return False
         return True
     return False

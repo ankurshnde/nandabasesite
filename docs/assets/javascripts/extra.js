@@ -462,35 +462,59 @@ function setupBackToTopButton() {
   handleScroll();
 }
 
-function isExternalLink(href) {
+function isExternalLink(href, linkElement) {
   if (!href) return false;
   href = href.trim();
   if (href.startsWith("#") || href.startsWith("javascript:") || href.startsWith("mailto:") || href.startsWith("tel:")) {
     return false;
   }
-  if (/^(?:https?:)?\/\//i.test(href)) {
-    try {
-      const url = new URL(href, window.location.origin);
-      if (url.origin !== window.location.origin) {
-        return true;
-      }
-    } catch (e) {
+  // Relative links without scheme are always internal
+  if (!/^(?:https?:)?\/\//i.test(href)) {
+    return false;
+  }
+  try {
+    const currentOrigin = window.location.origin.toLowerCase();
+    const url = new URL(href, window.location.origin);
+    const targetHost = url.hostname.toLowerCase();
+    const targetOrigin = url.origin.toLowerCase();
+
+    // Exact origin match (handles localhost, 127.0.0.1, pages.dev, projectnanda.org, etc.)
+    if (targetOrigin === currentOrigin) {
       return false;
     }
+
+    // Whitelist known internal production / development domains
+    if (
+      targetHost === "projectnanda.org" ||
+      targetHost === "www.projectnanda.org" ||
+      targetHost === "nanda.ai" ||
+      targetHost === "www.nanda.ai" ||
+      targetHost === "localhost" ||
+      targetHost === "127.0.0.1"
+    ) {
+      return false;
+    }
+
+    // All other domains or external subdomains (like nest.projectnanda.org, nandatown.projectnanda.org, etc.) are external
+    return true;
+  } catch (e) {
+    return false;
   }
-  return false;
 }
 
 function setupExternalLinks() {
   document.querySelectorAll("a").forEach(link => {
     const href = link.getAttribute("href");
-    if (!href) return;
+    if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
 
-    if (isExternalLink(href)) {
+    if (isExternalLink(href, link)) {
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener noreferrer");
+      if (link.textContent.includes("↗")) {
+        link.classList.add("nanda-has-arrow");
+      }
     } else {
-      // Remove target="_blank" if it was mistakenly set on an internal site link
+      // Internal site link: ensure target="_blank" is never set
       if (link.getAttribute("target") === "_blank") {
         link.removeAttribute("target");
       }
@@ -500,59 +524,7 @@ function setupExternalLinks() {
       }
     }
 
-    // Prevent double redirect icons: if a link inside article content already has a literal ↗, clean text node
-    if (link.closest(".md-typeset") && !link.classList.contains("nanda-project-btn")) {
-      const text = link.textContent || "";
-      if (text.includes("↗")) {
-        link.childNodes.forEach(node => {
-          if (node.nodeType === Node.TEXT_NODE && node.nodeValue.includes("↗")) {
-            node.nodeValue = node.nodeValue.replace(/[\s\u00A0]*↗/g, "").trimEnd();
-          }
-        });
-      }
-    }
-  });
-}
-
-function isExternalLink(href) {
-  if (!href) return false;
-  href = href.trim();
-  if (href.startsWith("#") || href.startsWith("javascript:") || href.startsWith("mailto:") || href.startsWith("tel:")) {
-    return false;
-  }
-  if (href.startsWith("http://") || href.startsWith("https://")) {
-    try {
-      const url = new URL(href, window.location.href);
-      const host = url.hostname.toLowerCase();
-      if (host === "nanda.ai" || host === "www.nanda.ai" || host === "localhost" || host === "127.0.0.1") {
-        return false;
-      }
-      return true;
-    } catch(e) {
-      return false;
-    }
-  }
-  return false;
-}
-
-function setupExternalLinks() {
-  document.querySelectorAll(".md-typeset a").forEach(link => {
-    const href = link.getAttribute("href");
-    if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
-
-    if (isExternalLink(href)) {
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener noreferrer");
-      if (link.textContent.includes("↗")) {
-        link.classList.add("nanda-has-arrow");
-      }
-    } else {
-      if (link.getAttribute("target") === "_blank") {
-        link.removeAttribute("target");
-      }
-    }
-
-    // Clean any double redirect symbols in link text
+    // Prevent double redirect icons: if link text node contains multiple ↗, clean it
     if (link.childNodes.length === 1 && link.childNodes[0].nodeType === 3) {
       if (/↗\s*↗+/.test(link.textContent)) {
         link.textContent = link.textContent.replace(/↗\s*↗+/g, "↗");
@@ -561,14 +533,14 @@ function setupExternalLinks() {
   });
 }
 
-// Global capture-phase click listener: only external site links open in a new tab
+// Global capture-phase click listener: ensures internal navigation stays in the same tab
 document.addEventListener("click", function(e) {
   const link = e.target.closest("a");
   if (!link) return;
   const href = link.getAttribute("href");
   if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
 
-  if (isExternalLink(href)) {
+  if (isExternalLink(href, link)) {
     link.setAttribute("target", "_blank");
     link.setAttribute("rel", "noopener noreferrer");
   } else {
