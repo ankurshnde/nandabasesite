@@ -12,7 +12,6 @@ The NANDA Developer Portal provides technical references, SDK documentation, and
 ## Core Documentation Sections
 
 - **[Build with NANDA](build-with-nanda.md)**: Step-by-step tutorial for writing, registering, and running your first autonomous agent on the Swarm Mesh.
-- **[Reference Implementation](reference-implementation.md)**: Architectural patterns and production blueprints for edge gateways and municipal triage microservices.
 - **[Open Source Contribution](open-source.md)**: Guidelines for local environment configuration, testing, code standards, and contributing to core repositories.
 
 ---

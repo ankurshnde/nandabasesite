@@ -33,14 +33,14 @@ The static site bundle will be generated in the `site/` folder.
 ├── docs/                      # Markdown content pages
 │   ├── index.md               # Research (Overview)
 │   ├── publication/
-│   │   ├── writing-lab.md     # Writing Lab
+│   │   ├── get-involved.md    # Get Involved
 │   │   └── nanda-index.md     # NANDA Index
 │   ├── projects/
 │   │   └── index.md           # Projects Overview (with links to NANDA Town ↗, NEST ↗, KumbhDoot ↗, DigitDoot ↗, Civic Agents ↗)
 │   ├── community/
 │   │   ├── index.md           # Community Overview
 │   │   ├── events.md          # Events
-│   │   ├── global-chapter.md  # Global Chapter
+│   │   ├── start-a-chapter.md # Start a Chapter!
 │   │   └── youth-chapter.md   # Youth Chapter
 │   ├── developer/
 │   │   ├── index.md           # Developer Overview
@@ -53,7 +53,7 @@ The static site bundle will be generated in the `site/` folder.
 │   ├── resources/
 │   │   ├── faq.md             # FAQ
 │   │   ├── previous-work.md   # Previous work
-│   │   ├── video-vault.md     # Video Vault
+│   │   ├── talks-archive.md   # Talks & Archive
 │   │   └── media-kit.md       # Media Kit
 │   └── assets/
 │       ├── logo.svg           # Vector Logo

@@ -12,7 +12,7 @@ theme:
   logo: assets/logo.svg
   favicon: assets/logo.svg
   font:
-    text: Poppins
+    text: Outfit
     code: Fira Code
   palette:
     # Single clean light theme
@@ -34,6 +34,9 @@ extra:
   generator: false
 
 plugins: []
+
+hooks:
+  - hooks/open_in_new_tab.py
 
 markdown_extensions:
   - abbr
@@ -76,26 +79,30 @@ markdown_extensions:
 nav:
   - Research:
     - Overview: research/index.md
-    - Publication: publication/index.md
-    - Writing Lab: publication/writing-lab.md
+    - Publications: publication/index.md
     - NANDA Index: publication/nanda-index.md
+    - Get Involved: publication/get-involved.md
   - Projects:
     - Overview: projects/index.md
+    - NEST ↗: https://nest.projectnanda.org/
+    - NANDA Town ↗: https://nandatown.projectnanda.org/
+    - Civic Agents ↗: https://civicagents.projectnanda.org/
   - Community:
     - Overview: community/index.md
-    - Events: community/events.md
-    - Global Chapter: community/global-chapter.md
-    - Youth Chapter: community/youth-chapter.md
-  - Developer:
-    - Overview: developer/index.md
-    - Build w/ NANDA: developer/build-with-nanda.md
-    - Implementation: developer/reference-implementation.md
-    - Contributions: developer/open-source.md
-  - People:
-    - Advisors: people/advisors.md
-    - Team: people/team.md
+    - Events ↗: https://lu.ma/nanda
+    - Start a Chapter!: community/start-a-chapter.md
+    - Youth Chapter ↗: https://nandashapers.org/
+  - Contribute:
+    - Open Source: developer/open-source.md
+    - Hackathons: developer/hackathons.md
+    - Fellowships: developer/fellowships.md
   - Resources:
     - FAQ: resources/faq.md
-    - Previous work: resources/previous-work.md
-    - Video Vault: resources/video-vault.md
-    - Media Kit: resources/media-kit.md
+    - Talks & Archive: resources/talks-archive.md
+  - People & Talent:
+    - Advisors & Speakers: people/advisors.md
+    - Team: people/team.md
+    - Career ↗: https://careers.projectnanda.org/
+  - About:
+    - Project NANDA: about/project-nanda.md
+    - Foundation (FAN) ↗: https://www.agenticnet.org/

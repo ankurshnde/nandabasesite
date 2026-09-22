@@ -21,11 +21,89 @@ window.toggleNandaEcosystem = function(open) {
   }
 };
 
+window._bayAreaSavedScrollY = null;
+window._bayAreaOpenedInPage = false;
+
+window.toggleBayAreaModal = function(open, shouldUpdateUrl) {
+  if (typeof shouldUpdateUrl === "undefined") shouldUpdateUrl = true;
+  var modal = document.getElementById("nandaBayAreaModal");
+  if (!modal) return;
+
+  var currentPath = window.location.pathname.replace(/\/$/, "");
+  var isBayAreaUrl = currentPath.endsWith("/community/start-a-chapter/sf-bay-area");
+
+  if (open) {
+    // If opening from within the chapter page, save the exact scroll position
+    if (!isBayAreaUrl) {
+      window._bayAreaSavedScrollY = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
+      window._bayAreaOpenedInPage = true;
+    }
+
+    modal.classList.add("nanda-bayarea-modal--open");
+    document.body.style.overflow = "hidden";
+    void modal.offsetWidth; // Force layout reflow
+    modal.classList.add("nanda-bayarea-modal--visible");
+    modal.setAttribute("aria-hidden", "false");
+
+    if (shouldUpdateUrl && !isBayAreaUrl) {
+      try {
+        history.pushState({ bayAreaModal: true }, "", "/community/start-a-chapter/sf-bay-area/");
+      } catch (e) {}
+    }
+  } else {
+    modal.classList.remove("nanda-bayarea-modal--visible");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    setTimeout(function() {
+      if (!modal.classList.contains("nanda-bayarea-modal--visible")) {
+        modal.classList.remove("nanda-bayarea-modal--open");
+      }
+    }, 320);
+
+    if (shouldUpdateUrl) {
+      if (window._bayAreaOpenedInPage) {
+        // Opened from within /community/start-a-chapter/
+        // Use replaceState to change URL back without firing popstate / triggering Material instant page re-fetch
+        try {
+          history.replaceState(null, "", "/community/start-a-chapter/");
+        } catch (e) {}
+
+        // Restore scroll position so user never gets thrown to the top of the page
+        if (typeof window._bayAreaSavedScrollY === "number") {
+          var targetY = window._bayAreaSavedScrollY;
+          window.scrollTo({ top: targetY, behavior: "instant" });
+          requestAnimationFrame(function() {
+            window.scrollTo({ top: targetY, behavior: "instant" });
+          });
+        }
+      } else if (isBayAreaUrl) {
+        // Direct cold load on /community/start-a-chapter/sf-bay-area/
+        // Exit to the SF Bay Area chapter card on /community/start-a-chapter/
+        window.location.href = "/community/start-a-chapter/#chapter-sf-bay-area";
+      }
+    } else {
+      if (typeof window._bayAreaSavedScrollY === "number") {
+        var targetY = window._bayAreaSavedScrollY;
+        window.scrollTo({ top: targetY, behavior: "instant" });
+        requestAnimationFrame(function() {
+          window.scrollTo({ top: targetY, behavior: "instant" });
+        });
+      }
+    }
+  }
+};
+
 // Global Escape Key Listener
 document.addEventListener("keydown", function(e) {
   if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
     if (typeof window.toggleNandaEcosystem === "function") {
       window.toggleNandaEcosystem(false);
+    }
+    if (typeof window.toggleBayAreaModal === "function") {
+      var bayModal = document.getElementById("nandaBayAreaModal");
+      if (bayModal && (bayModal.classList.contains("nanda-bayarea-modal--open") || bayModal.classList.contains("nanda-bayarea-modal--visible"))) {
+        window.toggleBayAreaModal(false, true);
+      }
     }
   }
 });
@@ -45,45 +123,56 @@ const FORK_ICON_SVG = `<svg viewBox="0 0 24 24" width="11" height="11" fill="non
 const REPO_ICON_SVG = `<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>`;
 
 const SITE_PAGES = [
-  { path: "/", title: "Homepage", section: "" },
+  { path: "/", title: "Home", section: "" },
   { path: "/research/", title: "Overview", section: "Research" },
-  { path: "/publication/", title: "Publication", section: "Research" },
-  { path: "/publication/writing-lab/", title: "Writing Lab", section: "Research" },
+  { path: "/publication/", title: "Publications", section: "Research" },
   { path: "/publication/nanda-index/", title: "NANDA Index", section: "Research" },
+  { path: "/publication/get-involved/", title: "Get Involved", section: "Research" },
   { path: "/projects/", title: "Overview", section: "Projects" },
   { path: "/community/", title: "Overview", section: "Community" },
-  { path: "/community/events/", title: "Events", section: "Community" },
-  { path: "/community/global-chapter/", title: "Global Chapter", section: "Community" },
-  { path: "/community/youth-chapter/", title: "Youth Chapter", section: "Community" },
-  { path: "/developer/", title: "Overview", section: "Developer" },
-  { path: "/developer/build-with-nanda/", title: "Build w/ NANDA", section: "Developer" },
-  { path: "/developer/reference-implementation/", title: "Implementation", section: "Developer" },
-  { path: "/developer/open-source/", title: "Contributions", section: "Developer" },
-  { path: "/people/advisors/", title: "Advisors", section: "People" },
-  { path: "/people/team/", title: "Team", section: "People" },
+  { path: "/community/start-a-chapter/", title: "Start a Chapter!", section: "Community" },
+  { path: "/developer/open-source/", title: "Open Source", section: "Contribute" },
+  { path: "/developer/hackathons/", title: "Hackathons", section: "Contribute" },
+  { path: "/developer/fellowships/", title: "Fellowships", section: "Contribute" },
   { path: "/resources/faq/", title: "FAQ", section: "Resources" },
-  { path: "/resources/previous-work/", title: "Previous work", section: "Resources" },
-  { path: "/resources/video-vault/", title: "Video Vault", section: "Resources" },
-  { path: "/resources/media-kit/", title: "Media Kit", section: "Resources" }
+  { path: "/resources/talks-archive/", title: "Talks & Archive", section: "Resources" },
+  { path: "/people/advisors/", title: "Advisors & Speakers", section: "People & Talent" },
+  { path: "/people/team/", title: "Team", section: "People & Talent" },
+  { path: "/about/project-nanda/", title: "Project NANDA", section: "About" }
 ];
 
 function setupSidebarStructure() {
-  // Clean unwanted elements
-  document.querySelectorAll(".md-sidebar--primary .md-nav__source, .md-sidebar--primary > .md-nav__title, .md-sidebar--primary label.md-nav__title, .md-sidebar--primary .md-nav--secondary, .md-sidebar--primary .nanda-sidebar-footer, .md-sidebar--primary label[for='__toc']").forEach(el => el.remove());
-
-  // Insert logo header at the top of every primary nav container
   document.querySelectorAll(".md-sidebar--primary .md-nav--primary").forEach(nav => {
+    // Clean unwanted elements
+    nav.querySelectorAll(".md-nav__source, > .md-nav__title, label.md-nav__title, .md-nav--secondary, .nanda-sidebar-footer, label[for='__toc']").forEach(el => el.remove());
+
     let header = nav.querySelector(".nanda-sidebar-header");
     if (!header) {
+      // Fallback: create header if not already rendered by Jinja template
+      const origLogo = nav.querySelector("a.md-logo, a[data-md-component='logo']");
+      const logoHref = origLogo ? (origLogo.getAttribute("href") || ".") : ".";
       header = document.createElement("div");
       header.className = "nanda-sidebar-header";
+      header.innerHTML = `
+        <a href="${logoHref}" class="nanda-sidebar-logo" aria-label="Project NANDA Home" data-md-component="logo">
+          <img src="assets/logo.svg" alt="Project NANDA" class="nanda-sidebar-logo-img">
+        </a>
+      `;
       nav.insertBefore(header, nav.firstChild);
     }
-    header.innerHTML = `
-      <a href="/" class="nanda-sidebar-logo" aria-label="NANDA Home">
-        <img src="/assets/logo.svg" alt="Project NANDA" class="nanda-sidebar-logo-img">
-      </a>
-    `;
+
+    const logoLink = header.querySelector(".nanda-sidebar-logo");
+    if (logoLink) {
+      logoLink.onclick = (e) => {
+        // If drawer on mobile is open, close it
+        const drawer = document.getElementById("__drawer");
+        if (drawer && drawer.checked) {
+          drawer.checked = false;
+        }
+        // Ensure default section state when returning to home
+        saveOpenedSections(new Set(["Research"]));
+      };
+    }
   });
 }
 
@@ -170,12 +259,13 @@ function setupSidebarNavigation() {
 
       const toggle = parentItem.querySelector("input.md-nav__toggle");
       if (toggle) {
-        toggle.checked = true;
-      }
-
-      const firstSubLink = parentItem.querySelector(".md-nav a.md-nav__link");
-      if (firstSubLink && firstSubLink.href) {
-        firstSubLink.click();
+        toggle.checked = !toggle.checked;
+        if (toggle.checked) {
+          openedSections.add(name);
+        } else {
+          openedSections.delete(name);
+        }
+        saveOpenedSections(openedSections);
       }
     };
   });
@@ -372,16 +462,122 @@ function setupBackToTopButton() {
   handleScroll();
 }
 
+function isExternalLink(href) {
+  if (!href) return false;
+  href = href.trim();
+  if (href.startsWith("#") || href.startsWith("javascript:") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+    return false;
+  }
+  if (/^(?:https?:)?\/\//i.test(href)) {
+    try {
+      const url = new URL(href, window.location.origin);
+      if (url.origin !== window.location.origin) {
+        return true;
+      }
+    } catch (e) {
+      return false;
+    }
+  }
+  return false;
+}
+
 function setupExternalLinks() {
-  const links = document.querySelectorAll(".md-nav__link, .md-typeset a");
-  links.forEach(link => {
-    const text = link.textContent || "";
-    if (text.includes("↗") || (link.href && !link.href.includes(window.location.hostname) && link.href.startsWith("http"))) {
+  document.querySelectorAll("a").forEach(link => {
+    const href = link.getAttribute("href");
+    if (!href) return;
+
+    if (isExternalLink(href)) {
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener noreferrer");
+    } else {
+      // Remove target="_blank" if it was mistakenly set on an internal site link
+      if (link.getAttribute("target") === "_blank") {
+        link.removeAttribute("target");
+      }
+      const rel = link.getAttribute("rel");
+      if (rel === "noopener noreferrer" || rel === "noopener") {
+        link.removeAttribute("rel");
+      }
+    }
+
+    // Prevent double redirect icons: if a link inside article content already has a literal ↗, clean text node
+    if (link.closest(".md-typeset") && !link.classList.contains("nanda-project-btn")) {
+      const text = link.textContent || "";
+      if (text.includes("↗")) {
+        link.childNodes.forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE && node.nodeValue.includes("↗")) {
+            node.nodeValue = node.nodeValue.replace(/[\s\u00A0]*↗/g, "").trimEnd();
+          }
+        });
+      }
     }
   });
 }
+
+function isExternalLink(href) {
+  if (!href) return false;
+  href = href.trim();
+  if (href.startsWith("#") || href.startsWith("javascript:") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+    return false;
+  }
+  if (href.startsWith("http://") || href.startsWith("https://")) {
+    try {
+      const url = new URL(href, window.location.href);
+      const host = url.hostname.toLowerCase();
+      if (host === "nanda.ai" || host === "www.nanda.ai" || host === "localhost" || host === "127.0.0.1") {
+        return false;
+      }
+      return true;
+    } catch(e) {
+      return false;
+    }
+  }
+  return false;
+}
+
+function setupExternalLinks() {
+  document.querySelectorAll(".md-typeset a").forEach(link => {
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
+
+    if (isExternalLink(href)) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+      if (link.textContent.includes("↗")) {
+        link.classList.add("nanda-has-arrow");
+      }
+    } else {
+      if (link.getAttribute("target") === "_blank") {
+        link.removeAttribute("target");
+      }
+    }
+
+    // Clean any double redirect symbols in link text
+    if (link.childNodes.length === 1 && link.childNodes[0].nodeType === 3) {
+      if (/↗\s*↗+/.test(link.textContent)) {
+        link.textContent = link.textContent.replace(/↗\s*↗+/g, "↗");
+      }
+    }
+  });
+}
+
+// Global capture-phase click listener: only external site links open in a new tab
+document.addEventListener("click", function(e) {
+  const link = e.target.closest("a");
+  if (!link) return;
+  const href = link.getAttribute("href");
+  if (!href || href.startsWith("#") || href.startsWith("javascript:")) return;
+
+  if (isExternalLink(href)) {
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  } else {
+    // Internal link: ensure target="_blank" is NOT present so it stays in the same tab
+    if (link.getAttribute("target") === "_blank") {
+      link.removeAttribute("target");
+    }
+  }
+}, true);
 
 function setupHeaderScrollFade() {
   const handleScroll = () => {
@@ -445,6 +641,56 @@ function setupEcosystemModal() {
   });
 }
 
+function setupBayAreaModal() {
+  var currentPath = window.location.pathname.replace(/\/$/, "");
+  if (currentPath.endsWith("/community/start-a-chapter/sf-bay-area")) {
+    window.toggleBayAreaModal(true, false);
+  }
+
+  if (window._nandaBayAreaInitialized) return;
+  window._nandaBayAreaInitialized = true;
+
+  document.addEventListener("click", function(e) {
+    var trigger = e.target.closest(".nanda-chapter-btn--learn-more");
+    if (trigger) {
+      e.preventDefault();
+      window.toggleBayAreaModal(true, true);
+      return;
+    }
+
+    var closeBtn = e.target.closest("#nandaBayAreaClose");
+    var backdrop = e.target.closest("#nandaBayAreaBackdrop");
+    if (closeBtn || backdrop) {
+      e.preventDefault();
+      window.toggleBayAreaModal(false, true);
+    }
+  });
+
+  window.addEventListener("popstate", function(e) {
+    var modal = document.getElementById("nandaBayAreaModal");
+    if (!modal) return;
+    var path = window.location.pathname.replace(/\/$/, "");
+    if (path.endsWith("/community/start-a-chapter/sf-bay-area")) {
+      window.toggleBayAreaModal(true, false);
+    } else {
+      window.toggleBayAreaModal(false, false);
+      if (typeof window._bayAreaSavedScrollY === "number") {
+        var targetY = window._bayAreaSavedScrollY;
+        window.scrollTo({ top: targetY, behavior: "instant" });
+        requestAnimationFrame(function() {
+          window.scrollTo({ top: targetY, behavior: "instant" });
+        });
+        setTimeout(function() {
+          window.scrollTo({ top: targetY, behavior: "instant" });
+        }, 60);
+        setTimeout(function() {
+          window.scrollTo({ top: targetY, behavior: "instant" });
+        }, 180);
+      }
+    }
+  });
+}
+
 function initNanda() {
   setupSidebarStructure();
   setupSidebarNavigation();
@@ -455,9 +701,14 @@ function initNanda() {
   setupExternalLinks();
   setupHeaderScrollFade();
   setupEcosystemModal();
+  setupBayAreaModal();
 }
 
-document.addEventListener("DOMContentLoaded", initNanda);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initNanda);
+} else {
+  initNanda();
+}
 
 if (typeof document$ !== "undefined") {
   document$.subscribe(initNanda);

@@ -7,6 +7,10 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     
+    <a href="{{ '.' | url }}" class="nanda-header-logo" aria-label="Project NANDA" title="Project NANDA" data-md-component="logo">
+      <img src="{{ 'assets/logo.svg' | url }}" alt="Project NANDA" class="nanda-header-logo-img">
+    </a>
+    
     <div class="nanda-header-actions">
       <a href="https://www.linkedin.com/company/projectnanda/" target="_blank" rel="noopener noreferrer" class="nanda-header-linkedin" title="NANDA on LinkedIn" aria-label="LinkedIn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" fill="currentColor">
@@ -92,6 +96,137 @@
         <div class="nanda-ecosystem-card-title">Join 39 <span class="nanda-ecosystem-arrow">↗</span></div>
         <div class="nanda-ecosystem-card-desc">Get your agent on the Agentic Web.</div>
       </a>
+    </div>
+  </div>
+</div>
+
+<!-- NANDA SF Bay Area Chapter Modal Window -->
+<div id="nandaBayAreaModal" class="nanda-bayarea-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="nandaBayAreaTitle">
+  <div class="nanda-bayarea-backdrop" id="nandaBayAreaBackdrop" onclick="toggleBayAreaModal(false)"></div>
+  <div class="nanda-bayarea-container">
+    <div class="nanda-bayarea-header">
+      <div class="nanda-bayarea-header-text">
+        <div class="nanda-bayarea-tag">First Regional Node</div>
+        <h2 id="nandaBayAreaTitle" class="nanda-bayarea-title">SF Bay Area Chapter</h2>
+        <p class="nanda-bayarea-subtitle">The founding chapter of Project NANDA, pioneering decentralized agentic infrastructure in Silicon Valley.</p>
+      </div>
+      <div class="nanda-bayarea-close-wrapper">
+        <button id="nandaBayAreaClose" class="nanda-bayarea-close" onclick="toggleBayAreaModal(false)" aria-label="Close SF Bay Area Window">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <span class="nanda-bayarea-esc-hint">ESC</span>
+      </div>
+    </div>
+
+    <div class="nanda-bayarea-about-card">
+      <div class="nanda-bayarea-about-heading">About the SF Bay Area Chapter</div>
+      <p class="nanda-bayarea-about-desc">
+        As the very first regional chapter established under Project NANDA, the SF Bay Area Chapter connects AI researchers, protocol developers, and innovators building the future of autonomous agents. We foster collaborations across Silicon Valley founders, developer advocates, and academic institutions in the heart of global AI innovation.
+      </p>
+      <div class="nanda-bayarea-links">
+        <a href="https://sfbayarea.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-link-btn nanda-bayarea-link-btn--website nanda-has-arrow">Visit Website <span class="nanda-btn-arrow">↗</span></a>
+        <a href="https://chat.whatsapp.com/L5jfpeQCv200INAZuziole" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-link-btn nanda-bayarea-link-btn--whatsapp nanda-has-arrow">WhatsApp Community <span class="nanda-btn-arrow">↗</span></a>
+        <a href="https://www.linkedin.com/showcase/agentic-web-sf-bay-area-chapter" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-link-btn nanda-bayarea-link-btn--linkedin nanda-has-arrow">LinkedIn Showcase <span class="nanda-btn-arrow">↗</span></a>
+      </div>
+    </div>
+
+    <div class="nanda-bayarea-section-title">Chapter Leadership &amp; Innovation Council</div>
+
+    <div class="nanda-bayarea-leaders-grid">
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/nitinbadjatia.jpeg' | url }}" alt="Nitin Badjatia" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Nitin Badjatia</div>
+          <a href="https://www.linkedin.com/in/nitinbadjatia/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">SAP <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/gurusharaskar.jpeg' | url }}" alt="Gurusha Raskar" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Gurusha Raskar</div>
+          <a href="https://www.linkedin.com/in/gurusharesearcher/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Apple <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/saurabhpeshwa.jpeg' | url }}" alt="Saurabh Sakalkar" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Saurabh Sakalkar</div>
+          <a href="https://www.linkedin.com/in/peshwa/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Cisco <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/sanjayaiyagari.jpeg' | url }}" alt="Sanjay Aiyagari" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Sanjay Aiyagari</div>
+          <a href="https://www.linkedin.com/in/aiyagari" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Red Hat <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/priyasub.jpg' | url }}" alt="Priya Subramanian" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Priya Subramanian</div>
+          <a href="https://www.linkedin.com/in/priya-subramanian-0559395/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">HCL Technologies <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/Mahesh_Lambe.JPG' | url }}" alt="Mahesh Lambe" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Mahesh Lambe</div>
+          <a href="https://www.linkedin.com/in/maheshlambe/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Unify Dynamics <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/navtejjj.jpeg' | url }}" alt="Navtej Singh" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Navtej Singh</div>
+          <a href="https://www.linkedin.com/in/navtejjj" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Splunk <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/sharathchandra.png' | url }}" alt="Sharath Chandra" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Sharath Chandra</div>
+          <a href="https://www.linkedin.com/in/sharathvc" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Stellarminds.ai <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/swatipatil.jpg' | url }}" alt="Swati Patil" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Swati Patil</div>
+          <a href="https://www.linkedin.com/in/patilswati/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">CodeMinder Inc <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
+  --md-text-font: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --md-code-font: "Fira Code", "Courier New", Courier, monospace;
   --md-default-bg-color: #FAFAF9;
   --md-default-fg-color: #18181b;
   --md-default-fg-color--light: #52525b;
@@ -13,15 +15,83 @@
   --nanda-sidebar-bg: #F2F2F0;
   --nanda-content-bg: #FAFAF9;
   --nanda-hover-bg: rgba(0, 0, 0, 0.04);
+  --nanda-brand-yellow: #eab308;
+  --nanda-brand-yellow-deep: #ca8a04;
+  --nanda-brand-yellow-light: #fde047;
 }
 
-/* Base typography */
+/* Smooth anchor scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Base typography - Matching Agentic Resource Discovery aesthetic */
 body, .md-typeset {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: var(--md-text-font);
   color: var(--md-default-fg-color);
-  font-size: 0.92rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.6;
   letter-spacing: -0.01em;
+}
+
+/* Page Main Title (H1) - Strict single line on desktop */
+.md-typeset h1,
+h1#networked-ai-agents-in-a-decentralized-architecture,
+.nanda-main-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: clamp(1.2rem, 2.15vw, 1.75rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.25 !important;
+  margin-bottom: 1.5rem !important;
+  white-space: nowrap !important;
+}
+
+@media screen and (max-width: 48em) {
+  .md-typeset h1,
+  h1#networked-ai-agents-in-a-decentralized-architecture,
+  .nanda-main-title {
+    font-size: clamp(1.2rem, 4.5vw, 1.5rem) !important;
+    white-space: normal !important;
+  }
+}
+
+/* Section Headings (H2) */
+.md-typeset h2 {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.25 !important;
+  margin-top: 2rem !important;
+}
+
+/* Subsection Headings (H3) */
+.md-typeset h3 {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.35 !important;
+}
+
+/* Minor Headings (H4) */
+.md-typeset h4 {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.md-typeset p {
+  line-height: 1.6 !important;
+}
+
+.md-typeset pre,
+.md-typeset code {
+  font-family: var(--md-code-font) !important;
+  font-size: 0.85rem !important;
+  line-height: 1.6 !important;
 }
 
 /* ==========================================================================
@@ -71,7 +141,7 @@ code, kbd, pre, .highlight {
   padding: 0.45rem 1rem 0.45rem 0.8rem !important;
   background-color: #ffffff !important;
   color: #64748b !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.78rem !important;
   font-weight: 500 !important;
   border-radius: 9999px !important;
@@ -169,13 +239,31 @@ code, kbd, pre, .highlight {
   display: none !important;
 }
 
+.nanda-header-logo {
+  display: none !important;
+}
+
 @media screen and (max-width: 76.24em) {
   .md-header {
     position: sticky !important;
   }
   .md-header__button[for="__drawer"] {
     display: inline-flex !important;
+    margin-right: 0.6rem !important;
+  }
+  .nanda-header-logo {
+    display: inline-flex !important;
+    align-items: center !important;
     margin-right: auto !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+  }
+  .nanda-header-logo img,
+  .nanda-header-logo-img {
+    height: 28px !important;
+    width: auto !important;
+    max-width: 125px !important;
+    display: block !important;
   }
 }
 
@@ -301,7 +389,7 @@ code, kbd, pre, .highlight {
 }
 
 .nanda-header-git-title {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.78rem !important;
   font-weight: 500 !important;
   color: var(--md-default-fg-color) !important;
@@ -315,7 +403,7 @@ code, kbd, pre, .highlight {
   margin: 0.12rem 0 0 0 !important;
   padding: 0 !important;
   list-style: none !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.65rem !important;
   font-weight: 400 !important;
   color: var(--md-default-fg-color--lighter) !important;
@@ -359,7 +447,7 @@ code, kbd, pre, .highlight {
 
 /* Size scaled exactly like sidebar sub-options (0.78rem) */
 .md-source__repo-name {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.78rem !important;
   font-weight: 500 !important;
   color: var(--md-default-fg-color) !important;
@@ -374,7 +462,7 @@ code, kbd, pre, .highlight {
   margin: 0.15rem 0 0 0 !important;
   padding: 0 !important;
   list-style: none !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.65rem !important;
   font-weight: 400 !important;
   color: var(--md-default-fg-color--lighter) !important;
@@ -486,9 +574,9 @@ code, kbd, pre, .highlight {
 
 /* Size scaled exactly like sidebar sub-options (0.78rem) */
 .md-source__repo-name {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.78rem !important;
-  font-weight: 500 !important; /* Poppins Medium strictly */
+  font-weight: 500 !important; /* Outfit Medium strictly */
   color: var(--md-default-fg-color) !important;
   line-height: 1.2 !important;
 }
@@ -501,9 +589,9 @@ code, kbd, pre, .highlight {
   margin: 0.1rem 0 0 0 !important;
   padding: 0 !important;
   list-style: none !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.65rem !important;
-  font-weight: 400 !important; /* Poppins Regular strictly */
+  font-weight: 400 !important; /* Outfit Regular strictly */
   color: var(--md-default-fg-color--lighter) !important;
   line-height: 1.1 !important;
   opacity: 0;
@@ -664,6 +752,13 @@ footer.md-footer,
   color: var(--md-default-fg-color);
   width: 100%;
   max-width: 125px;
+  cursor: pointer !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.nanda-sidebar-logo:hover {
+  opacity: 0.75 !important;
+  transform: scale(1.02) !important;
 }
 
 .nanda-sidebar-logo img,
@@ -695,7 +790,7 @@ footer.md-footer,
   background-color: var(--nanda-sidebar-bg) !important;
 }
 
-/* Main Section Header (Poppins Semi-Bold - 0.88rem) */
+/* Main Section Header (Outfit Semi-Bold - 0.88rem) */
 .md-nav--primary > .md-nav__list > .md-nav__item {
   margin-bottom: 0.45rem;
   border: none !important;
@@ -705,7 +800,7 @@ footer.md-footer,
 .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
 .md-nav--primary > .md-nav__list > .md-nav__item > label.md-nav__link,
 .md-nav--primary .md-nav__item--nested > label.md-nav__link {
-  font-weight: 600 !important; /* Poppins Semi Bold */
+  font-weight: 600 !important; /* Outfit Semi Bold */
   font-size: 0.88rem;
   line-height: 1.4;
   color: var(--md-default-fg-color);
@@ -790,12 +885,12 @@ footer.md-footer,
   display: none !important;
 }
 
-/* Sub-option Link (Poppins Regular - 0.78rem) */
+/* Sub-option Link (Outfit Regular - 0.78rem) */
 .md-nav--primary .md-nav__item--nested > .md-nav .md-nav__link,
 .md-nav--primary .md-nav[data-md-level="1"] .md-nav__link {
   font-size: 0.78rem;
   line-height: 1.35;
-  font-weight: 400 !important; /* Poppins Regular */
+  font-weight: 400 !important; /* Outfit Regular */
   color: var(--md-default-fg-color--light);
   padding: 0.16rem 0.3rem;
   border-radius: 4px;
@@ -815,11 +910,11 @@ footer.md-footer,
   color: var(--md-default-fg-color);
 }
 
-/* Active Selected Sub-option: POPPINS MEDIUM */
+/* Active Selected Sub-option: OUTFIT MEDIUM */
 .md-nav--primary .md-nav__item--nested > .md-nav a.md-nav__link--active,
 .md-nav--primary .md-nav[data-md-level="1"] a.md-nav__link--active,
 .md-nav--primary .md-nav__item--nested > .md-nav .md-nav__item--active > a.md-nav__link {
-  font-weight: 500 !important; /* Poppins Medium */
+  font-weight: 500 !important; /* Outfit Medium */
   font-size: 0.78rem;
   color: var(--md-default-fg-color) !important;
   background: transparent !important;
@@ -1049,6 +1144,7 @@ footer.md-footer,
   margin-top: 2rem;
   margin-bottom: 0.75rem;
   color: var(--md-default-fg-color);
+  scroll-margin-top: 4.5rem !important;
 }
 
 .md-typeset h3 {
@@ -1058,6 +1154,7 @@ footer.md-footer,
   margin-top: 1.5rem;
   margin-bottom: 0.4rem;
   color: var(--md-default-fg-color);
+  scroll-margin-top: 4.5rem !important;
 }
 
 /* Heading Permanent Links (¶) */
@@ -1097,8 +1194,11 @@ footer.md-footer,
 }
 
 .md-typeset hr {
-  margin: 2.5rem 0;
-  border-top: 1px solid var(--nanda-border);
+  margin: 2.5rem 0 !important;
+  border: none !important;
+  border-top: 1px solid var(--nanda-border) !important;
+  border-bottom: none !important;
+  height: 0 !important;
 }
 
 /* Structured tables */
@@ -1132,21 +1232,23 @@ footer.md-footer,
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Text links across all content */
-.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill) {
-  color: var(--md-default-fg-color);
+/* Text links across all content - Clear, distinct, theme-matched brand styling */
+.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company) {
+  color: #ca8a04;
+  font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: var(--md-default-fg-color--lighter);
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: #eab308;
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
-.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):hover {
-  color: #b45309;
-  text-decoration-color: #f59e0b;
+.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):hover {
+  color: #a16207;
+  text-decoration-color: #ca8a04;
 }
 
-.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill)::after {
+.md-typeset a[target="_blank"]:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-has-arrow)::after {
   content: " ↗";
   display: inline-block;
   font-size: 0.8em;
@@ -1255,70 +1357,449 @@ footer.md-footer,
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+.nanda-pub-list + hr,
+.md-typeset .nanda-pub-list + hr {
+  display: none !important;
 }
 
 .nanda-pub-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 2.5rem;
-  padding: 1.45rem 0;
-  border-bottom: 1px solid var(--nanda-border);
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.75rem !important;
+  padding: 1.15rem 0.5rem !important;
+  min-height: 4.4rem !important;
+  box-sizing: border-box !important;
+  border-bottom: 1px solid var(--nanda-border) !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer !important;
+  border-radius: 6px !important;
+  transition: background-color 0.18s ease, transform 0.18s ease !important;
 }
 
 .nanda-pub-item:first-child {
-  padding-top: 0.25rem;
+  padding-top: 1.15rem !important;
+}
+
+.nanda-pub-item::after {
+  display: none !important;
+  content: "" !important;
 }
 
 .nanda-pub-date {
-  flex: 0 0 105px;
-  font-size: 0.86rem;
-  color: var(--md-default-fg-color--lighter);
-  font-weight: 400;
-  padding-top: 0.15rem;
-  white-space: nowrap;
-}
-
-.nanda-pub-body {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  flex: 0 0 115px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  color: #71717a !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  white-space: nowrap !important;
+  line-height: 1.4 !important;
+  transition: color 0.18s ease !important;
 }
 
 .nanda-pub-title {
-  font-size: 1.05rem;
-  font-weight: 500;
+  flex: 1 1 auto !important;
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
   color: var(--md-default-fg-color) !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
   text-decoration: none !important;
-  line-height: 1.45;
-  transition: color 0.15s ease;
+  transition: color 0.18s ease !important;
 }
 
-.nanda-pub-title:hover {
-  color: #2563eb !important;
+.nanda-pub-item:hover {
+  cursor: pointer !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  transform: translateX(4px) !important;
+}
+
+.nanda-pub-item:hover .nanda-pub-title {
+  color: #ca8a04 !important;
   text-decoration: none !important;
 }
 
-.nanda-pub-authors {
-  font-size: 0.84rem;
-  color: var(--md-default-fg-color--lighter);
-  font-weight: 400;
+.nanda-pub-item:hover .nanda-pub-date {
+  color: var(--md-default-fg-color) !important;
 }
 
 @media screen and (max-width: 48em) {
   .nanda-pub-item {
-    flex-direction: column;
-    gap: 0.35rem;
-    padding: 1.25rem 0;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.35rem !important;
+    padding: 1rem 0.25rem !important;
+    min-height: auto !important;
   }
 
   .nanda-pub-date {
-    flex: none;
-    font-size: 0.8rem;
+    flex: none !important;
+    font-size: 0.76rem !important;
   }
 
   .nanda-pub-title {
-    font-size: 0.98rem;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+  }
+}
+
+/* ==========================================================================
+   PROJECTS OVERVIEW - MINIMAL EDITORIAL ROWS (IDENTICAL TO PUBLICATIONS UI)
+   ========================================================================== */
+
+.nanda-project-list {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin: 1.25rem 0 2.5rem 0 !important;
+  border-top: 1px solid var(--nanda-border) !important;
+}
+
+.nanda-project-list + hr,
+.md-typeset .nanda-project-list + hr {
+  display: none !important;
+}
+
+.nanda-project-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 2rem !important;
+  padding: 1.15rem 0.5rem !important;
+  box-sizing: border-box !important;
+  border-bottom: 1px solid var(--nanda-border) !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer !important;
+  border-radius: 6px !important;
+  transition: background-color 0.18s ease, transform 0.18s ease !important;
+}
+
+.nanda-project-row::after {
+  display: none !important;
+  content: "" !important;
+}
+
+.nanda-project-name {
+  flex: 0 0 190px !important;
+  width: 190px !important;
+  max-width: 190px !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+  color: var(--md-default-fg-color) !important;
+  white-space: nowrap !important;
+  line-height: 1.55 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  transition: color 0.18s ease !important;
+}
+
+.nanda-project-arrow {
+  font-size: 0.8em !important;
+  color: #a1a1aa !important;
+  line-height: 1 !important;
+  transition: transform 0.18s ease, color 0.18s ease !important;
+}
+
+.nanda-project-desc {
+  flex: 1 1 auto !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--light) !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  transition: color 0.18s ease !important;
+}
+
+.nanda-project-row:hover {
+  cursor: pointer !important;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  transform: translateX(4px) !important;
+}
+
+.nanda-project-row:hover .nanda-project-name {
+  color: #ca8a04 !important;
+}
+
+.nanda-project-row:hover .nanda-project-arrow {
+  color: #ca8a04 !important;
+  transform: translate(2px, -2px) !important;
+}
+
+.nanda-project-row:hover .nanda-project-desc {
+  color: var(--md-default-fg-color) !important;
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-project-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.35rem !important;
+    padding: 1rem 0.25rem !important;
+    min-height: auto !important;
+  }
+
+  .nanda-project-name {
+    flex: none !important;
+    font-size: 1rem !important;
+  }
+
+  .nanda-project-desc {
+    font-size: 0.88rem !important;
+  }
+}
+
+/* ==========================================================================
+   GET INVOLVED - 5-LEVEL SQUARED ONBOARDING BOXES (INTERACTIVE JOURNEY)
+   ========================================================================== */
+
+.nanda-journey-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 1.15rem !important;
+  margin: 2rem 0 2.75rem 0 !important;
+  width: 100% !important;
+}
+
+.nanda-journey-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  aspect-ratio: 1 / 1 !important;
+  padding: 0.85rem 0.4rem !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  color: var(--md-default-fg-color) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease !important;
+}
+
+.nanda-journey-card::after {
+  display: none !important;
+  content: "" !important;
+}
+
+.nanda-journey-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #eab308 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(234, 179, 8, 0.18), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nanda-journey-step {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: #ca8a04 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 0.35rem !important;
+  line-height: 1 !important;
+  height: 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: color 0.18s ease, transform 0.18s ease !important;
+}
+
+.nanda-journey-card:hover .nanda-journey-step {
+  transform: scale(1.08) !important;
+  color: #eab308 !important;
+}
+
+.nanda-journey-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.25 !important;
+  margin-bottom: 0.35rem !important;
+  height: 1.4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  transition: color 0.18s ease !important;
+}
+
+.nanda-journey-card:hover .nanda-journey-title {
+  color: #18181b !important;
+}
+
+.nanda-journey-desc {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  line-height: 1.35 !important;
+  height: 2.1rem !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+@media screen and (max-width: 64em) {
+  .nanda-journey-grid {
+    gap: 0.75rem !important;
+  }
+  .nanda-journey-card {
+    padding: 0.75rem 0.35rem !important;
+  }
+  .nanda-journey-step {
+    font-size: 1.2rem !important;
+  }
+  .nanda-journey-title {
+    font-size: 0.82rem !important;
+  }
+  .nanda-journey-desc {
+    font-size: 0.68rem !important;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-journey-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+  .nanda-journey-card {
+    aspect-ratio: auto !important;
+    min-height: 110px !important;
+    padding: 1.1rem 0.75rem !important;
+  }
+}
+
+/* ==========================================================================
+   SOCIAL CUBES GRID (5 CUBES IN A ROW)
+   ========================================================================== */
+
+.nanda-social-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 1.15rem !important;
+  margin: 1.5rem 0 2.5rem 0 !important;
+  width: 100% !important;
+}
+
+.nanda-social-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  aspect-ratio: 1 / 1 !important;
+  padding: 1rem 0.6rem !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  color: var(--md-default-fg-color) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease !important;
+}
+
+.nanda-social-card::after {
+  display: none !important;
+  content: "" !important;
+}
+
+.nanda-social-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: #eab308 !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(234, 179, 8, 0.18), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nanda-social-icon {
+  width: 38px !important;
+  height: 38px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ca8a04 !important;
+  margin-bottom: 0.6rem !important;
+  transition: transform 0.2s ease, color 0.2s ease !important;
+}
+
+.nanda-social-icon svg {
+  width: 28px !important;
+  height: 28px !important;
+  display: block !important;
+}
+
+.nanda-social-card:hover .nanda-social-icon {
+  transform: scale(1.12) !important;
+  color: #eab308 !important;
+}
+
+.nanda-social-name {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.25 !important;
+  margin-bottom: 0.25rem !important;
+  white-space: nowrap !important;
+  transition: color 0.18s ease !important;
+}
+
+.nanda-social-card:hover .nanda-social-name {
+  color: #18181b !important;
+}
+
+.nanda-social-handle {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  line-height: 1.3 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+
+@media screen and (max-width: 64em) {
+  .nanda-social-grid {
+    gap: 0.75rem !important;
+  }
+  .nanda-social-card {
+    padding: 0.75rem 0.35rem !important;
+  }
+  .nanda-social-name {
+    font-size: 0.82rem !important;
+  }
+  .nanda-social-handle {
+    font-size: 0.68rem !important;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-social-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+  .nanda-social-card {
+    aspect-ratio: auto !important;
+    min-height: 110px !important;
+    padding: 1.1rem 0.75rem !important;
   }
 }
 
@@ -1481,7 +1962,7 @@ footer.md-footer,
 }
 
 .nanda-portrait-initials {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-size: 1.7rem;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -1622,7 +2103,7 @@ footer.md-footer,
 }
 
 .nanda-ecosystem-title {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 1.45rem !important;
   font-weight: 500 !important;
   color: var(--md-default-fg-color) !important;
@@ -1633,7 +2114,7 @@ footer.md-footer,
 }
 
 .nanda-ecosystem-subtitle {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.84rem !important;
   color: var(--md-default-fg-color--lighter) !important;
   margin: 0.35rem 0 0 0 !important;
@@ -1673,7 +2154,7 @@ footer.md-footer,
 }
 
 .nanda-ecosystem-esc-hint {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.6rem !important;
   font-weight: 500 !important;
   color: var(--md-default-fg-color--lighter) !important;
@@ -1710,7 +2191,7 @@ footer.md-footer,
 }
 
 .nanda-ecosystem-card-title {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.95rem !important;
   font-weight: 500 !important;
   color: var(--md-default-fg-color) !important;
@@ -1732,7 +2213,7 @@ footer.md-footer,
 }
 
 .nanda-ecosystem-card-desc {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.76rem !important;
   color: var(--md-default-fg-color--lighter) !important;
   font-weight: 400 !important;
@@ -1806,7 +2287,7 @@ footer.md-footer,
 }
 
 .nanda-stats-number {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 1.65rem !important;
   font-weight: 600 !important;
   letter-spacing: -0.02em !important;
@@ -1815,7 +2296,7 @@ footer.md-footer,
 }
 
 .nanda-stats-label {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.72rem !important;
   font-weight: 600 !important;
   text-transform: uppercase !important;
@@ -1826,7 +2307,7 @@ footer.md-footer,
 }
 
 .nanda-stats-desc {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 0.76rem !important;
   font-weight: 400 !important;
   color: var(--md-default-fg-color--lighter) !important;
@@ -1845,3 +2326,745 @@ footer.md-footer,
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ==========================================================================
+   WORDS FROM ADVISORS - FULL-BLEED MOVING ROLL (MARQUEE)
+   Spans from sidebar boundary to the right edge with soft boundary gradients
+   ========================================================================== */
+
+.nanda-advisors-marquee-container {
+  overflow: hidden !important;
+  position: relative !important;
+  width: calc(100% + 4.5rem) !important;
+  margin-left: -2.25rem !important;
+  margin-right: -2.25rem !important;
+  padding: 1.5rem 0 2rem 0 !important;
+  mask-image: linear-gradient(to right, transparent 0%, black 5.5rem, black calc(100% - 5.5rem), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5.5rem, black calc(100% - 5.5rem), transparent 100%);
+}
+
+.nanda-advisors-marquee-container::before,
+.nanda-advisors-marquee-container::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 5.5rem !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+.nanda-advisors-marquee-container::before {
+  left: 0 !important;
+  background: linear-gradient(to right, var(--md-default-bg-color, #FAFAF9) 0%, rgba(250, 250, 249, 0) 100%) !important;
+}
+
+.nanda-advisors-marquee-container::after {
+  right: 0 !important;
+  background: linear-gradient(to left, var(--md-default-bg-color, #FAFAF9) 0%, rgba(250, 250, 249, 0) 100%) !important;
+}
+
+@media screen and (max-width: 76.24em) {
+  .nanda-advisors-marquee-container {
+    width: calc(100% + 2rem) !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    mask-image: linear-gradient(to right, transparent 0%, black 2.5rem, black calc(100% - 2.5rem), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 2.5rem, black calc(100% - 2.5rem), transparent 100%);
+  }
+
+  .nanda-advisors-marquee-container::before,
+  .nanda-advisors-marquee-container::after {
+    width: 2.5rem !important;
+  }
+}
+
+.nanda-advisors-marquee-track {
+  display: flex !important;
+  gap: 1.5rem !important;
+  width: max-content !important;
+  animation: nandaAdvisorRoll 45s linear infinite !important;
+  will-change: transform !important;
+}
+
+.nanda-advisors-marquee-container:hover .nanda-advisors-marquee-track {
+  animation-play-state: paused !important;
+}
+
+@keyframes nandaAdvisorRoll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+.nanda-advisor-card {
+  flex: 0 0 auto !important;
+  width: 475px !important;
+  aspect-ratio: 16 / 9 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background-color: #ffffff !important;
+  border: 1px solid var(--nanda-border) !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease !important;
+}
+
+.nanda-advisor-card:hover {
+  transform: translateY(-5px) scale(1.015) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(0, 0, 0, 0.22) !important;
+}
+
+.nanda-advisor-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  margin: 0 !important;
+  border-radius: 13px !important;
+}
+
+@media screen and (max-width: 64em) {
+  .nanda-advisor-card {
+    width: 380px !important;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-advisor-card {
+    width: 300px !important;
+  }
+}
+
+/* ==========================================================================
+   RESEARCH OVERVIEW DIAGRAM CONTAINER STYLES
+   ========================================================================== */
+.nanda-diagram-container {
+  margin: 2rem 0 !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background-color: #ffffff !important;
+  border: 1px solid var(--nanda-border) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+  padding: 1rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease !important;
+}
+
+.nanda-diagram-container:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+.nanda-diagram-container img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 10px !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   START A CHAPTER - STYLES & DIRECTORY
+   ========================================================================== */
+
+.nanda-chapters-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 1rem !important;
+  margin: 1.5rem 0 2rem 0 !important;
+}
+
+.nanda-chapter-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 12px !important;
+  padding: 1.15rem 1.25rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 0.85rem !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.nanda-chapter-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(0, 0, 0, 0.22) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) !important;
+}
+
+.nanda-chapter-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.5rem !important;
+}
+
+.nanda-chapter-city {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.02rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.nanda-chapter-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.2rem 0.5rem !important;
+  border-radius: 9999px !important;
+  background-color: #FEF9C3 !important;
+  color: #854D0E !important;
+  border: 1px solid rgba(202, 138, 4, 0.25) !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+
+.nanda-chapter-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  flex-wrap: wrap !important;
+}
+
+.nanda-chapter-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.32rem !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.74rem !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  padding: 0.32rem 0.65rem !important;
+  border-radius: 9999px !important;
+  border: 1px solid var(--nanda-border) !important;
+  background-color: #FAFAF9 !important;
+  color: var(--md-default-fg-color--light) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: all 0.16s ease !important;
+}
+
+.nanda-chapter-btn::after {
+  display: none !important;
+  content: "" !important;
+}
+
+.nanda-chapter-btn svg {
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+.nanda-chapter-btn:hover {
+  background-color: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+  color: #000000 !important;
+  transform: translateY(-1px) !important;
+}
+
+.nanda-chapter-btn--website:hover {
+  background-color: #FEFCE8 !important;
+  border-color: #CA8A04 !important;
+  color: #854D0E !important;
+}
+
+.nanda-chapter-btn--whatsapp:hover {
+  background-color: #F0FDF4 !important;
+  border-color: #22C55E !important;
+  color: #15803D !important;
+}
+
+.nanda-chapter-btn--linkedin:hover {
+  background-color: #F0F9FF !important;
+  border-color: #0EA5E9 !important;
+  color: #0369A1 !important;
+}
+
+.nanda-chapter-btn .nanda-btn-arrow {
+  font-size: 0.85em !important;
+  color: #a1a1aa !important;
+  line-height: 1 !important;
+  transition: transform 0.16s ease, color 0.16s ease !important;
+}
+
+.nanda-chapter-btn:hover .nanda-btn-arrow {
+  color: inherit !important;
+  transform: translate(1px, -1px) !important;
+}
+
+.nanda-chapter-btn--disabled {
+  opacity: 0.55 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  border-style: dashed !important;
+  color: #94a3b8 !important;
+  background-color: #f8fafc !important;
+}
+
+.nanda-chapter-btn--disabled:hover {
+  transform: none !important;
+  border-color: var(--nanda-border) !important;
+  color: #94a3b8 !important;
+  background-color: #f8fafc !important;
+}
+
+.nanda-admin-note {
+  background-color: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  border-left: 3px solid #64748B !important;
+  border-radius: 8px !important;
+  padding: 0.9rem 1.15rem !important;
+  margin: 1.5rem 0 !important;
+  font-size: 0.88rem !important;
+  color: #334155 !important;
+  line-height: 1.5 !important;
+}
+
+.nanda-admin-note-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin-bottom: 0.4rem !important;
+}
+
+.nanda-admin-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.15rem 0.45rem !important;
+  border-radius: 4px !important;
+  background-color: #E2E8F0 !important;
+  color: #475569 !important;
+}
+
+.nanda-benefits-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 1.25rem !important;
+  margin: 1.5rem 0 2rem 0 !important;
+}
+
+.nanda-benefit-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem 1.6rem !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+
+.nanda-benefit-card h3 {
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  font-size: 1.15rem !important;
+}
+
+.nanda-benefit-card ul {
+  margin: 0 !important;
+  padding-left: 1.25rem !important;
+}
+
+.nanda-benefit-card li {
+  margin-bottom: 0.75rem !important;
+  line-height: 1.55 !important;
+  color: var(--md-default-fg-color) !important;
+}
+
+.nanda-benefit-card li:last-child {
+  margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.nanda-notice-box {
+  background-color: #FAFAF9 !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-left: 3px solid #CA8A04 !important;
+  border-radius: 8px !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.25rem 0 1.75rem 0 !important;
+  font-size: 0.92rem !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.55 !important;
+}
+
+.nanda-notice-box p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ==========================================================================
+   SF BAY AREA CHAPTER MODAL WINDOW
+   ========================================================================== */
+
+.nanda-bayarea-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 99999 !important;
+  display: none;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.nanda-bayarea-modal.nanda-bayarea-modal--open {
+  display: flex !important;
+}
+
+.nanda-bayarea-backdrop {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(250, 250, 249, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  z-index: 1 !important;
+  opacity: 0;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nanda-bayarea-modal.nanda-bayarea-modal--visible .nanda-bayarea-backdrop {
+  opacity: 1 !important;
+}
+
+.nanda-bayarea-container {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 92% !important;
+  max-width: 52rem !important;
+  max-height: 88vh !important;
+  overflow-y: auto !important;
+  background: #FFFFFF !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 18px !important;
+  padding: 2.25rem 2.5rem !important;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.04) !important;
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nanda-bayarea-modal.nanda-bayarea-modal--visible .nanda-bayarea-container {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.nanda-bayarea-header {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  padding-bottom: 1.25rem !important;
+  border-bottom: 1px solid var(--nanda-border) !important;
+}
+
+.nanda-bayarea-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.18rem 0.5rem !important;
+  border-radius: 9999px !important;
+  background-color: #FEF9C3 !important;
+  color: #854D0E !important;
+  border: 1px solid rgba(202, 138, 4, 0.25) !important;
+  margin-bottom: 0.45rem !important;
+}
+
+.nanda-bayarea-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--md-default-fg-color) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  line-height: 1.25 !important;
+}
+
+.nanda-bayarea-subtitle {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.88rem !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  margin: 0.35rem 0 0 0 !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+}
+
+.nanda-bayarea-close-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.22rem !important;
+  flex-shrink: 0 !important;
+}
+
+.nanda-bayarea-close {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  border: 1px solid var(--nanda-border) !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--md-default-fg-color--light) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease !important;
+}
+
+.nanda-bayarea-close:hover {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(0, 0, 0, 0.22) !important;
+  color: #000000 !important;
+}
+
+.nanda-bayarea-esc-hint {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.6rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color--lighter) !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  user-select: none !important;
+}
+
+.nanda-bayarea-about-card {
+  background: #FAFAF9 !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 12px !important;
+  padding: 1.35rem 1.5rem !important;
+  margin: 1.5rem 0 1.75rem 0 !important;
+}
+
+.nanda-bayarea-about-heading {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.nanda-bayarea-about-desc {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.92rem !important;
+  line-height: 1.65 !important;
+  color: var(--md-default-fg-color--light) !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+.nanda-bayarea-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  flex-wrap: wrap !important;
+}
+
+.nanda-bayarea-link-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  padding: 0.42rem 0.85rem !important;
+  border-radius: 9999px !important;
+  border: 1px solid var(--nanda-border) !important;
+  background-color: #FFFFFF !important;
+  color: var(--md-default-fg-color) !important;
+  text-decoration: none !important;
+  transition: all 0.16s ease !important;
+}
+
+.nanda-bayarea-link-btn::after {
+  display: none !important;
+  content: "" !important;
+}
+
+.nanda-bayarea-link-btn:hover {
+  transform: translateY(-1px) !important;
+  border-color: rgba(0, 0, 0, 0.28) !important;
+}
+
+.nanda-bayarea-link-btn--website:hover {
+  background-color: #FEFCE8 !important;
+  border-color: #CA8A04 !important;
+  color: #854D0E !important;
+}
+
+.nanda-bayarea-link-btn--whatsapp:hover {
+  background-color: #F0FDF4 !important;
+  border-color: #22C55E !important;
+  color: #15803D !important;
+}
+
+.nanda-bayarea-link-btn--linkedin:hover {
+  background-color: #F0F9FF !important;
+  border-color: #0EA5E9 !important;
+  color: #0369A1 !important;
+}
+
+.nanda-bayarea-section-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.12rem !important;
+  font-weight: 700 !important;
+  color: var(--md-default-fg-color) !important;
+  margin: 1.75rem 0 1.15rem 0 !important;
+  letter-spacing: -0.015em !important;
+}
+
+.nanda-bayarea-leaders-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem 1.25rem !important;
+}
+
+.nanda-bayarea-leader-card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  text-align: left !important;
+  overflow: hidden !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nanda-bayarea-leader-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.nanda-bayarea-leader-media {
+  width: 100% !important;
+  aspect-ratio: 3.2 / 4 !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  background-color: #f1f1ee !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 0.65rem !important;
+}
+
+.nanda-bayarea-leader-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  display: block !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+  transition: transform 0.3s ease !important;
+}
+
+.nanda-bayarea-leader-card:hover .nanda-bayarea-leader-img {
+  transform: scale(1.02) !important;
+}
+
+.nanda-bayarea-leader-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.18rem !important;
+  align-items: flex-start !important;
+}
+
+.nanda-bayarea-leader-name {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.94rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.3 !important;
+}
+
+.nanda-bayarea-leader-company {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.74rem !important;
+  font-weight: 500 !important;
+  color: var(--md-default-fg-color--light) !important;
+  background-color: #F4F4F5 !important;
+  padding: 0.2rem 0.65rem !important;
+  border-radius: 9999px !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.28rem !important;
+  margin-top: 0.2rem !important;
+  transition: all 0.16s ease !important;
+}
+
+.nanda-bayarea-leader-company::after {
+  display: none !important;
+  content: "" !important;
+}
+
+.nanda-bayarea-leader-company:hover {
+  background-color: #18181B !important;
+  color: #FFFFFF !important;
+  transform: translateY(-1px) !important;
+}
+
+.nanda-chapter-btn--learn-more:hover {
+  background-color: #18181B !important;
+  border-color: #18181B !important;
+  color: #FFFFFF !important;
+}
+
+.nanda-chapter-btn--learn-more:hover .nanda-btn-arrow {
+  color: #FDE047 !important;
+}
+
+@media screen and (max-width: 52em) {
+  .nanda-bayarea-leaders-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .nanda-bayarea-container {
+    padding: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 36em) {
+  .nanda-bayarea-leaders-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+
+
+

@@ -1,380 +1,80 @@
 ---
-title: Research - NANDA
-description: Foundational research into open infrastructure, identity, discovery, resolution, trust, and governance for the Internet of AI Agents.
+title: Research Overview - NANDA
+description: Research at Project NANDA developing infrastructure for an open Internet of AI Agents.
 ---
 
-# Research
+# Research Overview
 
-NANDA research explores the infrastructure required for an open Internet of AI Agents.
+## Project NANDA
 
-AI agents are moving from isolated systems toward networked environments in which agents can discover resources, communicate with other agents, coordinate tasks, and operate across organizational and technical boundaries. This creates infrastructure problems that are different from those addressed by conventional web services and isolated AI systems.
+Research at Project NANDA is developing an infrastructure for an Internet of AI Agents: an ecosystem in which agents can find one another, establish identity and capabilities, and coordinate across organizational boundaries. Its main research focus is the NANDA Index and the discovery mechanisms around it. The Index acts as a shared resolution layer that can connect public, private, and third-party agent registries without requiring every agent to belong to a single central directory.
 
-NANDA research examines these problems across identity, discovery, resolution, interoperability, trust, coordination, evaluation, and governance.
+The Index resolves an agent name or identifier to information needed for interaction. This information may include endpoints, supported protocols, declared capabilities, credentials, and security requirements. AgentFacts provides a verifiable way to publish these details while allowing implementations and registries to remain distributed.
 
-The work combines technical specifications, architectural proposals, comparative studies, prototypes, experiments, and position papers. Individual projects address different parts of the emerging agentic infrastructure and are designed to be complementary rather than dependent on a single framework or implementation.
-
----
-
-## Research Scope
-
-The research is organized around a set of infrastructure questions.
-
-### How do agents identify one another?
-
-An agent needs an identity that remains meaningful even when its deployment, endpoint, capabilities, or communication protocol changes.
-
-Research on agent identity and naming examines how large populations of agents can be assigned persistent names and identifiers while separating identity from the context in which an agent is resolved.
-
-This includes work on agent names, namespaces, identifiers, and the relationship between identity and verifiable metadata.
-
-### How do agents discover one another?
-
-An agent cannot collaborate with another agent if it does not know that the other agent exists or what it can do.
-
-Agent discovery concerns finding agents and resources that satisfy a particular capability or task requirement. This becomes more complex when agents are distributed across different organizations, registries, platforms, and protocols.
-
-NANDA research examines discovery architectures that can operate across these boundaries while allowing different registries and organizations to retain control over their own systems.
-
-### How should an agent name become a communication path?
-
-Discovery and communication are different problems.
-
-Knowing the identity of an agent does not necessarily reveal the endpoint that should be used to communicate with it. An agent may have multiple endpoints, move between deployments, operate under different network conditions, or require different communication paths for different requesters.
-
-Research on dynamic and adaptive resolution examines how an agent identity can be resolved into an appropriate communication endpoint based on context such as location, system conditions, capabilities, and security.
-
-This separates the stable identity of an agent from the mechanisms used to reach it.
-
-### How can agents work across different ecosystems?
-
-The agent ecosystem is developing through multiple protocols, platforms, frameworks, and registries.
-
-Agents may communicate through A2A, MCP, HTTPS, or other mechanisms while being described through different metadata formats and discovered through different systems.
-
-NANDA research examines interoperability across these ecosystems. The objective is not to require every agent to use the same internal technology, but to identify the minimum infrastructure and standards required for independently developed systems to participate in a broader network.
+NANDA is not an agent framework, an agent builder, or a model-development lab. It does not replace frameworks that construct or run agents; it provides infrastructure through which independently built agents can become discoverable and work across systems.
 
 ---
 
-## Trust and Verification
+## Our Philosophy
 
-Networked agents create a different trust problem from conventional web services.
+Project NANDA is based on a broader research direction described in [A Perspective on Decentralizing AI](https://www.media.mit.edu/projects/decentralized-ai/overview/). Decentralized AI studies how organizations and individuals can collaborate without placing all data, computation, or decision-making under one institution. Participants retain local control of their resources and objectives, including in settings where they do not fully trust one another.
 
-A domain certificate can establish control of a domain, but it does not by itself establish what an agent can do, who operates it, whether its capabilities are genuine, or whether information about it has changed.
+This approach identifies five connected challenges:
 
-NANDA research therefore examines trust as a combination of identity, capability claims, provenance, integrity, credentials, and other evidence.
+* **Privacy:** enabling useful computation while sensitive data remains protected and organizational boundaries are preserved.  
+* **Verifiability:** establishing the origin, integrity, and quality of contributions without requiring unrestricted access to private data or systems.  
+* **Incentives:** giving participants appropriate reasons to contribute data, computation, knowledge, or other resources.  
+* **Orchestration:** coordinating heterogeneous participants and workloads without concentrating control in a central orchestrator.  
+* **Crowd UX:** making decentralized systems understandable and usable so that people can discover collaborators, evaluate choices, and participate without managing the underlying complexity.
 
-### Verifiable Agent Information
+Together, these challenges define a self-organizing model of AI collaboration. Privacy and verifiability establish the conditions for trust; incentives support participation; orchestration connects distributed resources; and crowd UX provides an accessible interface to the system.
 
-AgentFacts provides a model for representing information about agents as structured, verifiable claims.
-
-These claims can describe capabilities, endpoints, authentication information, provenance, and other properties relevant to discovery and interaction.
-
-The broader research explores how such claims can be issued, verified, updated, and revoked without requiring all agent information to be stored in one central system.
-
-### Privacy-Preserving Discovery
-
-Discovery itself can reveal information.
-
-A request for a particular capability can expose an organization's interests, internal workflows, or relationships with other systems. This becomes more important when agents operate in commercial, personal, healthcare, financial, or other sensitive environments.
-
-NANDA research explores discovery architectures that minimize unnecessary disclosure while still allowing agents and organizations to find appropriate resources.
+Project NANDA addresses the network layer. Its work on discovery, identity, protocol interoperability, and initial handshake mechanisms is intended to let agents coordinate across organizational silos without depending on a single portal or platform.
 
 ---
 
-## Agent Infrastructure
+## Development Roadmap
 
-A central research question is how existing Internet infrastructure should evolve for an environment containing potentially very large populations of dynamic agents.
+Project NANDA’s roadmap describes the development of an Internet of AI Agents in three phases. It begins with the infrastructure required to identify and connect agents, then adds mechanisms for economic exchange, and finally considers coordination and learning across large agent populations.
 
-Traditional systems such as DNS and static service registries were designed around relatively stable resources. Agent systems introduce frequent metadata changes, dynamic endpoints, changing capabilities, distributed ownership, and machine-to-machine interaction.
+<div class="nanda-diagram-container" markdown="1">
 
-Research therefore examines which existing Internet mechanisms can be reused, which need to be extended, and where new infrastructure primitives may be required.
+![Development Roadmap - Three Phases of Internet of AI Agents](../assets/research/phases-diagram-1.png){ loading=lazy }
 
-This work includes research into:
+</div>
 
-- Agent names and namespaces
-- Agent registries
-- Federated registries
-- Lightweight indexes
-- Dynamic resolution
-- Capability metadata
-- Verifiable credentials
-- Privacy-preserving discovery
-- Cross-registry interoperability
+The three development phases:
 
-The NANDA Index is one technical outcome of this line of research. It is maintained as a separate specification and implementation area rather than being treated as the definition of the entire NANDA research program.
+<div class="nanda-diagram-container" markdown="1">
 
-[Explore NANDA Index](../publication/nanda-index.md)
+![Three Development Phases - Architectural Layers](../assets/research/phases-diagram-2.png){ loading=lazy }
+
+</div>
+
+Each phase develops at more than one level. The lower layer provides protocols for communication or exchange; the control layer handles identity, discovery, pricing, reputation, and coordination; and the collective layer addresses system-wide questions such as security, market dynamics, and population behavior.
+
+A city provides a simple analogy. A2A supplies the streets over which agents communicate, while MCP provides access to tools inside buildings. The NANDA Index is the address system, AgentFacts is the passport, and NEST is the test track. Markets, neighborhoods, and population-scale coordination come later, after the foundational infrastructure is in place.
 
 ---
 
-## Interoperability
+## Three-Prong Approach
 
-The emerging agent ecosystem contains multiple approaches to communication and discovery.
+Project NANDA is organized around three related forms of work:
 
-Rather than assuming that one protocol will become universal, NANDA research examines how different ecosystems can interoperate while retaining their existing infrastructure.
+* **Technology:** research on open standards, protocols, and reference implementations for discovery, identity, interoperability, and attestation. 
+* **Social mission:** community and governance work intended to keep the Agentic Web open and prevent its shared infrastructure from becoming a collection of closed directories. 
+* **Venture ecosystem:** support for a plural economy of implementations, services, and organizations, so that agent discovery and exchange do not collapse into a single platform.
 
-The Web of Agents position proposes an interoperable environment based on a small set of common foundations for agent-to-agent messaging, interaction interoperability, state management, and discovery.
-
-The underlying principle is that interoperability should occur at clearly defined boundaries. An agent should be able to participate in a larger ecosystem without exposing its internal implementation or abandoning the protocol and infrastructure chosen by its operator.
-
-[Read Web of Agents](../publication/index.md)
+These areas serve different purposes but share the same premise: common infrastructure should permit multiple technical implementations, communities, and economic participants to coexist.
 
 ---
 
-## Coordination
+## Featured Papers
 
-Communication between agents does not necessarily produce coordinated behavior.
+[**Upgrade or Switch: Do We Need a Next-Gen Trusted Architecture for the Internet of AI Agents?**](https://arxiv.org/abs/2506.12003) 
+Examines whether existing Internet infrastructure should be extended for autonomous agents or supplemented by purpose-built registry and index architectures, and argues that hybrid approaches are likely.
 
-As agent populations become larger, agents may need to adapt their actions based on information received from other agents and changes in their shared environment.
+[**Beyond DNS: Unlocking the Internet of AI Agents via the NANDA Index and Verified AgentFacts**](https://arxiv.org/abs/2507.14263) 
+Presents the NANDA Index, AgentFacts, and adaptive resolution as an architecture for discoverable, identifiable, and verifiable agents across organizational boundaries.
 
-The Ripple Effect Protocol explores a coordination mechanism in which agents communicate not only their current decisions but also lightweight information describing how those decisions would change when relevant environmental conditions change.
-
-This introduces the concept of sensitivity sharing, allowing neighboring agents to gain visibility into decision flexibility rather than seeing only the final decision.
-
-The research investigates whether such signals can help decentralized agent populations coordinate without requiring a central controller.
-
-[Read Ripple Effect Protocol](../publication/index.md)
-
----
-
-## Evaluation and Testing
-
-Agent evaluation cannot be reduced to isolated task accuracy when agents operate as part of a network.
-
-An agent may perform well on an individual benchmark while performing poorly when interacting with other agents, operating under network latency, receiving incomplete information, encountering changing conditions, or participating in a larger coordination process.
-
-NANDA research therefore examines both individual agent evaluation and system-level evaluation.
-
-### Technical Sandboxes
-
-Technical sandboxes provide controlled environments in which agents can be evaluated under realistic but safeguarded conditions.
-
-Research on sandboxes examines dimensions including:
-
-- Reasoning
-- Tool and API use
-- Bias and language
-- Robustness
-- Safety
-- Policy alignment
-- Multi-agent coordination
-
-The research also distinguishes individual agent competence from system fitness.
-
-### System Fitness
-
-System fitness describes the ability of populations of heterogeneous agents to coordinate under realistic conditions such as latency, partial information, changing behavior, and adversarial conditions.
-
-A live testbed described in the sandbox research deploys heterogeneous agents across regions and measures network behavior, agent interactions, reputation, discovery, and coordination.
-
-This allows infrastructure choices to be evaluated as systems rather than only as isolated components.
-
-[Read Sandboxes for the Internet of Agents](../publication/index.md)
-
----
-
-## Registry Research
-
-Agent registries are becoming an important part of agent infrastructure, but different registry architectures make different assumptions about control, identity, metadata, security, and federation.
-
-NANDA research has examined several approaches, including:
-
-- MCP Registry
-- A2A Agent Cards
-- AGNTCY Agent Directory Service
-- Microsoft Entra Agent ID
-- NANDA AgentFacts
-
-The comparative work evaluates these approaches across security, authentication, scalability, and maintainability.
-
-One conclusion from this work is that the ecosystem is unlikely to converge on a single registry architecture. Interoperability between different registry models is therefore an important research direction.
-
-The research also examines the separation between stable identity information and dynamic capability metadata, which allows agent information to change without requiring continuous modification of a central index.
-
-[Read Registry Research](../publication/index.md)
-
----
-
-## Governance
-
-Technical infrastructure for autonomous agents also creates questions about accountability and institutional responsibility.
-
-Agents can operate across organizations, jurisdictions, and technical systems. They can communicate with one another, delegate tasks, and make decisions without requiring a human to approve every interaction.
-
-This creates a need to consider how identity, provenance, registration, oversight, and governance mechanisms should work alongside technical infrastructure.
-
-Research on multistakeholder governance examines registry architectures inspired in part by the experience of Internet infrastructure such as DNS, while recognizing that the agentic environment introduces additional requirements around autonomy, provenance, monitoring, and machine-to-machine interaction.
-
-The research considers governance models in which responsibility is distributed across technical operators, registries, organizations, regulators, researchers, and other stakeholders rather than concentrated in a single authority.
-
-[Read Governance Research](../publication/index.md)
-
----
-
-## Research on Existing Infrastructure
-
-NANDA research does not assume that new infrastructure is automatically necessary.
-
-One research direction examines whether existing Internet mechanisms can be extended to support the requirements of autonomous agents, where existing mechanisms are insufficient, and where purpose-built infrastructure may be justified.
-
-This includes comparison of:
-
-- DNS-based approaches
-- Existing service registries
-- Enterprise directories
-- Agent-specific registries
-- Federated discovery systems
-- Decentralized directory architectures
-- Capability-based discovery
-- Identity and credential systems
-
-The objective is to understand the architectural trade-offs before introducing new infrastructure.
-
----
-
-## Research Projects
-
-NANDA research currently includes work across several connected areas:
-
-### NANDA Index
-A federated infrastructure for agent discovery, identity, and resolution.  
-[Explore NANDA Index](../publication/nanda-index.md)
-
-### AgentFacts
-A model for representing verifiable information and claims about AI agents.  
-[Explore AgentFacts](../publication/nanda-index.md#trust)
-
-### Adaptive Resolution
-Research into dynamic selection of communication endpoints based on the context in which an agent is being resolved.  
-[Explore Adaptive Resolution](../publication/nanda-index.md#resolution)
-
-### Web of Agents
-Research into interoperability across agent ecosystems and the minimum foundations required for collaborative agents to operate across technical and organizational boundaries.  
-[Read the position](../publication/index.md)
-
-### Ripple Effect Protocol
-Research into decentralized coordination through sensitivity sharing between agents.  
-[Read the paper](../publication/index.md)
-
-### Agent Sandboxes
-Research into technical environments for evaluating individual agents and populations of agents under realistic conditions.  
-[Read the paper](../publication/index.md)
-
-### Agent Registry Research
-Comparative and architectural research into centralized, enterprise, federated, and decentralized approaches to agent registries.  
-[Read the research](../publication/index.md)
-
-### Agentic Internet Governance
-Research into governance, accountability, provenance, registration, and multistakeholder infrastructure for autonomous agents.  
-[Read the paper](../publication/index.md)
-
----
-
-## Publications
-
-NANDA research is published through technical papers, position papers, specifications, and working drafts.
-
-### Technical and Architectural Research
-- [Using the NANDA Index Architecture in Practice](../publication/index.md)
-- [Beyond DNS: Unlocking the Internet of AI Agents via the NANDA Index and Verified AgentFacts](../publication/index.md)
-- [Evolution of AI Agent Registry Solutions](../publication/index.md)
-- [NANDA Adaptive Resolver](../publication/index.md)
-
-### Interoperability and Coordination
-- [Collaborative Agentic AI Needs Interoperability Across Ecosystems](../publication/index.md)
-- [Ripple Effect Protocol: Coordinating Agent Populations](../publication/index.md)
-
-### Evaluation
-- [Towards Sandboxes for the Internet of Agents](../publication/index.md)
-
-### Governance and Institutional Infrastructure
-- [Toward a Multistakeholder Governance of the Agentic Internet](../publication/index.md)
-
-### Architectural Questions
-- [Upgrade or Switch: Do We Need a New Registry Architecture for the Internet of AI Agents?](../publication/index.md)
-
----
-
-## Research Approach
-
-NANDA research is organized around infrastructure problems rather than around a single product or implementation.
-
-A research question may begin as an architectural problem, develop into a technical proposal, and then be evaluated through implementation or experimentation.
-
-The resulting work can take several forms:
-
-- **Position papers** establish architectural questions, motivations, and possible directions.
-- **Technical papers** develop concrete architectures, mechanisms, and models.
-- **Specifications** define interoperable structures, protocols, and interfaces.
-- **Experiments** test proposed mechanisms under controlled or realistic conditions.
-- **Implementations** provide working systems that allow architectural assumptions to be tested in practice.
-
-These forms are connected. A specification can emerge from research, an implementation can expose new architectural questions, and experiments can challenge assumptions made in an earlier proposal.
-
----
-
-## Design Principles
-
-Several principles recur across the research:
-
-- **Interoperability**: Agent infrastructure should support independently developed systems rather than require a single implementation.
-- **Separation of Concerns**: Identity, discovery, resolution, communication, trust, and execution should remain distinct where their responsibilities differ.
-- **Federated Operation**: Different organizations should be able to operate infrastructure while participating in a larger interoperable ecosystem.
-- **Verifiability**: Important claims about agents should be capable of independent verification rather than relying solely on self-description.
-- **Privacy**: Discovery and verification should minimize unnecessary exposure of identities, capabilities, relationships, and queries.
-- **Operational Independence**: Organizations should be able to retain control over their own agents and infrastructure while making selected resources available to wider ecosystems.
-- **Open Development**: Infrastructure that may become part of the public foundation of the agentic web should be developed through open specifications, implementations, experimentation, and community participation.
-
----
-
-## Open Questions
-
-The Internet of AI Agents is still developing, and many foundational questions remain open:
-
-- How should agent identities remain stable as deployments change?
-- How should agent capabilities be represented so that they can be discovered and verified?
-- How should discovery operate when multiple independent registries contain overlapping information?
-- How should resolution adapt to changing network, security, geographic, and operational conditions?
-- How should trust be established when agents interact across organizational boundaries?
-- How can privacy be preserved while maintaining useful discovery?
-- How should different agent communication protocols interoperate?
-- How can large populations of agents coordinate without requiring centralized control?
-- How should agent populations be evaluated under realistic network and behavioral conditions?
-- How should technical infrastructure interact with governance and regulatory systems?
-- How should responsibility be distributed when autonomous agents operate across multiple organizations and jurisdictions?
-
-These questions are not treated as a single problem. NANDA research approaches them as connected infrastructure problems whose solutions need to work together.
-
----
-
-## Research and Specifications
-
-Research and specifications serve different purposes within NANDA.
-
-Research investigates problems, evaluates alternatives, develops architectures, and presents evidence.
-
-Specifications define technical interfaces and structures that can be implemented independently.
-
-The NANDA Index is therefore maintained separately as a technical specification rather than being described only as a research project.
-
-[Explore Specifications →](../developer/index.md)
-
----
-
-## Research and the Agentic Web
-
-The long-term research direction is an open network in which agents can discover resources, establish trust, communicate across ecosystems, coordinate actions, and operate under appropriate technical and institutional constraints.
-
-The objective is not to define a single architecture for every agent.
-
-The objective is to develop the infrastructure and knowledge required for independently developed agent systems to participate in the same network.
-
----
-
-## Explore
-
-- [Research Projects](../projects/index.md)
-- [Publications](../publication/index.md)
-- [Writing Lab](../publication/writing-lab.md)
-- [NANDA Index](../publication/nanda-index.md)
-- [Developer Reference](../developer/index.md)
+[Explore More](../publication/index.md)
