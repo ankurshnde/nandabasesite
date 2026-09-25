@@ -467,6 +467,11 @@ code, kbd, pre, .highlight {
   height: 20px !important;
 }
 
+.nanda-header-reddit svg {
+  width: 19px !important;
+  height: 19px !important;
+}
+
 /* GitHub Widget Link */
 .nanda-header-github {
   display: inline-flex !important;

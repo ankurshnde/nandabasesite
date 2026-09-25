@@ -104,6 +104,7 @@ There are several ways to get involved in the NANDA ecosystem:
 - **X (formerly Twitter):** Follow [@ProjNanda](https://x.com/ProjNanda) for real-time announcements, research papers, and technical updates.
 - **Instagram:** Follow [@projnanda](https://www.instagram.com/projnanda) for community highlights, hackathon photos, and event coverage.
 - **LinkedIn Community:** Follow the official [Project NANDA LinkedIn Page](https://www.linkedin.com/company/projectnanda/) for updates and partner announcements.
+- **Reddit Community:** Join discussions, ideas, and community proposals on [r/projectnanda](https://www.reddit.com/r/projectnanda/).
 - **YouTube:** Watch recorded lectures, architectural discussions, and hackathon demos on [@ProjectNANDA](https://www.youtube.com/@ProjectNANDA).
 - **Newsletter:** Subscribe to regular updates via the [Newsletter sign-up form](https://forms.gle/bnVRV2zr8M5Kotfr7).
 - **Writing Group:** Contribute to upcoming whitepapers and working group drafts via the [Writing Group / Get Involved Guide](../publication/get-involved.md).
