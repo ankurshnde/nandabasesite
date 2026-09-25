@@ -32,7 +32,10 @@ theme:
         name: Switch to light mode
   features:
     - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
     - navigation.tracking
+    - navigation.top
     - content.code.copy
 
 extra_css:

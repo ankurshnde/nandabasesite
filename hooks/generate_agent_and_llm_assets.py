@@ -77,8 +77,8 @@ def on_post_build(config):
             if os.path.isfile(s):
                 shutil.copy2(s, d)
 
-    # 2. Copy root crawler & LLM text assets
-    for filename in ["robots.txt", "llms.txt", "llms-full.txt"]:
+    # 2. Copy root crawler, LLM text assets, and edge headers
+    for filename in ["robots.txt", "llms.txt", "llms-full.txt", "_headers"]:
         src_file = os.path.join(docs_dir, filename)
         dst_file = os.path.join(site_dir, filename)
         if os.path.exists(src_file):
