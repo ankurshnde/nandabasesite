@@ -37,3 +37,12 @@ To understand the agentic ecosystem:
 - [A2A Agent Card](https://projectnanda.org/.well-known/agent-card.json): Agent-to-Agent protocol communication contract.
 - [MCP Tools Manifest](https://projectnanda.org/.well-known/mcp.json): Model Context Protocol tools for querying NANDA documentation and resolving identities.
 - [Full Documentation Dump](https://projectnanda.org/llms-full.txt): Complete consolidated Markdown context for LLMs and RAG pipelines.
+
+## Official Community & Social Channels
+- [X (formerly Twitter)](https://x.com/ProjNanda): @ProjNanda
+- [Instagram](https://www.instagram.com/projnanda): @projnanda
+- [LinkedIn](https://www.linkedin.com/company/projectnanda/): Project NANDA
+- [GitHub](https://github.com/projnanda): projnanda
+- [YouTube](https://www.youtube.com/@ProjectNANDA): @ProjectNANDA
+- [Discord](https://discord.com/invite/BxnPBEqd88): Community Hub
+

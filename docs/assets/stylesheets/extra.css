@@ -420,7 +420,8 @@ code, kbd, pre, .highlight {
   transform: translateY(-50%) translateX(1.35em) !important;
 }
 
-/* LinkedIn Icon Link - Exact Same Height (25px) as Git Diamond */
+/* Header Social Links - Exact Same Height (25px) as Git Diamond & LinkedIn */
+.nanda-header-social,
 .nanda-header-linkedin {
   display: inline-flex !important;
   align-items: center !important;
@@ -436,19 +437,34 @@ code, kbd, pre, .highlight {
   max-width: 25px !important;
   max-height: 25px !important;
   flex-shrink: 0 !important;
-  transition: opacity 0.15s ease, transform 0.15s ease !important;
+  transition: opacity 0.15s ease, transform 0.15s ease, color 0.15s ease !important;
 }
 
+.nanda-header-social:hover,
 .nanda-header-linkedin:hover {
   opacity: 0.7 !important;
   transform: translateY(-1px);
 }
 
+.nanda-header-social svg,
 .nanda-header-linkedin svg {
   display: block !important;
-  width: 25px !important;
-  height: 25px !important;
   fill: currentColor !important;
+}
+
+.nanda-header-x svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.nanda-header-instagram svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.nanda-header-linkedin svg {
+  width: 20px !important;
+  height: 20px !important;
 }
 
 /* GitHub Widget Link */

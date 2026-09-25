@@ -145,6 +145,8 @@ The lead also coordinates contributors and mentors participants working on the p
 
 ## Direct Links & Resources
 
+* [Project NANDA on X (formerly Twitter)](https://x.com/ProjNanda)
+* [Project NANDA on Instagram](https://www.instagram.com/projnanda)
 * [Project NANDA on LinkedIn](https://www.linkedin.com/company/projectnanda)
 * [L1 Submission Form](https://forms.gle/BzV4x2xPcBDtbCNT9)
 * [L2 Submission Form](https://forms.gle/qtWiTQKL2Jz7Nh2EA)

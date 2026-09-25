@@ -1439,6 +1439,8 @@ All core NANDA repositories, SDKs, benchmarks, and reference implementations are
 There are several ways to get involved in the NANDA ecosystem:
 
 - **Weekly Webinars & Events:** Join regular community calls, technical demos, and workshops on [Lu.Ma](https://lu.ma/nanda).
+- **X (formerly Twitter):** Follow [@ProjNanda](https://x.com/ProjNanda) for real-time announcements, research papers, and technical updates.
+- **Instagram:** Follow [@projnanda](https://www.instagram.com/projnanda) for community highlights, hackathon photos, and event coverage.
 - **LinkedIn Community:** Follow the official [Project NANDA LinkedIn Page](https://www.linkedin.com/company/projectnanda/) for updates and partner announcements.
 - **YouTube:** Watch recorded lectures, architectural discussions, and hackathon demos on [@ProjectNANDA](https://www.youtube.com/@ProjectNANDA).
 - **Newsletter:** Subscribe to regular updates via the [Newsletter sign-up form](https://forms.gle/bnVRV2zr8M5Kotfr7).
