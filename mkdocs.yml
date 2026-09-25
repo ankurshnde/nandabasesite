@@ -15,10 +15,21 @@ theme:
     text: Outfit
     code: Fira Code
   palette:
-    # Single clean light theme
-    scheme: default
-    primary: white
-    accent: slate
+    # Light theme
+    - scheme: default
+      primary: white
+      accent: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Dark theme in shade of #1F1F1F
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   features:
     - navigation.instant
     - navigation.tracking
@@ -37,6 +48,7 @@ plugins: []
 
 hooks:
   - hooks/open_in_new_tab.py
+  - hooks/generate_agent_and_llm_assets.py
 
 markdown_extensions:
   - abbr
@@ -104,5 +116,5 @@ nav:
     - Team: people/team.md
     - Career ↗: https://careers.projectnanda.org/
   - About:
-    - Project NANDA: about/project-nanda.md
+    - Project NANDA: about/index.md
     - Foundation (FAN) ↗: https://www.agenticnet.org/

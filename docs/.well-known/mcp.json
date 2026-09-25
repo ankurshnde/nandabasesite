@@ -1,0 +1,52 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-manifest-v1.json",
+  "name": "project-nanda-mcp",
+  "title": "Project NANDA Documentation & Tools MCP Server",
+  "version": "1.0.0",
+  "description": "Provides tools and resources for AI agents to query Project NANDA documentation, inspect architectural models, and resolve agent identities.",
+  "homepage": "https://projectnanda.org",
+  "tools": [
+    {
+      "name": "get_nanda_overview",
+      "description": "Returns the foundational overview, mission, and the city analogy (streets, tools, address system, passport).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "resolve_subject_identity",
+      "description": "Simulates or queries the NANDA Index resolution pipeline for a given subject identity (domain, DID, email, platform ID).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "subject": {
+            "type": "string",
+            "description": "The subject identifier to resolve (e.g. 'host39.org', 'kumbhdoot.org')."
+          }
+        },
+        "required": ["subject"]
+      }
+    },
+    {
+      "name": "list_community_chapters",
+      "description": "Returns the list of active Project NANDA chapters worldwide, including SF Bay Area, New Jersey, AusNZ, and Spain.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uri": "nanda://docs/llms-txt",
+      "name": "NANDA Curated LLM Context",
+      "mimeType": "text/markdown"
+    },
+    {
+      "uri": "nanda://well-known/agentfacts",
+      "name": "NANDA AgentFacts Passport",
+      "mimeType": "application/json"
+    }
+  ]
+}

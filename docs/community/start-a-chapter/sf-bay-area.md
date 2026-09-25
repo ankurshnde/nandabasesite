@@ -173,7 +173,7 @@ These cities are already part of Project NANDA's ecosystem. Become a member of a
       <span class="nanda-chapter-city">New Jersey (NJ)</span>
     </div>
     <div class="nanda-chapter-actions">
-      <span class="nanda-chapter-btn nanda-chapter-btn--whatsapp nanda-chapter-btn--disabled" title="WhatsApp group active — invite link pending admin permissions">WhatsApp (Link Pending)</span>
+      <a href="https://chat.whatsapp.com/IEqrLUrFzuBKiQRgnxFmtk?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener noreferrer" class="nanda-chapter-btn nanda-chapter-btn--whatsapp nanda-has-arrow">WhatsApp <span class="nanda-btn-arrow">↗</span></a>
     </div>
   </div>
 
@@ -188,10 +188,10 @@ These cities are already part of Project NANDA's ecosystem. Become a member of a
 
   <div class="nanda-chapter-card">
     <div class="nanda-chapter-header">
-      <span class="nanda-chapter-city">Australia</span>
+      <span class="nanda-chapter-city">Australia &amp; New Zealand</span>
     </div>
     <div class="nanda-chapter-actions">
-      <span class="nanda-chapter-btn nanda-chapter-btn--whatsapp nanda-chapter-btn--disabled" title="WhatsApp group active — invite link pending admin permissions">WhatsApp (Link Pending)</span>
+      <a href="https://chat.whatsapp.com/JNISvBGNUdf8YwLyKKWjFF?s=cl&p=a&mlu=4&iam=2" target="_blank" rel="noopener noreferrer" class="nanda-chapter-btn nanda-chapter-btn--whatsapp nanda-has-arrow">WhatsApp <span class="nanda-btn-arrow">↗</span></a>
     </div>
   </div>
 
@@ -209,18 +209,10 @@ These cities are already part of Project NANDA's ecosystem. Become a member of a
       <span class="nanda-chapter-city">Spain</span>
     </div>
     <div class="nanda-chapter-actions">
-      <span class="nanda-chapter-btn nanda-chapter-btn--whatsapp nanda-chapter-btn--disabled" title="WhatsApp group active — invite link pending admin permissions">WhatsApp (Link Pending)</span>
+      <a href="https://chat.whatsapp.com/LEqQ5mfBw28DKDWHVns0VT?s=cl&p=a&mlu=4&iam=2" target="_blank" rel="noopener noreferrer" class="nanda-chapter-btn nanda-chapter-btn--whatsapp nanda-has-arrow">WhatsApp <span class="nanda-btn-arrow">↗</span></a>
     </div>
   </div>
 
-</div>
-
-<div class="nanda-admin-note">
-  <div class="nanda-admin-note-header">
-    <span class="nanda-admin-badge">Status Tracker</span>
-    <strong>WhatsApp Group Link Tracker</strong>
-  </div>
-  Chapters marked with <em>WhatsApp (Link Pending)</em> (<strong>New Jersey, Australia, Milan, Switzerland, Spain</strong>) have active community groups; public invite links will be enabled as soon as group administration permissions are shared.
 </div>
 
 <div class="nanda-notice-box">

@@ -1,5 +1,63 @@
 {% extends "base.html" %}
 
+{% block extrahead %}
+{{ super() }}
+<script>
+  (function() {
+    try {
+      var scheme = localStorage.getItem('nanda-color-scheme');
+      if (!scheme) {
+        var p = localStorage.getItem('/.__palette') || localStorage.getItem(location.pathname + '.__palette');
+        if (p) {
+          var parsed = JSON.parse(p);
+          if (parsed && (parsed.color && parsed.color.scheme === 'slate' || parsed.index === 1)) {
+            scheme = 'slate';
+          }
+        }
+      }
+      if (scheme === 'slate') {
+        document.documentElement.setAttribute('data-md-color-scheme', 'slate');
+      } else if (scheme === 'default') {
+        document.documentElement.setAttribute('data-md-color-scheme', 'default');
+      }
+    } catch (e) {}
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://projectnanda.org/#organization",
+      "name": "Project NANDA",
+      "alternateName": ["NANDA Initiative", "Foundation for Agentic Networks"],
+      "url": "https://projectnanda.org",
+      "logo": "https://projectnanda.org/assets/logo.svg",
+      "sameAs": [
+        "https://github.com/projnanda",
+        "https://www.linkedin.com/company/projectnanda/",
+        "https://host39.org/agents/projectnanda"
+      ],
+      "description": "Networked AI Agents in a Decentralized Architecture - Open foundational protocols and resolution primitives for the Internet of AI Agents."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://projectnanda.org/#website",
+      "url": "https://projectnanda.org",
+      "name": "Project NANDA",
+      "publisher": { "@id": "https://projectnanda.org/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://nandaindex.org/resolve?subject={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block header %}
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
@@ -12,6 +70,13 @@
     </a>
     
     <div class="nanda-header-actions">
+      <!-- Slate Chip Switch Theme Toggle (https://opensourceui.in/components/slate-chip-switch) -->
+      <label id="nandaThemeToggle" data-slot="slate-chip-switch" class="nanda-slate-chip-switch" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">
+        <input type="checkbox" id="nandaThemeCheckbox" class="nanda-chip-input" aria-label="Toggle dark/light theme" onchange="window.handleThemeCheckbox(this)">
+        <span aria-hidden="true" data-layer="chip-track" class="nanda-chip-track">
+          <span data-layer="chip-thumb" class="nanda-chip-thumb"></span>
+        </span>
+      </label>
       <a href="https://www.linkedin.com/company/projectnanda/" target="_blank" rel="noopener noreferrer" class="nanda-header-linkedin" title="NANDA on LinkedIn" aria-label="LinkedIn">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="3 3 18 18" fill="currentColor">
           <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 1.63 1.64c0-.9-.73-1.64-1.63-1.64Z"/>
@@ -38,11 +103,10 @@
 
 <!-- NANDA Ecosystem Trigger Button (Anchored at bottom-left border dividing sidebar and content) -->
 <button id="nandaEcosystemTrigger" class="nanda-ecosystem-trigger" onclick="toggleNandaEcosystem(true)" aria-label="Explore NANDA Ecosystem Projects" title="NANDA Ecosystem">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="3" y="3" width="7" height="7" rx="2"></rect>
-    <rect x="14" y="3" width="7" height="7" rx="2"></rect>
-    <rect x="14" y="14" width="7" height="7" rx="2"></rect>
-    <rect x="3" y="14" width="7" height="7" rx="2"></rect>
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+    <path d="M2 12h20"></path>
   </svg>
 </button>
 
@@ -72,9 +136,24 @@
         <div class="nanda-ecosystem-card-desc">A sandbox for building and testing protocols for AI agents.</div>
       </a>
 
+      <a href="https://nandaindex.org/" target="_blank" rel="noopener noreferrer" class="nanda-ecosystem-card">
+        <div class="nanda-ecosystem-card-title">NANDA Index <span class="nanda-ecosystem-arrow">↗</span></div>
+        <div class="nanda-ecosystem-card-desc">First-hop discovery infrastructure mapping identities to authoritative agent descriptors.</div>
+      </a>
+
       <a href="https://nest.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-ecosystem-card">
         <div class="nanda-ecosystem-card-title">NEST <span class="nanda-ecosystem-arrow">↗</span></div>
-        <div class="nanda-ecosystem-card-desc">NANDA X sandbox & testbed: build, test, launch, and connect with agentic projects worldwide.</div>
+        <div class="nanda-ecosystem-card-desc">NANDA X sandbox &amp; testbed: build, test, launch, and connect with agentic projects worldwide.</div>
+      </a>
+
+      <a href="https://civicagents.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-ecosystem-card">
+        <div class="nanda-ecosystem-card-title">Civic Agents <span class="nanda-ecosystem-arrow">↗</span></div>
+        <div class="nanda-ecosystem-card-desc">Resident-first infrastructure for AI-powered public service access.</div>
+      </a>
+
+      <a href="https://host39.org/" target="_blank" rel="noopener noreferrer" class="nanda-ecosystem-card">
+        <div class="nanda-ecosystem-card-title">Host39 <span class="nanda-ecosystem-arrow">↗</span></div>
+        <div class="nanda-ecosystem-card-desc">The passport layer: public registry service hosting verified AgentFacts and agent cards.</div>
       </a>
 
       <a href="https://kumbhdoot.org/" target="_blank" rel="noopener noreferrer" class="nanda-ecosystem-card">
@@ -83,18 +162,8 @@
       </a>
 
       <a href="https://digidoot.in/" target="_blank" rel="noopener noreferrer" class="nanda-ecosystem-card">
-        <div class="nanda-ecosystem-card-title">DigiDoot <span class="nanda-ecosystem-arrow">↗</span></div>
+        <div class="nanda-ecosystem-card-title">Doot <span class="nanda-ecosystem-arrow">↗</span></div>
         <div class="nanda-ecosystem-card-desc">AI agent for every Indian citizen.</div>
-      </a>
-
-      <a href="https://civicagents.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-ecosystem-card">
-        <div class="nanda-ecosystem-card-title">Civic Agents <span class="nanda-ecosystem-arrow">↗</span></div>
-        <div class="nanda-ecosystem-card-desc">Resident-first infrastructure for AI-powered public service access.</div>
-      </a>
-
-      <a href="https://join39.org/" target="_blank" rel="noopener noreferrer" class="nanda-ecosystem-card">
-        <div class="nanda-ecosystem-card-title">Join 39 <span class="nanda-ecosystem-arrow">↗</span></div>
-        <div class="nanda-ecosystem-card-desc">Get your agent on the Agentic Web.</div>
       </a>
     </div>
   </div>
@@ -139,51 +208,11 @@
 
       <div class="nanda-bayarea-leader-card">
         <div class="nanda-bayarea-leader-media">
-          <img src="{{ 'assets/headshots/nitinbadjatia.jpeg' | url }}" alt="Nitin Badjatia" class="nanda-bayarea-leader-img" loading="lazy">
-        </div>
-        <div class="nanda-bayarea-leader-content">
-          <div class="nanda-bayarea-leader-name">Nitin Badjatia</div>
-          <a href="https://www.linkedin.com/in/nitinbadjatia/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">SAP <span class="nanda-btn-arrow">↗</span></a>
-        </div>
-      </div>
-
-      <div class="nanda-bayarea-leader-card">
-        <div class="nanda-bayarea-leader-media">
           <img src="{{ 'assets/headshots/gurusharaskar.jpeg' | url }}" alt="Gurusha Raskar" class="nanda-bayarea-leader-img" loading="lazy">
         </div>
         <div class="nanda-bayarea-leader-content">
           <div class="nanda-bayarea-leader-name">Gurusha Raskar</div>
           <a href="https://www.linkedin.com/in/gurusharesearcher/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Apple <span class="nanda-btn-arrow">↗</span></a>
-        </div>
-      </div>
-
-      <div class="nanda-bayarea-leader-card">
-        <div class="nanda-bayarea-leader-media">
-          <img src="{{ 'assets/headshots/saurabhpeshwa.jpeg' | url }}" alt="Saurabh Sakalkar" class="nanda-bayarea-leader-img" loading="lazy">
-        </div>
-        <div class="nanda-bayarea-leader-content">
-          <div class="nanda-bayarea-leader-name">Saurabh Sakalkar</div>
-          <a href="https://www.linkedin.com/in/peshwa/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Cisco <span class="nanda-btn-arrow">↗</span></a>
-        </div>
-      </div>
-
-      <div class="nanda-bayarea-leader-card">
-        <div class="nanda-bayarea-leader-media">
-          <img src="{{ 'assets/headshots/sanjayaiyagari.jpeg' | url }}" alt="Sanjay Aiyagari" class="nanda-bayarea-leader-img" loading="lazy">
-        </div>
-        <div class="nanda-bayarea-leader-content">
-          <div class="nanda-bayarea-leader-name">Sanjay Aiyagari</div>
-          <a href="https://www.linkedin.com/in/aiyagari" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Red Hat <span class="nanda-btn-arrow">↗</span></a>
-        </div>
-      </div>
-
-      <div class="nanda-bayarea-leader-card">
-        <div class="nanda-bayarea-leader-media">
-          <img src="{{ 'assets/headshots/priyasub.jpg' | url }}" alt="Priya Subramanian" class="nanda-bayarea-leader-img" loading="lazy">
-        </div>
-        <div class="nanda-bayarea-leader-content">
-          <div class="nanda-bayarea-leader-name">Priya Subramanian</div>
-          <a href="https://www.linkedin.com/in/priya-subramanian-0559395/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">HCL Technologies <span class="nanda-btn-arrow">↗</span></a>
         </div>
       </div>
 
@@ -199,11 +228,61 @@
 
       <div class="nanda-bayarea-leader-card">
         <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/maria.jpeg' | url }}" alt="Maria Gorskikh" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Maria Gorskikh</div>
+          <a href="https://www.linkedin.com/in/mariagorskikh/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">The Maritime <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
           <img src="{{ 'assets/headshots/navtejjj.jpeg' | url }}" alt="Navtej Singh" class="nanda-bayarea-leader-img" loading="lazy">
         </div>
         <div class="nanda-bayarea-leader-content">
           <div class="nanda-bayarea-leader-name">Navtej Singh</div>
           <a href="https://www.linkedin.com/in/navtejjj" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Splunk <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/nitinbadjatia.jpeg' | url }}" alt="Nitin Badjatia" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Nitin Badjatia</div>
+          <a href="https://www.linkedin.com/in/nitinbadjatia/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">SAP <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/priyasub.jpg' | url }}" alt="Priya Subramanian" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Priya Subramanian</div>
+          <a href="https://www.linkedin.com/in/priya-subramanian-0559395/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">HCL Technologies <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/sanjayaiyagari.jpeg' | url }}" alt="Sanjay Aiyagari" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Sanjay Aiyagari</div>
+          <a href="https://www.linkedin.com/in/aiyagari" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Red Hat <span class="nanda-btn-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="nanda-bayarea-leader-card">
+        <div class="nanda-bayarea-leader-media">
+          <img src="{{ 'assets/headshots/saurabhpeshwa.jpeg' | url }}" alt="Saurabh Sakalkar" class="nanda-bayarea-leader-img" loading="lazy">
+        </div>
+        <div class="nanda-bayarea-leader-content">
+          <div class="nanda-bayarea-leader-name">Saurabh Sakalkar</div>
+          <a href="https://www.linkedin.com/in/peshwa/" target="_blank" rel="noopener noreferrer" class="nanda-bayarea-leader-company nanda-has-arrow">Cisco <span class="nanda-btn-arrow">↗</span></a>
         </div>
       </div>
 

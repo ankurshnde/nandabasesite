@@ -14,10 +14,34 @@
   --nanda-border: #e4e4e7;
   --nanda-sidebar-bg: #F2F2F0;
   --nanda-content-bg: #FAFAF9;
+  --nanda-card-bg: #FFFFFF;
+  --nanda-card-hover-bg: #F9F9F8;
   --nanda-hover-bg: rgba(0, 0, 0, 0.04);
   --nanda-brand-yellow: #eab308;
   --nanda-brand-yellow-deep: #ca8a04;
   --nanda-brand-yellow-light: #fde047;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #1F1F1F;
+  --md-default-fg-color: #EDEDED;
+  --md-default-fg-color--light: #A1A1AA;
+  --md-default-fg-color--lighter: #71717A;
+  --md-default-fg-color--lightest: #52525B;
+  --md-primary-fg-color: #1F1F1F;
+  --md-primary-bg-color: #1F1F1F;
+  --md-accent-fg-color: #FDE047;
+  --md-code-bg-color: #181818;
+  --md-code-fg-color: #E4E4E7;
+  --nanda-border: #333333;
+  --nanda-sidebar-bg: #181818;
+  --nanda-content-bg: #1F1F1F;
+  --nanda-card-bg: #262626;
+  --nanda-card-hover-bg: #2D2D2D;
+  --nanda-hover-bg: rgba(255, 255, 255, 0.06);
+  --nanda-brand-yellow: #EAB308;
+  --nanda-brand-yellow-deep: #FACC15;
+  --nanda-brand-yellow-light: #FEF08A;
 }
 
 /* Smooth anchor scrolling */
@@ -306,6 +330,94 @@ code, kbd, pre, .highlight {
 .nanda-header-actions a::after {
   content: "" !important;
   display: none !important;
+}
+
+/* ==========================================================================
+   SLATE CHIP SWITCH (https://opensourceui.in/components/slate-chip-switch)
+   ========================================================================== */
+
+.nanda-slate-chip-switch {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 9999px !important;
+  padding: 2px !important;
+  font-size: 11.5px !important;
+  background: linear-gradient(to bottom, #eceff3, #d9dee5) !important;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.75), 0 0 0 1px rgba(0, 0, 0, 0.06) !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  flex-shrink: 0 !important;
+  margin: 0 0.35rem 0 0 !important;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+.nanda-slate-chip-switch:hover {
+  transform: translateY(-0.5px);
+}
+
+[data-md-color-scheme="slate"] .nanda-slate-chip-switch {
+  background: linear-gradient(to bottom, #2d333b, #1e2228) !important;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+.nanda-slate-chip-switch:has(.nanda-chip-input:focus-visible) {
+  outline: 2px solid #38bdf8 !important;
+  outline-offset: 2px !important;
+}
+
+/* Hidden input peer */
+.nanda-chip-input {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 10 !important;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  opacity: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Track layer */
+.nanda-chip-track {
+  position: relative !important;
+  display: block !important;
+  height: 1.45em !important;
+  width: 2.85em !important;
+  border-radius: 9999px !important;
+  background-color: #c7ced8 !important;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18) !important;
+  transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out !important;
+}
+
+.nanda-chip-input:checked ~ .nanda-chip-track {
+  background-color: #0ea5e9 !important; /* Sky 500 on-state fill */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(14, 116, 144, 0.25) !important;
+}
+
+/* Thumb layer */
+.nanda-chip-thumb {
+  position: absolute !important;
+  left: 0.08em !important;
+  top: 50% !important;
+  width: 1.22em !important;
+  height: 1.22em !important;
+  transform: translateY(-50%) !important;
+  border-radius: 9999px !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+.nanda-chip-input:checked ~ .nanda-chip-track .nanda-chip-thumb {
+  transform: translateY(-50%) translateX(1.35em) !important;
 }
 
 /* LinkedIn Icon Link - Exact Same Height (25px) as Git Diamond */
@@ -1233,7 +1345,7 @@ footer.md-footer,
 }
 
 /* Text links across all content - Clear, distinct, theme-matched brand styling */
-.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company) {
+.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link) {
   color: #ca8a04;
   font-weight: 500;
   text-decoration: underline;
@@ -1243,12 +1355,12 @@ footer.md-footer,
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
-.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):hover {
+.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):hover {
   color: #a16207;
   text-decoration-color: #ca8a04;
 }
 
-.md-typeset a[target="_blank"]:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-has-arrow)::after {
+.md-typeset a[target="_blank"]:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):not(.nanda-has-arrow)::after {
   content: " ↗";
   display: inline-block;
   font-size: 0.8em;
@@ -1286,18 +1398,26 @@ footer.md-footer,
   padding: 0.85rem 1.15rem !important;
   background-color: #ffffff !important;
   border: 1px solid var(--nanda-border) !important;
-  border-radius: 6px !important;
+  border-radius: 10px !important;
   text-decoration: none !important;
-  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease !important;
+  transition: border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease !important;
   cursor: pointer !important;
 }
 
 .nanda-page-nav__link:hover {
-  border-color: #cbd5e1 !important;
+  border-color: #eab308 !important;
   background-color: #ffffff !important;
   text-decoration: none !important;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(234, 179, 8, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+.nanda-page-nav__link:hover .nanda-page-nav__title {
+  color: #ca8a04 !important;
+}
+
+.nanda-page-nav__link:hover .nanda-page-nav__direction {
+  color: #b45309 !important;
 }
 
 .nanda-page-nav__link--prev {
@@ -2080,7 +2200,7 @@ footer.md-footer,
   overflow-y: auto !important;
   background: #FFFFFF !important;
   border: 1px solid var(--nanda-border) !important;
-  border-radius: 16px !important;
+  border-radius: 0 !important;
   padding: 2.25rem 2.5rem !important;
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.04) !important;
   opacity: 0;
@@ -2133,7 +2253,7 @@ footer.md-footer,
 .nanda-ecosystem-close {
   width: 32px !important;
   height: 32px !important;
-  border-radius: 50% !important;
+  border-radius: 0 !important;
   border: 1px solid var(--nanda-border) !important;
   background: transparent !important;
   cursor: pointer !important;
@@ -2177,7 +2297,7 @@ footer.md-footer,
   padding: 1rem 1.15rem !important;
   background: #FAFAF9 !important;
   border: 1px solid var(--nanda-border) !important;
-  border-radius: 10px !important;
+  border-radius: 0 !important;
   text-decoration: none !important;
   color: inherit !important;
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease !important;
@@ -2236,7 +2356,7 @@ footer.md-footer,
     max-width: calc(100% - 1.5rem) !important;
     max-height: 88vh !important;
     padding: 1.5rem 1.25rem !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
     margin: auto 0.75rem !important;
   }
 
@@ -2761,7 +2881,7 @@ footer.md-footer,
   overflow-y: auto !important;
   background: #FFFFFF !important;
   border: 1px solid var(--nanda-border) !important;
-  border-radius: 18px !important;
+  border-radius: 0 !important;
   padding: 2.25rem 2.5rem !important;
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12), 0 4px 14px rgba(0, 0, 0, 0.04) !important;
   opacity: 0;
@@ -2792,7 +2912,7 @@ footer.md-footer,
   text-transform: uppercase !important;
   letter-spacing: 0.06em !important;
   padding: 0.18rem 0.5rem !important;
-  border-radius: 9999px !important;
+  border-radius: 0 !important;
   background-color: #FEF9C3 !important;
   color: #854D0E !important;
   border: 1px solid rgba(202, 138, 4, 0.25) !important;
@@ -2830,7 +2950,7 @@ footer.md-footer,
 .nanda-bayarea-close {
   width: 34px !important;
   height: 34px !important;
-  border-radius: 50% !important;
+  border-radius: 0 !important;
   border: 1px solid var(--nanda-border) !important;
   background: transparent !important;
   cursor: pointer !important;
@@ -2864,7 +2984,7 @@ footer.md-footer,
 .nanda-bayarea-about-card {
   background: #FAFAF9 !important;
   border: 1px solid var(--nanda-border) !important;
-  border-radius: 12px !important;
+  border-radius: 0 !important;
   padding: 1.35rem 1.5rem !important;
   margin: 1.5rem 0 1.75rem 0 !important;
 }
@@ -2901,7 +3021,7 @@ footer.md-footer,
   font-weight: 600 !important;
   line-height: 1 !important;
   padding: 0.42rem 0.85rem !important;
-  border-radius: 9999px !important;
+  border-radius: 0 !important;
   border: 1px solid var(--nanda-border) !important;
   background-color: #FFFFFF !important;
   color: var(--md-default-fg-color) !important;
@@ -2912,6 +3032,7 @@ footer.md-footer,
 .nanda-bayarea-link-btn::after {
   display: none !important;
   content: "" !important;
+  border-radius: 0 !important;
 }
 
 .nanda-bayarea-link-btn:hover {
@@ -2955,7 +3076,7 @@ footer.md-footer,
 .nanda-bayarea-leader-card {
   background: transparent !important;
   border: none !important;
-  border-radius: 6px !important;
+  border-radius: 0 !important;
   padding: 0 !important;
   box-shadow: none !important;
   display: flex !important;
@@ -2974,7 +3095,7 @@ footer.md-footer,
 .nanda-bayarea-leader-media {
   width: 100% !important;
   aspect-ratio: 3.2 / 4 !important;
-  border-radius: 6px !important;
+  border-radius: 0 !important;
   overflow: hidden !important;
   background-color: #f1f1ee !important;
   border: 1px solid rgba(0, 0, 0, 0.05) !important;
@@ -3019,7 +3140,7 @@ footer.md-footer,
   color: var(--md-default-fg-color--light) !important;
   background-color: #F4F4F5 !important;
   padding: 0.2rem 0.65rem !important;
-  border-radius: 9999px !important;
+  border-radius: 0 !important;
   text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -3063,6 +3184,1143 @@ footer.md-footer,
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ==========================================================================
+   HACKATHONS CARDS & DIRECTORY
+   ========================================================================== */
+
+.nanda-hackathons-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  margin: 1.5rem 0 2.5rem 0 !important;
+  width: 100% !important;
+}
+
+.nanda-hackathon-card {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  padding: 1.25rem 1.4rem !important;
+  background-color: #ffffff !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease !important;
+}
+
+.nanda-hackathon-card::after {
+  display: none !important;
+  content: "" !important;
+}
+
+.nanda-hackathon-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: #eab308 !important;
+  box-shadow: 0 8px 24px rgba(234, 179, 8, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  background-color: #ffffff !important;
+}
+
+.nanda-hackathon-info {
+  flex: 1 1 auto !important;
+}
+
+.nanda-hackathon-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  margin-bottom: 0.3rem !important;
+  transition: color 0.18s ease !important;
+}
+
+.nanda-hackathon-card:hover .nanda-hackathon-title {
+  color: #ca8a04 !important;
+}
+
+.nanda-hackathon-desc {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--light) !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+.nanda-hackathon-partner {
+  flex: 0 0 auto !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  padding: 0.35rem 0.8rem !important;
+  border-radius: 20px !important;
+  background-color: #f8fafc !important;
+  color: #64748b !important;
+  border: 1px solid #e2e8f0 !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+}
+
+.nanda-hackathon-card:hover .nanda-hackathon-partner {
+  border-color: rgba(234, 179, 8, 0.4) !important;
+  color: #b45309 !important;
+  background-color: #fefce8 !important;
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-hackathon-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+    padding: 1.1rem 1rem !important;
+  }
+}
+
+/* ==========================================================================
+   FELLOWSHIPS CARDS & DIRECTORY
+   ========================================================================== */
+
+.nanda-fellowships-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.15rem !important;
+  margin: 1.5rem 0 2.5rem 0 !important;
+  width: 100% !important;
+}
+
+.nanda-fellowship-card {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.85rem !important;
+  padding: 1.35rem 1.45rem !important;
+  background-color: #ffffff !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease !important;
+}
+
+.nanda-fellowship-card::after {
+  display: none !important;
+  content: "" !important;
+}
+
+.nanda-fellowship-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: #eab308 !important;
+  box-shadow: 0 8px 24px rgba(234, 179, 8, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  background-color: #ffffff !important;
+}
+
+.nanda-fellowship-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  width: 100% !important;
+}
+
+.nanda-fellowship-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.08rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  transition: color 0.18s ease !important;
+}
+
+.nanda-fellowship-card:hover .nanda-fellowship-title {
+  color: #ca8a04 !important;
+}
+
+.nanda-fellowship-partner {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  padding: 0.32rem 0.75rem !important;
+  border-radius: 20px !important;
+  background-color: #f8fafc !important;
+  color: #64748b !important;
+  border: 1px solid #e2e8f0 !important;
+  white-space: nowrap !important;
+  transition: all 0.18s ease !important;
+}
+
+.nanda-fellowship-card:hover .nanda-fellowship-partner {
+  border-color: rgba(234, 179, 8, 0.4) !important;
+  color: #b45309 !important;
+  background-color: #fefce8 !important;
+}
+
+.nanda-fellowship-desc {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.91rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--light) !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+.nanda-fellowship-features {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.6rem !important;
+  margin-top: 0.2rem !important;
+}
+
+.nanda-fellowship-feature {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.77rem !important;
+  color: #3f3f46 !important;
+  background-color: #f4f4f5 !important;
+  border: 1px solid #e4e4e7 !important;
+  border-radius: 6px !important;
+  padding: 0.25rem 0.65rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  line-height: 1.4 !important;
+}
+
+.nanda-fellowship-feature strong {
+  font-weight: 600 !important;
+  color: #18181b !important;
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-fellowship-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+  }
+}
+
+/* ==========================================================================
+   TALKS & ARCHIVE: PRESENTATION CONTAINER & TOOLBAR
+   ========================================================================== */
+.nanda-presentation-container {
+  margin: 1.75rem 0 2.5rem 0 !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 14px !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
+  overflow: hidden !important;
+}
+
+.nanda-presentation-toolbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+  padding: 0.85rem 1.25rem !important;
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid var(--nanda-border) !important;
+}
+
+.nanda-presentation-info {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.95rem !important;
+  color: var(--md-default-fg-color) !important;
+}
+
+.nanda-presentation-badge {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.22rem 0.55rem !important;
+  border-radius: 4px !important;
+  background-color: #eab308 !important;
+  color: #000000 !important;
+}
+
+.nanda-presentation-actions {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  flex-wrap: wrap !important;
+}
+
+.nanda-presentation-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  padding: 0.4rem 0.85rem !important;
+  border-radius: 8px !important;
+  border: 1px solid #cbd5e1 !important;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  text-decoration: none !important;
+  transition: all 0.18s ease !important;
+}
+
+.nanda-presentation-btn:hover {
+  border-color: #ca8a04 !important;
+  color: #ca8a04 !important;
+  background-color: #fefce8 !important;
+  transform: translateY(-1px) !important;
+}
+
+.nanda-presentation-btn--video {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+}
+
+.nanda-presentation-btn--video:hover {
+  background-color: #27272a !important;
+  color: #fef08a !important;
+  border-color: #27272a !important;
+}
+
+/* ==========================================================================
+   TALKS & ARCHIVE: SELECTED TALKS GRID & CARDS
+   ========================================================================== */
+.nanda-talks-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+  gap: 1.25rem !important;
+  margin: 1.5rem 0 2.5rem 0 !important;
+}
+
+.nanda-talk-card {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.4rem 1.5rem !important;
+  background-color: #ffffff !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease !important;
+}
+
+.nanda-talk-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: #eab308 !important;
+  box-shadow: 0 8px 24px rgba(234, 179, 8, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  background-color: #ffffff !important;
+}
+
+.nanda-talk-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 0.65rem !important;
+}
+
+.nanda-talk-tag {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 0.2rem 0.55rem !important;
+  border-radius: 4px !important;
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+.nanda-talk-card:hover .nanda-talk-tag {
+  background-color: #fefce8 !important;
+  color: #ca8a04 !important;
+}
+
+.nanda-talk-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.08rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  line-height: 1.35 !important;
+  margin-bottom: 0.5rem !important;
+  transition: color 0.18s ease !important;
+}
+
+.nanda-talk-card:hover .nanda-talk-title {
+  color: #ca8a04 !important;
+}
+
+.nanda-talk-speaker {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.85rem !important;
+  color: #0f172a !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.nanda-talk-event {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  color: #64748b !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.nanda-talk-desc {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 400 !important;
+  color: var(--md-default-fg-color--light) !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   TALKS & ARCHIVE: SYSTEM ARCHITECTURE FIGURES GRID
+   ========================================================================== */
+.nanda-figures-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin: 1.75rem 0 2.5rem 0 !important;
+}
+
+.nanda-figure-card {
+  display: flex !important;
+  flex-direction: column !important;
+  background-color: #ffffff !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+.nanda-figure-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(234, 179, 8, 0.6) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+.nanda-figure-image-wrap {
+  background-color: #f8fafc !important;
+  border-bottom: 1px solid var(--nanda-border) !important;
+  padding: 1rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.nanda-figure-image-wrap img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 8px !important;
+  background-color: #ffffff !important;
+}
+
+.nanda-figure-content {
+  padding: 1.25rem 1.4rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.nanda-figure-tag {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #ca8a04 !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.nanda-figure-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  margin: 0 0 0.5rem 0 !important;
+  line-height: 1.35 !important;
+}
+
+.nanda-figure-desc {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.88rem !important;
+  color: var(--md-default-fg-color--light) !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-figures-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==========================================================================
+   ABOUT PAGE: FOOTER COMPONENT
+   ========================================================================== */
+.nanda-about-footer {
+  margin: 3.5rem 0 1.5rem 0 !important;
+  padding: 2.25rem 1.5rem 1rem 1.5rem !important;
+  border-top: 1px solid var(--nanda-border) !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+}
+
+.nanda-about-footer-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 0.65rem 0.95rem !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.88rem !important;
+}
+
+.nanda-about-footer-link {
+  color: #64748b !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.2rem !important;
+  transition: color 0.16s ease !important;
+}
+
+.nanda-about-footer-link:hover {
+  color: #ca8a04 !important;
+}
+
+.nanda-about-footer-sep {
+  color: #cbd5e1 !important;
+  font-size: 0.8rem !important;
+  user-select: none !important;
+}
+
+.nanda-about-footer-credit {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+  margin-top: 0.2rem !important;
+}
+
+.nanda-heart {
+  color: #000000 !important;
+  font-size: 1.05rem !important;
+  margin: 0 0.15rem !important;
+}
+
+.nanda-about-footer-tagline {
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.82rem !important;
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   DARK THEME RENDERING OVERRIDES (ACCURATE #1F1F1F PALETTE)
+   ========================================================================== */
+
+[data-md-color-scheme="slate"],
+[data-md-color-scheme="slate"] body {
+  background-color: #1F1F1F !important;
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .md-container,
+[data-md-color-scheme="slate"] .md-main,
+[data-md-color-scheme="slate"] .md-main__inner,
+[data-md-color-scheme="slate"] .md-content,
+[data-md-color-scheme="slate"] .md-content__inner,
+[data-md-color-scheme="slate"] .md-typeset {
+  background-color: #1F1F1F !important;
+  color: #EDEDED !important;
+}
+
+/* Header in Dark Mode */
+[data-md-color-scheme="slate"] .md-header {
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 76.24em) {
+  [data-md-color-scheme="slate"] .md-header {
+    background-color: #1F1F1F !important;
+    border-bottom: 1px solid #2E2E2E !important;
+  }
+}
+
+/* Sidebar in Dark Mode */
+[data-md-color-scheme="slate"] .md-sidebar--primary,
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__scrollwrap,
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__inner,
+[data-md-color-scheme="slate"] .nanda-sidebar-header {
+  background-color: #181818 !important;
+  border-right-color: #2E2E2E !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary::-webkit-scrollbar-track,
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-track {
+  background: #181818 !important;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav,
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__list,
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__item {
+  background-color: #181818 !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > label.md-nav__link,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested > label.md-nav__link {
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested > .md-nav .md-nav__link,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="1"] .md-nav__link {
+  color: #A1A1AA !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested > .md-nav .md-nav__link:hover,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="1"] .md-nav__link:hover {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested > .md-nav a.md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav[data-md-level="1"] a.md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav--primary .md-nav__item--nested > .md-nav .md-nav__item--active > a.md-nav__link {
+  color: #FFFFFF !important;
+}
+
+/* Invert Logo to Crisp White */
+[data-md-color-scheme="slate"] .nanda-sidebar-logo img,
+[data-md-color-scheme="slate"] .nanda-sidebar-logo svg,
+[data-md-color-scheme="slate"] .nanda-sidebar-logo-img,
+[data-md-color-scheme="slate"] .nanda-header-logo img,
+[data-md-color-scheme="slate"] .nanda-header-logo-img,
+[data-md-color-scheme="slate"] .md-logo img {
+  filter: invert(1) brightness(1.2) !important;
+}
+
+/* Headings in Dark Mode */
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4,
+[data-md-color-scheme="slate"] .nanda-main-title {
+  color: #FFFFFF !important;
+}
+
+/* Code Blocks & Inline Code */
+[data-md-color-scheme="slate"] .md-typeset pre,
+[data-md-color-scheme="slate"] .md-typeset pre > code,
+[data-md-color-scheme="slate"] .highlight,
+[data-md-color-scheme="slate"] .highlight pre {
+  background-color: #161616 !important;
+  color: #E4E4E7 !important;
+  border: 1px solid #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset :not(pre) > code {
+  background-color: #262626 !important;
+  color: #FDE047 !important;
+  border: 1px solid #383838 !important;
+}
+
+/* Tables in Dark Mode */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border: 1px solid #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: #262626 !important;
+  color: #FFFFFF !important;
+  border-bottom: 2px solid #383838 !important;
+  border-right: 1px solid #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-top: 1px solid #2E2E2E !important;
+  border-right: 1px solid #2E2E2E !important;
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tr:hover {
+  background-color: #262626 !important;
+}
+
+/* Admonitions, Blockquotes, HR */
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  border-left: 3px solid #EAB308 !important;
+  background-color: #242424 !important;
+  color: #D4D4D8 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset hr {
+  border-bottom-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition {
+  background-color: #242424 !important;
+  border-color: #383838 !important;
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition-title {
+  background-color: #2A2A2A !important;
+  color: #FFFFFF !important;
+}
+
+/* Back To Top Capsule */
+[data-md-color-scheme="slate"] .nanda-back-to-top {
+  background-color: #262626 !important;
+  color: #A1A1AA !important;
+  border-color: #383838 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-back-to-top:hover {
+  background-color: #2E2E2E !important;
+  color: #FFFFFF !important;
+}
+
+/* Next / Prev Nav Links */
+[data-md-color-scheme="slate"] .nanda-page-nav__link {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-page-nav__link:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-page-nav__title {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-page-nav__direction {
+  color: #A1A1AA !important;
+}
+
+/* Publications List */
+[data-md-color-scheme="slate"] .nanda-pub-item {
+  border-bottom-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-pub-item:hover {
+  background-color: #262626 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-pub-title {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-pub-date {
+  color: #A1A1AA !important;
+}
+
+/* Projects List */
+[data-md-color-scheme="slate"] .nanda-project-row {
+  border-bottom-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-project-row:hover {
+  background-color: #262626 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-project-name {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-project-desc {
+  color: #A1A1AA !important;
+}
+
+/* Journey Grid & Cards */
+[data-md-color-scheme="slate"] .nanda-journey-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-journey-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-journey-title {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-journey-desc {
+  color: #A1A1AA !important;
+}
+
+/* Social Grid & Cards */
+[data-md-color-scheme="slate"] .nanda-social-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-social-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-social-name {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-social-handle {
+  color: #A1A1AA !important;
+}
+
+/* Stats Cards */
+[data-md-color-scheme="slate"] .nanda-stats-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-stats-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-stats-number {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-stats-desc {
+  color: #A1A1AA !important;
+}
+
+/* Team & Advisors Portrait Cards */
+[data-md-color-scheme="slate"] .nanda-portrait-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-portrait-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-portrait-name {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-portrait-org {
+  color: #A1A1AA !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-portrait-bio {
+  color: #A1A1AA !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-advisor-talk-pill {
+  background-color: #1F1F1F !important;
+  border-color: #383838 !important;
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-advisor-talk-pill:hover {
+  background-color: #2D2D2D !important;
+  color: #FFFFFF !important;
+}
+
+/* Advisors Marquee */
+[data-md-color-scheme="slate"] .nanda-advisor-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-advisor-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-advisors-marquee-container::before {
+  background: linear-gradient(to right, #1F1F1F 0%, rgba(31, 31, 31, 0) 100%) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-advisors-marquee-container::after {
+  background: linear-gradient(to left, #1F1F1F 0%, rgba(31, 31, 31, 0) 100%) !important;
+}
+
+/* Diagrams & Figures */
+[data-md-color-scheme="slate"] .nanda-diagram-container {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-figure-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-figure-image-wrap {
+  background-color: #181818 !important;
+  border-bottom-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-figure-content h3 {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-figure-content p {
+  color: #A1A1AA !important;
+}
+
+/* Chapter Cards, Badges & Action Buttons */
+[data-md-color-scheme="slate"] .nanda-chapter-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-chapter-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-chapter-city {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-chapter-btn {
+  background-color: #1F1F1F !important;
+  border-color: #383838 !important;
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-chapter-btn:hover {
+  background-color: #2D2D2D !important;
+  border-color: #4A4A4A !important;
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-benefit-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-benefit-card h3 {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-benefit-card li {
+  color: #A1A1AA !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-admin-note,
+[data-md-color-scheme="slate"] .nanda-notice-box {
+  background-color: #262626 !important;
+  border-color: #383838 !important;
+  color: #EDEDED !important;
+}
+
+/* Hackathons & Fellowships */
+[data-md-color-scheme="slate"] .nanda-hackathon-card,
+[data-md-color-scheme="slate"] .nanda-fellowship-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-hackathon-card:hover,
+[data-md-color-scheme="slate"] .nanda-fellowship-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-hackathon-title,
+[data-md-color-scheme="slate"] .nanda-fellowship-title {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-hackathon-desc,
+[data-md-color-scheme="slate"] .nanda-fellowship-desc {
+  color: #A1A1AA !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-fellowship-feature {
+  background-color: #1F1F1F !important;
+  border-color: #383838 !important;
+}
+
+/* Talks & Presentation Viewer */
+[data-md-color-scheme="slate"] .nanda-talk-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-talk-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-talk-title {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-talk-speaker,
+[data-md-color-scheme="slate"] .nanda-talk-event,
+[data-md-color-scheme="slate"] .nanda-talk-desc {
+  color: #A1A1AA !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-presentation-container {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-presentation-toolbar {
+  background-color: #1F1F1F !important;
+  border-bottom-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-presentation-btn {
+  background-color: #262626 !important;
+  border-color: #383838 !important;
+  color: #EDEDED !important;
+}
+
+/* Ecosystem Trigger Button */
+[data-md-color-scheme="slate"] .nanda-ecosystem-trigger {
+  background-color: #262626 !important;
+  border-color: #383838 !important;
+  color: #A1A1AA !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-trigger:hover {
+  background-color: #2D2D2D !important;
+  border-color: #555555 !important;
+  color: #FFFFFF !important;
+}
+
+/* Ecosystem & SF Bay Area Modals (Square corners, #1F1F1F background) */
+[data-md-color-scheme="slate"] .nanda-ecosystem-backdrop,
+[data-md-color-scheme="slate"] .nanda-bayarea-backdrop {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-container,
+[data-md-color-scheme="slate"] .nanda-bayarea-container {
+  background-color: #1F1F1F !important;
+  border-color: #383838 !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7) !important;
+  border-radius: 0px !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-header,
+[data-md-color-scheme="slate"] .nanda-bayarea-header {
+  border-bottom-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-title,
+[data-md-color-scheme="slate"] .nanda-bayarea-title,
+[data-md-color-scheme="slate"] .nanda-bayarea-about-heading,
+[data-md-color-scheme="slate"] .nanda-bayarea-section-title {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-subtitle,
+[data-md-color-scheme="slate"] .nanda-bayarea-subtitle,
+[data-md-color-scheme="slate"] .nanda-bayarea-about-desc {
+  color: #A1A1AA !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-close,
+[data-md-color-scheme="slate"] .nanda-bayarea-close {
+  background-color: #262626 !important;
+  border-color: #383838 !important;
+  color: #A1A1AA !important;
+  border-radius: 0px !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-close:hover,
+[data-md-color-scheme="slate"] .nanda-bayarea-close:hover {
+  background-color: #2D2D2D !important;
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-card,
+[data-md-color-scheme="slate"] .nanda-bayarea-leader-card,
+[data-md-color-scheme="slate"] .nanda-bayarea-about-card {
+  background-color: #262626 !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-card:hover,
+[data-md-color-scheme="slate"] .nanda-bayarea-leader-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #444444 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-card-title,
+[data-md-color-scheme="slate"] .nanda-bayarea-leader-name {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-ecosystem-card-desc,
+[data-md-color-scheme="slate"] .nanda-bayarea-leader-company {
+  color: #A1A1AA !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-bayarea-link-btn {
+  background-color: #1F1F1F !important;
+  border-color: #383838 !important;
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-bayarea-link-btn:hover {
+  background-color: #2D2D2D !important;
+  border-color: #4A4A4A !important;
+  color: #FFFFFF !important;
+}
+
+/* Footer Section in Dark Mode */
+[data-md-color-scheme="slate"] .nanda-about-footer-link {
+  color: #94A3B8 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-about-footer-link:hover {
+  color: #FACC15 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-about-footer-sep {
+  color: #475569 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-about-footer-credit {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-heart {
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-about-footer-tagline {
+  color: #71717A !important;
+}
+
+
+
 
 
 

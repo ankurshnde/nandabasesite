@@ -11,6 +11,39 @@ Using the city analogy: **A2A** is the streets, **MCP** is the tools in the buil
 
 ---
 
+## Architectural Model & Operational Flow
+
+The IETF specification divides agent discovery into four separable architectural roles:
+
+1. **Representation Layer**: Standardized descriptors and manifests, including AI Catalog (`application/ai-catalog+json`), A2A Agent Cards (`application/a2a-agent-card+json`), and MCP server descriptors.
+2. **Resolution Layer**: Resolves a stable Subject Identity to a terminal target (via direct DNS paths or a configured NANDA Index registry).
+3. **Discovery Layer**: Fetches the selected descriptor, subject-owned catalog, or subject-authorized gateway.
+4. **Infrastructure Layer**: Distributed registries, storage engines, and immutable audit logs that manage, validate, and revoke bindings.
+
+### The Resolution Pipeline
+
+Every interaction follows a clean, single-hop discovery sequence:
+
+```
+Subject Identity
+      │
+      ▼
+Direct DNS or Registry-Assisted Resolution (NANDA Index)
+      │
+      ▼
+Terminal Descriptor (A2A Agent Card, MCP Descriptor, or Gateway)
+      │
+      ▼
+Protocol-Specific Verification & Authorization (e.g. AgentFacts)
+      │
+      ▼
+Peer-to-Peer Agent Invocation (A2A, MCP, HTTPS)
+```
+
+Once resolution locates the target, invocation occurs directly between agents; the Index is completely out of the data path.
+
+---
+
 ## What the Index is Not
 
 The index is:
@@ -30,7 +63,7 @@ The index is:
 * **Lean pointer, fat facts**  
   An index record is a small routing object that identifies the next object to retrieve. Endpoints, skills, authentication details, compliance claims, and other rich metadata remain in AgentFacts or the terminal descriptor.
 
-* **Split ownership**  
+* **Split ownership & deployment**  
   The identity owner, descriptor host, and runtime operator may be three different parties. Hosting an Agent Card does not establish ownership; Authority Evidence binds the subject identity to the target or authorized publisher.
 
 * **Permissionless publication**  
@@ -58,19 +91,61 @@ The index is:
 
 ## What an Index Record Contains
 
-The precise schema depends on the layer: the IETF draft defines a **Resolution Target Object**, while the running implementation exposes an **IndexRecord**. The full definitions remain in [IETF draft-01 §5](https://datatracker.ietf.org/doc/draft-raskar-agentic-web-federated-resolution/01/) and the [GitHub IndexRecord](https://github.com/projnanda/nanda-index-v2).
+The precise schema depends on the layer: the IETF draft defines a **Resolution Target Object**, while the running implementation exposes an **IndexRecord**. Full definitions are maintained in [IETF draft-01 §5](https://datatracker.ietf.org/doc/draft-raskar-agentic-web-federated-resolution/01/) and the [GitHub IndexRecord](https://github.com/projnanda/nanda-index-v2).
 
 | Field | Meaning |
 | :--- | :--- |
 | `subject` / `identifier` | Stable identity being resolved; the implementation commonly represents it as a URN. |
-| `subjectType` | Identity class, such as domain, email, DID, platform, URI, URN, or workload. |
-| `media_type` / `targetType` | Type of the next object or gateway response. |
+| `subjectType` | Identity class: `domain`, `agent-name`, `email`, `uri`, `urn`, `did`, `platform`, or `workload`. |
+| `media_type` / `targetType` | IANA media type or protocol of the next object (e.g., `application/a2a-agent-card+json`). |
 | `targetUrl` / `registry_url` | HTTPS location of the terminal descriptor, authorized catalog, card host, or gateway. |
-| `method` | Resolution method: artifact or gateway in draft-01. |
-| `ttl` / `freshness` | Cache lifetime, validity bounds, update time, or related freshness information. |
-| `status` | Implementation lifecycle state: pending, active, or suspended. |
-| `authority` | Evidence binding the subject identity to the target or publisher. |
+| `method` | Resolution method: `artifact` (terminal descriptor/card) or `gateway` in draft-01. |
+| `ttl` / `freshness` | Cache lifetime, validity bounds (`validFrom`, `expiresAt`), update time, or related freshness. |
+| `status` | Implementation lifecycle state: `pending`, `active`, or `suspended`. |
+| `authority` | Verifiable evidence binding the subject identity to the target or publisher. |
 | `publisher` | Structured identity of the party publishing the record. |
+
+### Wire Format Example
+
+Here is a conforming **Resolution Target Object** binding an agent identity to an A2A Agent Card with domain authority evidence:
+
+```json
+{
+  "subject": "orders@moon-bakery.example",
+  "subjectType": "agent-name",
+  "method": "artifact",
+  "targetType": "application/a2a-agent-card+json",
+  "targetUrl": "https://cards.agenthost.example/moon-bakery/orders.json",
+  "authority": {
+    "type": "https-domain-challenge",
+    "issuer": "https://registry.example",
+    "evidenceUrl": "https://moon-bakery.example/.well-known/proof.json",
+    "expiresAt": "2026-12-31T23:59:59Z"
+  },
+  "revocationUrl": "https://registry.example/revocations/moon-orders"
+}
+```
+
+### The HTTPS Resolution Interface
+
+The registry exposes a simple REST endpoint (`POST /resolve`) bounded by standard HTTP semantics:
+
+```http
+POST /resolve HTTP/1.1
+Host: registry.nandaindex.example
+Content-Type: application/json
+Accept: application/ai-catalog+json
+
+{
+  "identity": "orders@moon-bakery.example",
+  "identityType": "agent-name",
+  "maxResults": 10,
+  "acceptedMethods": ["artifact", "gateway"]
+}
+```
+
+- **Success (`200 OK`)**: Returns an `application/ai-catalog+json` envelope containing the matching `application/agent-resolution-target+json` entries.
+- **Errors**: Formatted in RFC 9457 `application/problem+json` (distinguishing between `unauthorized`, `unverifiable`, `stale`, and `revoked` outcomes without leaking private credentials).
 
 > Clients resolve identities; they do not scrape the Index to search for capabilities.
 
@@ -78,11 +153,13 @@ The precise schema depends on the layer: the IETF draft defines a **Resolution T
 
 ## Resolution Paths
 
-* **Direct Resolution:**  
-  DNS-AID, a well-known AI Catalog, or an organization gateway → select the relevant descriptor → verify and authorize → invoke. The Index is not required.
+* **Direct Resolution (No Index Required):**  
+  Used when an organization operates native DNS discovery infrastructure.  
+  `DNS-AID (_index._agents.<domain>)` or well-known catalog (`/.well-known/ai-catalog.json`) → select descriptor → verify and authorize → invoke.
 
-* **Assisted Resolution:**  
-  `resolve(subject)` on a NandaIndex registry → terminal descriptor, subject-owned catalog, or authorized gateway → verify and authorize → invoke through A2A, MCP, or HTTPS.
+* **Registry-Assisted Resolution (NANDA Index):**  
+  Used when identities lack usable DNS Discovery Anchors or use split hosting.  
+  `resolve(subject)` on NANDA Index registry → terminal descriptor, subject-owned catalog, or authorized gateway → verify and authorize → invoke through A2A, MCP, or HTTPS.
 
 The v2 implementation expresses the three-hop chain as:  
 `resolve(URN)` → **registry or Agent Card host** → **Agent Card** → **runtime**.  
@@ -92,9 +169,14 @@ See the [nanda-index-v2 repository](https://github.com/projnanda/nanda-index-v2)
 
 ## Who It Is For
 
-* **Enterprise:** Already operates an AI Catalog, DNS-AID path, or organization gateway; an Index record can serve as fallback, federation visibility, migration support, or anti-squatting protection.
-* **SMB:** May own a domain without operating agent-discovery infrastructure; its card can be hosted by one provider and its runtime by another.
-* **Individual:** Can use an email or platform identity without owning a domain.
+The IETF specification details three primary deployment archetypes:
+
+* **Enterprise (Direct with Fallback):**  
+  Organizations already operating an AI Catalog, DNS-AID path, or corporate gateway. The Index provides external ecosystem discovery, multi-region federation visibility, migration support, and anti-squatting protection.
+* **SMB (Split Hosting):**  
+  Small businesses owning a brand domain on basic hosting without agent-specific DNS infrastructure. A registry links their brand identity (`orders@moon-bakery.com`) to an Agent Card hosted by a specialized provider, while the agent runtime executes on cloud compute.
+* **Individual & Personal Workloads:**  
+  Developers, researchers, and individuals operating personal agents on local hardware (e.g., Mac mini, OpenClaw runtime) or private cloud. They can publish bindings under an email address (`john@example.net`) or DID, authenticated through account-level proofs without needing domain ownership.
 
 ---
 
@@ -102,7 +184,7 @@ See the [nanda-index-v2 repository](https://github.com/projnanda/nanda-index-v2)
 
 * **Design Paper:** [*A Global Switchboard for the Agentic Web*](https://nandaindex.org/paper.pdf), by Ramesh Raskar, Pradyumna Chari, Luca Muscariello, Samuel Sharaf, Karan Bharadwaj, and Vijoy Pandey.
 * **Live Site:** [nandaindex.org](https://nandaindex.org/).
-* **Internet-Draft:** [draft-01](https://datatracker.ietf.org/doc/draft-raskar-agentic-web-federated-resolution/01/) is an individual Internet-Draft with intended Informational status and an expiry date of 21 January 2027.
+* **Internet-Draft:** [draft-01](https://datatracker.ietf.org/doc/draft-raskar-agentic-web-federated-resolution/01/) is an individual Internet-Draft (*Registry-Assisted Discovery for AI Agents and Workloads Without DNS Discovery Anchors*) with intended Informational status and an expiry date of 21 January 2027.
 * **Reference Implementation:** [projnanda/nanda-index-v2](https://github.com/projnanda/nanda-index-v2), licensed under Apache-2.0.
 * **Why Not Only DNS:** [*Beyond DNS: Unlocking the Internet of AI Agents via the NANDA Index and Verified AgentFacts*](https://arxiv.org/abs/2507.14263). Its large-scale and rapid-resolution claims describe architecture goals and prototypes, not shipped service guarantees.
 * **AgentFacts / Passport:** See the separate **AgentFacts** page at [host39.org](http://host39.org).

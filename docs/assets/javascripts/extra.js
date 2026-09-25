@@ -663,7 +663,57 @@ function setupBayAreaModal() {
   });
 }
 
+// NANDA Theme Controller (Slate Chip Switch)
+window.getNandaTheme = function() {
+  var scheme = document.documentElement.getAttribute("data-md-color-scheme") ||
+               (document.body ? document.body.getAttribute("data-md-color-scheme") : null) ||
+               localStorage.getItem("nanda-color-scheme");
+  return scheme === "slate" ? "slate" : "default";
+};
+
+window.setNandaTheme = function(scheme) {
+  var isDark = scheme === "slate";
+  document.documentElement.setAttribute("data-md-color-scheme", scheme);
+  if (document.body) {
+    document.body.setAttribute("data-md-color-scheme", scheme);
+  }
+  try {
+    localStorage.setItem("nanda-color-scheme", scheme);
+    var paletteObj = { index: isDark ? 1 : 0, color: { scheme: scheme } };
+    localStorage.setItem("/.__palette", JSON.stringify(paletteObj));
+  } catch (e) {}
+
+  var checkbox = document.getElementById("nandaThemeCheckbox");
+  if (checkbox) {
+    checkbox.checked = isDark;
+  }
+
+  var toggleContainer = document.getElementById("nandaThemeToggle");
+  if (toggleContainer) {
+    toggleContainer.setAttribute("data-state", isDark ? "on" : "off");
+    toggleContainer.setAttribute("title", isDark ? "Switch to light mode" : "Switch to dark mode");
+    toggleContainer.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  }
+};
+
+window.handleThemeCheckbox = function(input) {
+  var next = input.checked ? "slate" : "default";
+  window.setNandaTheme(next);
+};
+
+window.toggleNandaTheme = function() {
+  var current = window.getNandaTheme();
+  var next = current === "slate" ? "default" : "slate";
+  window.setNandaTheme(next);
+};
+
+function setupThemeController() {
+  var current = window.getNandaTheme();
+  window.setNandaTheme(current);
+}
+
 function initNanda() {
+  setupThemeController();
   setupSidebarStructure();
   setupSidebarNavigation();
   setupPagePagination();
@@ -685,3 +735,4 @@ if (document.readyState === "loading") {
 if (typeof document$ !== "undefined") {
   document$.subscribe(initNanda);
 }
+

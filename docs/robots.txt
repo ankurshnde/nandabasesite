@@ -1,0 +1,44 @@
+# robots.txt for https://projectnanda.org
+# Open, permissionless research and standards for the Agentic Web
+
+User-agent: *
+Allow: /
+
+# Explicit directives for ethical search and AI indexing crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# XML Sitemap
+Sitemap: https://projectnanda.org/sitemap.xml
+
+# LLM Discovery Endpoints (Standard llms.txt specification)
+# Spec: https://llmstxt.org/
+# Curated Context: https://projectnanda.org/llms.txt
+# Comprehensive Context: https://projectnanda.org/llms-full.txt
+
+# Agentic Web Discovery (NANDA Index, Host39 AgentFacts & A2A/MCP)
+# Authoritative Passport: https://projectnanda.org/.well-known/agentfacts.json
+# A2A Agent Card: https://projectnanda.org/.well-known/agent-card.json
+# MCP Tools Manifest: https://projectnanda.org/.well-known/mcp.json
+# Host39 Registry Verification: https://host39.org/agents/projectnanda

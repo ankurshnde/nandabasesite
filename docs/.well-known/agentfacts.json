@@ -1,0 +1,60 @@
+{
+  "$schema": "https://host39.org/schemas/agentfacts-v1.json",
+  "version": "1.0.0",
+  "subject": "did:web:projectnanda.org",
+  "name": "Project NANDA",
+  "alternate_names": [
+    "NANDA Initiative",
+    "Foundation for Agentic Networks"
+  ],
+  "description": "Networked AI Agents in a Decentralized Architecture. Foundational infrastructure for discovery, identification, and interoperability across the Internet of AI Agents.",
+  "canonical_url": "https://projectnanda.org",
+  "repository": "https://github.com/projnanda",
+  "passport": {
+    "issuer": "https://host39.org",
+    "registry_id": "host39:projectnanda",
+    "verification_url": "https://host39.org/agents/projectnanda",
+    "attestation_type": "organization_verified",
+    "status": "active"
+  },
+  "origins": {
+    "research_lab": "MIT Media Lab Camera Culture Group",
+    "founded_by": "Ramesh Raskar and collaborators",
+    "stewardship": "Foundation for Agentic Networks (FAN)"
+  },
+  "roles": [
+    "resolution_authority",
+    "standards_organization",
+    "public_good_infrastructure"
+  ],
+  "capabilities": [
+    {
+      "id": "agent.discovery.first_hop",
+      "name": "First-Hop Subject Identity Resolution",
+      "protocol": "IETF draft-raskar-agentic-web-federated-resolution-01",
+      "endpoint": "https://nandaindex.org/resolve"
+    },
+    {
+      "id": "agent.passport.registry",
+      "name": "Verified AgentFacts Verification",
+      "protocol": "Host39 Passport Protocol v1",
+      "endpoint": "https://host39.org/verify"
+    },
+    {
+      "id": "agent.sandbox.testbed",
+      "name": "NEST Interoperability Sandbox",
+      "endpoint": "https://nest.projectnanda.org"
+    }
+  ],
+  "interfaces": {
+    "a2a": "https://projectnanda.org/.well-known/agent-card.json",
+    "mcp": "https://projectnanda.org/.well-known/mcp.json",
+    "ai_catalog": "https://projectnanda.org/.well-known/ai-catalog.json",
+    "llms_context": "https://projectnanda.org/llms.txt"
+  },
+  "license": "MIT",
+  "contact": {
+    "linkedin": "https://www.linkedin.com/company/projectnanda/",
+    "github": "https://github.com/projnanda"
+  }
+}

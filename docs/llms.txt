@@ -1,0 +1,39 @@
+# Project NANDA
+
+> Networked AI Agents in a Decentralized Architecture (NANDA) is an open research and infrastructure initiative establishing foundational protocols, registries, and discovery primitives for the Internet of AI Agents. Originating from research at the MIT Media Lab Camera Culture Group, NANDA operates under the Foundation for Agentic Networks (FAN).
+
+## The Core Analogy
+To understand the agentic ecosystem:
+- **A2A (Agent-to-Agent)** is the streets and transport network.
+- **MCP (Model Context Protocol)** is the tools and APIs inside each building.
+- **NANDA Index** is the address and routing system (mapping stable Subject Identities to authoritative descriptors).
+- **AgentFacts** (hosted on **Host39**) is the passport and cryptographic verification layer.
+- After discovery, agents communicate directly peer-to-peer. NANDA is not in the data path.
+
+## Primary Documentation & Research
+- [Home & Architectural Manifesto](https://projectnanda.org/index.md): Core vision, layered protocol model, and FAQs.
+- [About Project NANDA](https://projectnanda.org/about/index.md): Research history, MIT Media Lab origins, and mission.
+- [NANDA Index Architecture](https://projectnanda.org/publication/nanda-index.md): First-hop discovery infrastructure, resolution wire protocol (IETF draft alignment), and operational sequence.
+- [Developer Open Source & Code](https://projectnanda.org/developer/open-source.md): GitHub repositories, reference implementations, and SDK guides.
+- [Reference Implementation](https://projectnanda.org/developer/reference-implementation.md): End-to-end code walkthrough for hosting agent descriptors and registry resolution.
+- [Hackathons](https://projectnanda.org/developer/hackathons.md): Civic agent challenges, KumbhDoot, and global builder events.
+- [Fellowships](https://projectnanda.org/developer/fellowships.md): Academic research and engineering fellowship programs.
+- [Team & Advisors](https://projectnanda.org/people/team.md): Contributors, steering committee, and advisory board.
+- [Start a Chapter](https://projectnanda.org/community/start-a-chapter.md): Local chapter guidelines and city hubs worldwide (SF Bay Area, New Jersey, AusNZ, Spain, etc.).
+- [Frequently Asked Questions](https://projectnanda.org/resources/faq.md): Governance, licensing, security, and comparison to existing standards.
+- [Talks Archive](https://projectnanda.org/resources/talks-archive.md): Keynotes, workshops, and conference presentations.
+
+## Live Ecosystem & Sandboxes
+- [NANDA Town](https://nandatown.projectnanda.org/): Interactive sandbox for testing agentic protocols.
+- [NANDA Index](https://nandaindex.org/): Public resolution registry for agent descriptors.
+- [NEST](https://nest.projectnanda.org/): Testbed to build, test, launch, and connect agentic projects.
+- [Civic Agents](https://civicagents.projectnanda.org/): Resident-first public interest infrastructure.
+- [Host39](https://host39.org/): Public registry hosting verified AgentFacts and agent cards.
+- [KumbhDoot](https://kumbhdoot.org/): Pilgrim assistance agent deploying decentralized coordination at Nashik Kumbh Mela.
+- [Doot](https://digidoot.in/): Citizen-centric civic service access agent.
+
+## Machine-Readable Agent Discovery
+- [AgentFacts Passport](https://projectnanda.org/.well-known/agentfacts.json): Cryptographic attestations, governance, and metadata.
+- [A2A Agent Card](https://projectnanda.org/.well-known/agent-card.json): Agent-to-Agent protocol communication contract.
+- [MCP Tools Manifest](https://projectnanda.org/.well-known/mcp.json): Model Context Protocol tools for querying NANDA documentation and resolving identities.
+- [Full Documentation Dump](https://projectnanda.org/llms-full.txt): Complete consolidated Markdown context for LLMs and RAG pipelines.

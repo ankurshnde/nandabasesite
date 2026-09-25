@@ -18,7 +18,7 @@ The team powering open specifications, decentralized infrastructure, research, a
 <div class="nanda-portrait-grid">
   <div class="nanda-portrait-card">
     <div class="nanda-portrait-media">
-      <img src="/assets/team/ramesh_raskar.jpg" alt="Prof. Ramesh Raskar" class="nanda-portrait-img" loading="lazy">
+      <img src="/assets/advisors/Ramesh%20Raskar.jpeg" alt="Prof. Ramesh Raskar" class="nanda-portrait-img" loading="lazy">
     </div>
     <div class="nanda-portrait-content">
       <div class="nanda-portrait-name">Prof. Ramesh Raskar</div>
@@ -235,6 +235,16 @@ The team powering open specifications, decentralized infrastructure, research, a
 <div class="nanda-portrait-grid">
   <div class="nanda-portrait-card">
     <div class="nanda-portrait-media">
+      <img src="/assets/team/mahesh_lambe.png" alt="Mahesh Lambe" class="nanda-portrait-img" loading="lazy">
+    </div>
+    <div class="nanda-portrait-content">
+      <div class="nanda-portrait-name">Mahesh Lambe</div>
+      <div class="nanda-portrait-role">Scientific Advisor</div>
+      <div class="nanda-portrait-org">Project NANDA</div>
+    </div>
+  </div>
+  <div class="nanda-portrait-card">
+    <div class="nanda-portrait-media">
       <img src="/assets/team/sam_rosen.jpeg" alt="Sam Rosen" class="nanda-portrait-img" loading="lazy">
     </div>
     <div class="nanda-portrait-content">
@@ -270,16 +280,6 @@ The team powering open specifications, decentralized infrastructure, research, a
     <div class="nanda-portrait-content">
       <div class="nanda-portrait-name">Nikolay Vyahhi</div>
       <div class="nanda-portrait-role">Education Programs Advisor</div>
-      <div class="nanda-portrait-org">Project NANDA</div>
-    </div>
-  </div>
-  <div class="nanda-portrait-card">
-    <div class="nanda-portrait-media">
-      <img src="/assets/team/mahesh_lambe.png" alt="Mahesh Lambe" class="nanda-portrait-img" loading="lazy">
-    </div>
-    <div class="nanda-portrait-content">
-      <div class="nanda-portrait-name">Mahesh Lambe</div>
-      <div class="nanda-portrait-role">Scientific Advisor</div>
       <div class="nanda-portrait-org">Project NANDA</div>
     </div>
   </div>

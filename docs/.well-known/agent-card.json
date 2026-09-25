@@ -1,0 +1,36 @@
+{
+  "$schema": "https://a2a-protocol.org/schemas/agent-card-v1.json",
+  "name": "NANDA Documentation & Discovery Agent",
+  "version": "1.0.0",
+  "description": "Authoritative conversational and programmatic agent providing technical architecture resolution, documentation queries, and chapter discovery for Project NANDA.",
+  "subject": "did:web:projectnanda.org",
+  "protocols": [
+    "A2A-1.0",
+    "MCP-2024-11-05",
+    "HTTPS"
+  ],
+  "endpoints": {
+    "documentation": "https://projectnanda.org",
+    "llms": "https://projectnanda.org/llms.txt",
+    "mcp_manifest": "https://projectnanda.org/.well-known/mcp.json",
+    "agentfacts": "https://projectnanda.org/.well-known/agentfacts.json"
+  },
+  "skills": [
+    {
+      "id": "nanda.architecture.query",
+      "description": "Answers technical queries regarding the NANDA layered model, A2A, MCP, AgentFacts, and resolution pipeline."
+    },
+    {
+      "id": "nanda.index.resolve",
+      "description": "Assists agents in resolving subject identities against the NANDA Index first-hop directory."
+    },
+    {
+      "id": "nanda.chapters.list",
+      "description": "Lists verified local chapters, leadership contacts, and community groups."
+    }
+  ],
+  "security": {
+    "auth_type": "open",
+    "encryption": "TLS 1.3"
+  }
+}

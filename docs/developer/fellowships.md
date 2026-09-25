@@ -1,38 +1,76 @@
 ---
-title: Fellowships - NANDA
-description: Research and builder fellowships for the open agentic web.
+title: Fellowships - Contribute
+description: NANDA Fellowships bring together developers, researchers, and builders from across the globe to advance the Internet of AI Agents.
 ---
 
 # Fellowships
 
-NANDA fellowships support researchers, developers, and ecosystem connectors who are defining and building the open agentic web.
+NANDA Fellowships bring together developers, researchers, and builders from across the globe to advance the Internet of AI Agents. Fellows work closely with core researchers and industry partners to design open-source protocols, build sandboxes, and create services that autonomous agents can discover and use independently.
 
 ---
 
-## Fellowship Programs
+## Upcoming Fellowships
 
-### 1. Research Contributors
-Co-author papers and algorithms on decentralized AI, agent coordination, and agent safety.
+We are currently planning our upcoming fellowship cohorts with partners from academic, enterprise, and venture ecosystems.
 
-### 2. Open-Source Developers
-Build adapters, SDKs, sandboxes, and interoperability tooling across frameworks (LangChain, CrewAI, MCP, A2A).
-
-### 3. Ecosystem Connectors
-Bridge startups, enterprises, civic organizations, and academic institutions into open agentic networks.
+If you are interested in hosting, sponsoring, or partnering for a fellowship track, reach out to us at [contact@projectnanda.org](mailto:contact@projectnanda.org).
 
 ---
 
-## Funded Cohorts
+## Previous Fellowships
 
-### Radius × Project NANDA Fellowship
-Fellows tackle agent-to-agent networking, harden agent transactions, and ship open infrastructure for the community.
+<div class="nanda-fellowships-list">
 
-- **For Fellows:** Scope protocol work with senior researchers and mentors, and demo production-grade multi-agent systems.
-- **For Sponsors:** Strategic impact guiding cohorts toward critical AI infrastructure challenges, with direct access to open-source artifacts and talent.
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZzqvTgx3CmXuoqlq83SKta1XI2ir5hIp6HaYFMRJzFYwwWg/viewform" target="_blank" rel="noopener noreferrer" class="nanda-fellowship-card">
+    <div class="nanda-fellowship-header">
+      <div class="nanda-fellowship-title">Hexaware x Project NANDA <span class="nanda-btn-arrow">↗</span></div>
+      <div class="nanda-fellowship-partner">Hexaware Technologies</div>
+    </div>
+    <div class="nanda-fellowship-desc">Enterprise developer fellowship partnering with Hexaware to architect scalable agentic workflows, autonomous data bridges, and multi-agent infrastructure.</div>
+    <div class="nanda-fellowship-features">
+      <span class="nanda-fellowship-feature"><strong>Status:</strong> Registration Closed (Kickoff Soon)</span>
+      <span class="nanda-fellowship-feature"><strong>Track:</strong> Enterprise Agentic AI</span>
+      <span class="nanda-fellowship-feature"><strong>Format:</strong> Collaborative Fellowship</span>
+    </div>
+  </a>
 
----
+  <a href="https://www.linkedin.com/posts/projectnanda_we-just-wrapped-up-our-radius-x-project-nanda-activity-7393710154266918912-7zPh" target="_blank" rel="noopener noreferrer" class="nanda-fellowship-card">
+    <div class="nanda-fellowship-header">
+      <div class="nanda-fellowship-title">Radius x Project NANDA <span class="nanda-btn-arrow">↗</span></div>
+      <div class="nanda-fellowship-partner">Radius</div>
+    </div>
+    <div class="nanda-fellowship-desc">Research and engineering cohort focused on hardening agent-to-agent networking, transaction reliability, and decentralized multi-agent infrastructure.</div>
+    <div class="nanda-fellowship-features">
+      <span class="nanda-fellowship-feature"><strong>Status:</strong> Cohort Completed</span>
+      <span class="nanda-fellowship-feature"><strong>Track:</strong> A2A Networking &amp; Transactions</span>
+      <span class="nanda-fellowship-feature"><strong>Achievement:</strong> Production Protocol Demos Shipped</span>
+    </div>
+  </a>
 
-## Apply & Inquire
+  <a href="https://tresata.ai/careers/project-nanda-developer-fellowship-program" target="_blank" rel="noopener noreferrer" class="nanda-fellowship-card">
+    <div class="nanda-fellowship-header">
+      <div class="nanda-fellowship-title">Tresata x Project NANDA <span class="nanda-btn-arrow">↗</span></div>
+      <div class="nanda-fellowship-partner">Tresata AI</div>
+    </div>
+    <div class="nanda-fellowship-desc">Inaugural developer fellowship program advancing data intelligence, unified entity resolution, and autonomous data backbones for the Internet of AI Agents.</div>
+    <div class="nanda-fellowship-features">
+      <span class="nanda-fellowship-feature"><strong>Stipend:</strong> $15,000 per Fellow</span>
+      <span class="nanda-fellowship-feature"><strong>Duration:</strong> 3 Months (Full-Time)</span>
+      <span class="nanda-fellowship-feature"><strong>Cohort:</strong> 5 Selected Developers</span>
+    </div>
+  </a>
 
-- [Apply for a Fellowship Cohort](https://docs.google.com/forms/d/e/1FAIpQLScoYg90Ex5IOpBzuSxbnjwjSssJD4rw5U2GpShxACE5t0N4Lw/viewform)
-- [Inquire About Fellowship Sponsorships](mailto:ashutosh@agenticnet.org?subject=Project%20NANDA%20Fellowship%20Sponsorship)
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoFIsDufZIwTMZIDtxCgzaCWRdTRBtfIetpj7VlMPB0KjM9A/viewform" target="_blank" rel="noopener noreferrer" class="nanda-fellowship-card">
+    <div class="nanda-fellowship-header">
+      <div class="nanda-fellowship-title">Jan AI Residency <span class="nanda-btn-arrow">↗</span></div>
+      <div class="nanda-fellowship-partner">Jan AI</div>
+    </div>
+    <div class="nanda-fellowship-desc">Hands-on engineering residency dedicated to local and on-device agentic AI, privacy-preserving desktop execution, and open protocol adapters.</div>
+    <div class="nanda-fellowship-features">
+      <span class="nanda-fellowship-feature"><strong>Track:</strong> Local &amp; On-Device AI Agents</span>
+      <span class="nanda-fellowship-feature"><strong>Duration:</strong> Intensive Residency Track</span>
+      <span class="nanda-fellowship-feature"><strong>Format:</strong> Open-Source Engineering &amp; Research</span>
+    </div>
+  </a>
+
+</div>

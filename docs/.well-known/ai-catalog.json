@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agenticnet.org/schemas/ai-catalog-v1.json",
+  "version": "1.0.0",
+  "publisher": "Project NANDA",
+  "catalog": {
+    "identity": "projectnanda.org",
+    "updated_at": "2026-09-25T19:00:00Z",
+    "agents": [
+      {
+        "id": "nanda-core",
+        "name": "Project NANDA Documentation Agent",
+        "agent_card": "https://projectnanda.org/.well-known/agent-card.json",
+        "agentfacts": "https://projectnanda.org/.well-known/agentfacts.json",
+        "mcp": "https://projectnanda.org/.well-known/mcp.json"
+      }
+    ]
+  }
+}
