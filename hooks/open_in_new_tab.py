@@ -86,19 +86,24 @@ def on_post_page(output, page, config):
                     classes.append("nanda-has-arrow")
                 a["class"] = classes
         else:
-            # Internal links must open in the same tab
-            if a.get("target") == "_blank":
-                del a["target"]
-            rel = a.get("rel")
-            if rel:
-                if isinstance(rel, list):
-                    rel = [r for r in rel if r not in ("noopener", "noreferrer")]
-                    if rel:
-                        a["rel"] = rel
-                    else:
+            # Internal documents (e.g. PDF) should open in a new tab
+            if href.lower().endswith(".pdf"):
+                a["target"] = "_blank"
+                a["rel"] = "noopener noreferrer"
+            else:
+                # Internal page links must open in the same tab
+                if a.get("target") == "_blank":
+                    del a["target"]
+                rel = a.get("rel")
+                if rel:
+                    if isinstance(rel, list):
+                        rel = [r for r in rel if r not in ("noopener", "noreferrer")]
+                        if rel:
+                            a["rel"] = rel
+                        else:
+                            del a["rel"]
+                    elif rel in ("noopener noreferrer", "noreferrer noopener", "noopener", "noreferrer"):
                         del a["rel"]
-                elif rel in ("noopener noreferrer", "noreferrer noopener", "noopener", "noreferrer"):
-                    del a["rel"]
 
     # Sanitize any accidental double redirect symbols in all text nodes
     for text_node in soup.find_all(string=True):

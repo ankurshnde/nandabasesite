@@ -56,9 +56,14 @@ def on_pre_build(config):
                 print(f"[NANDA Hook] Warning: could not process {rel_path}: {e}")
 
     llms_full_path = os.path.join(docs_dir, "llms-full.txt")
+    new_content = "\n".join(full_text_parts)
     try:
-        with open(llms_full_path, "w", encoding="utf-8") as f:
-            f.write("\n".join(full_text_parts))
+        if os.path.exists(llms_full_path):
+            with open(llms_full_path, "r", encoding="utf-8") as f:
+                if f.read() == new_content:
+                    return
+        with open(llms_full_path, "w", encoding="utf-8", newline="\n") as f:
+            f.write(new_content)
     except Exception as e:
         print(f"[NANDA Hook] Warning: could not write llms-full.txt: {e}")
 
