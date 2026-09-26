@@ -103,12 +103,11 @@ Project NANDA’s roadmap describes the development of an Internet of AI Agents 
 
 ## What Project NANDA includes
 
-* **NANDA Index**: A federated, multi-operator directory of pointers from identity to authoritative source. Think of it as a quilt of independently run indexes, not one central database.   
-* **AgentFacts**: A signed capability record for each agent: what it does, how to reach it, and whether it's still valid.   
-* **Federated resolution architecture**: Separates *where to look* from *what an agent can do*, so no single registry has to hold every answer.   
-* **NANDA Adapter**: An open-source bridge that brings an existing agent — built with frameworks like LangChain or CrewAI, or custom logic — onto the network and makes it discoverable.   
-* **NEST (NANDA Exchange Sandbox & Testnet)**: An engine and command-line interface for building, testing, and replaying multi-agent scenarios. It is a test and integration environment, not the universal runtime required to invoke an agent on the open web.  
-* **Nanda Town**: An open-source sandbox built around NEST for designing and running multi-agent experiments. A scenario defines agents, roles, rules, failures, protocol-layer choices, and metrics in YAML; Nanda Town runs it and records interaction traces as JSON for inspection or replay.
+* **[NANDA Index ↗](https://nandaindex.org/)** A federated, multi-operator directory of pointers from identity to authoritative source. Think of it as a quilt of independently run indexes, not one central database.   
+* **[AgentFacts ↗](https://host39.org/)** A signed capability record for each agent: what it does, how to reach it, and whether it's still valid.   
+* **[NANDA Adapter ↗](https://github.com/projnanda/adapter)** An open-source bridge that brings an existing agent — built with frameworks like LangChain or CrewAI, or custom logic — onto the network and makes it discoverable.   
+* **[NEST (NANDA Exchange Sandbox & Testnet) ↗](https://nest.projectnanda.org/)** An engine and command-line interface for building, testing, and replaying multi-agent scenarios. It is a test and integration environment, not the universal runtime required to invoke an agent on the open web.  
+* **[Nanda Town ↗](https://nandatown.projectnanda.org/)** An open-source sandbox built around NEST for designing and running multi-agent experiments. A scenario defines agents, roles, rules, failures, protocol-layer choices, and metrics in YAML; Nanda Town runs it and records interaction traces as JSON for inspection or replay.
 
 ---
 
