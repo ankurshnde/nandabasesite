@@ -164,64 +164,112 @@ Universal discovery and verified agent coordination across decentralized ecosyst
 
 Cloud, research, infrastructure, safety, and venture leaders building the agent ecosystem:
 
-<div class="nanda-speakers-grid">
+<div class="nanda-portrait-grid nanda-portrait-grid--3col">
   <!-- 1. Ramesh Raskar -->
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Ramesh Raskar.jpeg" alt="Prof. Ramesh Raskar" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">Prof. Ramesh Raskar</div>
-      <div class="nanda-speaker-title">MIT Media Lab &bull; Founder, Project NANDA</div>
-      <a href="https://youtu.be/yXxHb3LMygw" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
+  <div class="nanda-portrait-card">
+    <div class="nanda-portrait-media">
+      <img src="assets/advisors/Ramesh%20Raskar.jpeg" alt="Prof. Ramesh Raskar" class="nanda-portrait-img" loading="lazy">
+    </div>
+    <div class="nanda-portrait-content">
+      <div class="nanda-portrait-name">Prof. Ramesh Raskar</div>
+      <div class="nanda-portrait-role">MIT Media Lab</div>
+      <div class="nanda-portrait-org">Founder, Project NANDA</div>
+      <div class="nanda-portrait-actions">
+        <a href="https://youtu.be/yXxHb3LMygw" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch Keynote</span>
+        </a>
+      </div>
     </div>
   </div>
 
   <!-- 2. John Roese -->
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/John Roese.jpeg" alt="John Roese" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">John Roese</div>
-      <div class="nanda-speaker-title">Global CTO &amp; Chief AI Officer, Dell</div>
-      <a href="https://youtu.be/WJ3xGAKqmGs" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
+  <div class="nanda-portrait-card">
+    <div class="nanda-portrait-media">
+      <img src="assets/advisors/John%20Roese.jpeg" alt="John Roese" class="nanda-portrait-img" loading="lazy">
+    </div>
+    <div class="nanda-portrait-content">
+      <div class="nanda-portrait-name">John Roese</div>
+      <div class="nanda-portrait-role">Global CTO &amp; Chief AI Officer</div>
+      <div class="nanda-portrait-org">Dell Technologies</div>
+      <div class="nanda-portrait-actions">
+        <a href="https://youtu.be/WJ3xGAKqmGs" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch Keynote</span>
+        </a>
+      </div>
     </div>
   </div>
 
   <!-- 3. R.V. Guha -->
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Guha.jpg" alt="R.V. Guha" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">R.V. Guha</div>
-      <div class="nanda-speaker-title">Technical Fellow, Microsoft &bull; NLWeb</div>
-      <a href="https://www.youtube.com/watch?v=P0YKIRD8eQk" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
+  <div class="nanda-portrait-card">
+    <div class="nanda-portrait-media">
+      <img src="assets/advisors/Guha.jpg" alt="R.V. Guha" class="nanda-portrait-img" loading="lazy">
+    </div>
+    <div class="nanda-portrait-content">
+      <div class="nanda-portrait-name">R.V. Guha</div>
+      <div class="nanda-portrait-role">Technical Fellow</div>
+      <div class="nanda-portrait-org">Microsoft &bull; Creator, NLWeb</div>
+      <div class="nanda-portrait-actions">
+        <a href="https://www.youtube.com/watch?v=P0YKIRD8eQk" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch Keynote</span>
+        </a>
+      </div>
     </div>
   </div>
 
   <!-- 4. Jessica Rosenworcel -->
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Jessica Rosenworcel.jpg" alt="Jessica Rosenworcel" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">Jessica Rosenworcel</div>
-      <div class="nanda-speaker-title">Former Chair, FCC</div>
-      <a href="https://youtu.be/qQebYJcITno" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
+  <div class="nanda-portrait-card">
+    <div class="nanda-portrait-media">
+      <img src="assets/advisors/Jessica%20Rosenworcel.jpg" alt="Jessica Rosenworcel" class="nanda-portrait-img" loading="lazy">
+    </div>
+    <div class="nanda-portrait-content">
+      <div class="nanda-portrait-name">Jessica Rosenworcel</div>
+      <div class="nanda-portrait-role">Former Chairwoman</div>
+      <div class="nanda-portrait-org">FCC (Federal Communications Commission)</div>
+      <div class="nanda-portrait-actions">
+        <a href="https://youtu.be/qQebYJcITno" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch Keynote</span>
+        </a>
+      </div>
     </div>
   </div>
 
   <!-- 5. Peeyush Aggarwal -->
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Peeyush Aggarwal.jpeg" alt="Peeyush Aggarwal" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">Peeyush Aggarwal</div>
-      <div class="nanda-speaker-title">Partner, Deloitte UK</div>
-      <a href="https://www.youtube.com/watch?v=AZQKop8kPV4" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
+  <div class="nanda-portrait-card">
+    <div class="nanda-portrait-media">
+      <img src="assets/advisors/Peeyush%20Aggarwal.jpeg" alt="Peeyush Aggarwal" class="nanda-portrait-img" loading="lazy">
+    </div>
+    <div class="nanda-portrait-content">
+      <div class="nanda-portrait-name">Peeyush Aggarwal</div>
+      <div class="nanda-portrait-role">Partner</div>
+      <div class="nanda-portrait-org">Deloitte UK</div>
+      <div class="nanda-portrait-actions">
+        <a href="https://www.youtube.com/watch?v=AZQKop8kPV4" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch Keynote</span>
+        </a>
+      </div>
     </div>
   </div>
 
   <!-- 6. Nick Cooper -->
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Nick Cooper.jpeg" alt="Nick Cooper" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">Nick Cooper</div>
-      <div class="nanda-speaker-title">Member of Technical Staff, OpenAI</div>
-      <a href="https://youtu.be/S2ksXKHbOUU" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
+  <div class="nanda-portrait-card">
+    <div class="nanda-portrait-media">
+      <img src="assets/advisors/Nick%20Cooper.jpeg" alt="Nick Cooper" class="nanda-portrait-img" loading="lazy">
+    </div>
+    <div class="nanda-portrait-content">
+      <div class="nanda-portrait-name">Nick Cooper</div>
+      <div class="nanda-portrait-role">Member of Technical Staff</div>
+      <div class="nanda-portrait-org">OpenAI</div>
+      <div class="nanda-portrait-actions">
+        <a href="https://youtu.be/S2ksXKHbOUU" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <span>Watch Keynote</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
