@@ -5,33 +5,6 @@ description: Project NANDA is an open initiative building foundational discovery
 
 # Networked AI Agents in a Decentralized Architecture {: .nanda-main-title }
 
-<div class="nanda-hero-mission">
-  <p>The future isn't just AI — it's <strong>trillions of AI agents</strong> collaborating across the open web, securely.</p>
-</div>
-
-<div class="nanda-badge-group">
-  <a href="https://www.youtube.com/@ProjectNANDA" target="_blank" rel="noopener noreferrer" class="nanda-badge-pill">
-    <svg viewBox="0 0 24 24" width="14" height="14" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-    YouTube
-  </a>
-  <a href="https://discord.gg/BxnPBEqd88" target="_blank" rel="noopener noreferrer" class="nanda-badge-pill">
-    <svg viewBox="0 0 24 24" width="14" height="14" fill="#5865F2"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.894.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-    Discord
-  </a>
-  <a href="https://www.linkedin.com/company/projectnanda/" target="_blank" rel="noopener noreferrer" class="nanda-badge-pill">
-    <svg viewBox="0 0 24 24" width="14" height="14" fill="#0A66C2"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 1.63 1.64c0-.9-.73-1.64-1.63-1.64Z"/></svg>
-    LinkedIn
-  </a>
-  <a href="https://arxiv.org/abs/2507.14263" target="_blank" rel="noopener noreferrer" class="nanda-badge-pill">
-    <svg viewBox="0 0 24 24" width="14" height="14" fill="#B31B1B"><path d="M19 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2m-5 4h3v2h-3zm0 4h3v2h-3zm0 4h3v2h-3zM7 6h5v12H7z"/></svg>
-    arXiv Papers
-  </a>
-  <a href="https://github.com/projnanda" target="_blank" rel="noopener noreferrer" class="nanda-badge-pill">
-    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-    GitHub
-  </a>
-</div>
-
 **Project NANDA** is an open initiative pioneering the foundational infrastructure for the Internet of AI Agents — enabling autonomous systems to discover, verify, interact, and collaborate seamlessly across the global web.
 
 **Core Problem:** How can billions of AI agents discover each other, verify capabilities, and coordinate tasks without creating centralized bottlenecks or security vulnerabilities?
@@ -76,7 +49,7 @@ Two core components make universal discovery possible:
 <div class="nanda-updates-feed">
   <div class="nanda-update-card">
     <div class="nanda-update-meta">
-      <span class="nanda-update-pill">Hackathon</span>
+      <span class="nanda-update-pill"><span class="nanda-live-dot"></span> Live Hackathon</span>
       <span class="nanda-update-when">MIT Media Lab</span>
     </div>
     <div class="nanda-update-title">NandaHack: Agentic AI Hackathon</div>
@@ -86,7 +59,7 @@ Two core components make universal discovery possible:
 
   <div class="nanda-update-card">
     <div class="nanda-update-meta">
-      <span class="nanda-update-pill">Announcement</span>
+      <span class="nanda-update-pill"><span class="nanda-live-dot"></span> Active Protocol</span>
       <span class="nanda-update-when">Provenance Layer</span>
     </div>
     <div class="nanda-update-title">Introducing DataFacts</div>
@@ -96,7 +69,7 @@ Two core components make universal discovery possible:
 
   <div class="nanda-update-card">
     <div class="nanda-update-meta">
-      <span class="nanda-update-pill">Civic Initiative</span>
+      <span class="nanda-update-pill"><span class="nanda-live-dot"></span> Live Pilot</span>
       <span class="nanda-update-when">Massachusetts Pilot</span>
     </div>
     <div class="nanda-update-title">An Agent for Every Bostonian</div>
@@ -163,38 +136,6 @@ Existing domain-based lookup remains the right answer whenever a publisher alrea
 * **Individuals or informal projects** with no domain of their own, whose personal agent may run on any cloud while its descriptor lives elsewhere entirely.
 
 Project NANDA's position is that the missing piece is not a new protocol but a bootstrap layer that maps identity to the right discovery mechanism before discovery even starts.
-
----
-
-## What Project NANDA includes
-
-* **NANDA Index**: A federated, multi-operator directory of pointers from identity to authoritative source. Think of it as a quilt of independently run indexes, not one central database.
-* **AgentFacts**: A signed capability record for each agent: what it does, how to reach it, and whether it's still valid.
-* **Federated resolution architecture**: Separates *where to look* from *what an agent can do*, so no single registry has to hold every answer.
-* **NANDA Adapter**: An open-source bridge that brings an existing agent — built with frameworks like LangChain or CrewAI, or custom logic — onto the network and makes it discoverable.
-* **NEST (NANDA Exchange Sandbox & Testnet)**: An engine and command-line interface for building, testing, and replaying multi-agent scenarios. It is a test and integration environment, not the universal runtime required to invoke an agent on the open web.
-* **Nanda Town**: An open-source sandbox built around NEST for designing and running multi-agent experiments. A scenario defines agents, roles, rules, failures, protocol-layer choices, and metrics in YAML; Nanda Town runs it and records interaction traces as JSON for inspection or replay.
-
----
-
-## What Project NANDA is not
-
-* **Not an agent runtime or framework** such as LangChain, CrewAI, an ADK, or a model host, and it does not execute agent logic.
-* **Not a replacement for MCP, A2A, DNS** or an enterprise identity provider; those systems remain the mechanism through which agents are actually invoked and authenticated.
-* **Not one central catalog of every agent.** The index is designed as a federation of independently operated registries, not a single owned database.
-* **Not a marketplace** for buying, selling, or ranking agents.
-
----
-
-## How discovery works
-
-Resolution follows a three-hop pattern:
-
-1. A client knows the agent, organization, person, project, or other stable identity it wants to reach.
-2. The NANDA Index points the client to the relevant AgentFacts document, agent card, catalog, registry, gateway, or other approved discovery source.
-3. After discovery, the client uses the agent’s own interface, such as MCP, A2A, HTTPS, or another supported protocol, to communicate with or invoke the agent.
-
-Direct domain-based discovery is used first whenever it already applies. NANDA Index is consulted only for identities that existing systems can't resolve on their own.
 
 ---
 
@@ -315,46 +256,164 @@ Direct domain-based discovery is used first whenever it already applies. NANDA I
 
 Our foundational research outlines the architectural principles, threat models, and protocol designs for the Agentic Web:
 
-| Paper Title | Description | Citation / Link |
-| :--- | :--- | :--- |
-| **Beyond DNS: Unlocking the Internet of AI Agents** | *The foundational paper.* Details the design of the NANDA Index, AgentFacts schema, and Verified Agent Discovery. | [![arXiv](https://img.shields.io/badge/arXiv-2507.14263-B31B1B)](https://arxiv.org/abs/2507.14263) |
-| **Upgrade or Switch: The Need for New Registry** | Analyzes why legacy DNS falls short for autonomous AI agents and evaluates purpose-built registry paradigms. | [![arXiv](https://img.shields.io/badge/arXiv-2506.12003-B31B1B)](https://arxiv.org/abs/2506.12003) |
-| **NANDA Adaptive Resolver** | A dynamic microservice architecture for autonomous agent name resolution in distributed environments. | [![arXiv](https://img.shields.io/badge/arXiv-2508.03113-B31B1B)](https://arxiv.org/abs/2508.03113) |
-| **NANDA in Practice: Enterprise Perspective** | Explores Zero Trust Agentic Access (ZTAA), governance, and compliance for corporate multi-agent deployments. | [![arXiv](https://img.shields.io/badge/arXiv-2508.03101-B31B1B)](https://arxiv.org/abs/2508.03101) |
-| **Survey of AI Agent Registry Solutions** | Compares NANDA, MCP, A2A, and MS Entra across security, scalability, cryptographic trust, and maintainability. | [![arXiv](https://img.shields.io/badge/arXiv-2508.03095-B31B1B)](https://arxiv.org/abs/2508.03095) |
+### Foundation Architecture
+
+<div class="nanda-pub-list">
+  <a href="https://arxiv.org/abs/2507.14263" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">JUL 18, 2025</div>
+    <div class="nanda-pub-title">Beyond DNS: Unlocking the Internet of AI Agents via the NANDA Index and Verified AgentFacts</div>
+  </a>
+
+  <a href="https://arxiv.org/abs/2506.12003" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">JUN 12, 2025</div>
+    <div class="nanda-pub-title">Upgrade or Switch: Do We Need a Next-Gen Trusted Architecture for the Internet of AI Agents?</div>
+  </a>
+
+  <a href="https://arxiv.org/abs/2508.03113" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">AUG 04, 2025</div>
+    <div class="nanda-pub-title">NANDA Adaptive Resolver: Architecture for Dynamic Resolution of AI Agent Names</div>
+  </a>
+
+  <a href="https://arxiv.org/abs/2508.03101" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">AUG 03, 2025</div>
+    <div class="nanda-pub-title">Using the NANDA Index Architecture in Practice: An Enterprise Perspective</div>
+  </a>
+
+  <a href="https://arxiv.org/abs/2508.03095" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">AUG 02, 2025</div>
+    <div class="nanda-pub-title">A Survey of AI Agent Registry Solutions</div>
+  </a>
+</div>
+
+### Interpretable & Specialized Research Papers
+
+<div class="nanda-pub-list">
+  <a href="https://arxiv.org/abs/2505.21550" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">MAY 27, 2025</div>
+    <div class="nanda-pub-title">Collaborative Agentic AI Needs Interoperability Across Ecosystems</div>
+  </a>
+
+  <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5801322" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">OCT 15, 2025</div>
+    <div class="nanda-pub-title">Towards Sandboxes for the Internet of Agents</div>
+  </a>
+
+  <a href="https://arxiv.org/abs/2510.16572" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">OCT 19, 2025</div>
+    <div class="nanda-pub-title">Ripple Effect Protocol: Coordinating Agent Populations</div>
+  </a>
+
+  <a href="https://arxiv.org/abs/2208.12354" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">AUG 24, 2022</div>
+    <div class="nanda-pub-title">Fundamentals of Task-Agnostic Data Valuation</div>
+  </a>
+
+  <a href="https://arxiv.org/abs/2406.04257" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">JUN 07, 2024</div>
+    <div class="nanda-pub-title">Data Measurements for Decentralized Data Markets</div>
+  </a>
+</div>
 
 ---
 
-## Architecture in Action
+## System Architectures and Framework
 
-<div class="nanda-figures-grid">
+Core system blueprints, runtime handshakes, and architectural frameworks:
+
+<div class="nanda-figures-grid nanda-figures-grid--two-col">
+  <!-- Figure 1: Paradigm Shift -->
+  <div class="nanda-figure-card">
+    <div class="nanda-figure-image-wrap">
+      <img src="assets/diagrams/ss5.png" alt="The Paradigm Shift: Traditional Web vs Internet of Agents" loading="lazy">
+    </div>
+    <div class="nanda-figure-content">
+      <div class="nanda-figure-tag">Conceptual Shift</div>
+      <h3 class="nanda-figure-title">The Paradigm Shift: Web of Content vs. Internet of Agents</h3>
+      <p class="nanda-figure-desc">Comparing the reactive, human-mediated Traditional Web (DNS, URLs, browser clients) with the proactive, autonomous, and stateful Internet of AI Agents.</p>
+    </div>
+  </div>
+
+  <!-- Figure 2: Lifecycle Management -->
+  <div class="nanda-figure-card">
+    <div class="nanda-figure-image-wrap">
+      <img src="assets/diagrams/ss8.png" alt="Lifecycle Management: Domain vs Agent Registration" loading="lazy">
+    </div>
+    <div class="nanda-figure-content">
+      <div class="nanda-figure-tag">Lifecycle &amp; Setup</div>
+      <h3 class="nanda-figure-title">Lifecycle Management: Domain vs. Agent Registration</h3>
+      <p class="nanda-figure-desc">The parallel architectural processes of traditional web domain registration vs. decentralized agent discovery, AgentFacts publishing, and live endpoint resolution.</p>
+    </div>
+  </div>
+
+  <!-- Figure 3: Core Stack Architecture -->
+  <div class="nanda-figure-card">
+    <div class="nanda-figure-image-wrap">
+      <img src="assets/diagrams/ss3.png" alt="NANDA Index and AgentFacts System Architecture" loading="lazy">
+    </div>
+    <div class="nanda-figure-content">
+      <div class="nanda-figure-tag">Core Architecture</div>
+      <h3 class="nanda-figure-title">NANDA Index &amp; AgentFacts System Architecture</h3>
+      <p class="nanda-figure-desc">The three-layer discovery stack: Lean Index Anchor Tier (&le;120 bytes), AgentFacts Metadata Tier (signed JSON-LD), and Dynamic Resolution Layer with adaptive load-balancing.</p>
+    </div>
+  </div>
+
+  <!-- Figure 4: Resolution Protocol Flow -->
+  <div class="nanda-figure-card">
+    <div class="nanda-figure-image-wrap">
+      <img src="assets/diagrams/ss4.png" alt="Resolution Protocol and Dual-Path Lookup" loading="lazy">
+    </div>
+    <div class="nanda-figure-content">
+      <div class="nanda-figure-tag">Protocol Flow</div>
+      <h3 class="nanda-figure-title">Resolution Protocol &amp; Dual-Path Lookup</h3>
+      <p class="nanda-figure-desc">Step-by-step cryptographic handshake and dual-path resolution routing through PrimaryFactsURL (direct) and PrivateFactsURL (anonymous/zero-knowledge).</p>
+    </div>
+  </div>
+
+  <!-- Figure 5: Enterprise Infrastructure -->
+  <div class="nanda-figure-card">
+    <div class="nanda-figure-image-wrap">
+      <img src="assets/diagrams/ss9.png" alt="Enterprise Infrastructure Transformation" loading="lazy">
+    </div>
+    <div class="nanda-figure-content">
+      <div class="nanda-figure-tag">Enterprise Architecture</div>
+      <h3 class="nanda-figure-title">Enterprise Infrastructure Transformation</h3>
+      <p class="nanda-figure-desc">Transitioning from legacy enterprise stacks (Firewalls, Reverse Proxies, WAF, CDN) to Agentic Zero-Trust Architectures (ZTAA) with A2A, MCP, and authenticated mesh gateways.</p>
+    </div>
+  </div>
+
+  <!-- Figure 6: Applied Operations Workflow -->
   <div class="nanda-figure-card">
     <div class="nanda-figure-image-wrap">
       <img src="assets/diagrams/ss10.png" alt="Applied Operations Workflow" loading="lazy">
     </div>
     <div class="nanda-figure-content">
-      <h3>Applied Operations</h3>
-      <p>A Product Operations agentic workflow utilizing MCP and A2A protocols across decentralized endpoints.</p>
+      <div class="nanda-figure-tag">Implementation Case</div>
+      <h3 class="nanda-figure-title">Applied Product Operations Workflow</h3>
+      <p class="nanda-figure-desc">Real-world operational scenario illustrating how Product Operations agents autonomously coordinate tasks, invoke MCP tool servers, and exchange data via A2A protocols.</p>
     </div>
   </div>
 
+  <!-- Figure 7: Recursive Resolver -->
   <div class="nanda-figure-card">
     <div class="nanda-figure-image-wrap">
       <img src="assets/diagrams/ss6.png" alt="Recursive Resolution Architecture" loading="lazy">
     </div>
     <div class="nanda-figure-content">
-      <h3>Recursive Resolution</h3>
-      <p>How the NANDA Adaptive Resolver queries decentralized Namespaces, Intermediates, and authoritative registries.</p>
+      <div class="nanda-figure-tag">Resolution Engine</div>
+      <h3 class="nanda-figure-title">Recursive Resolution &amp; Namespace Intermediates</h3>
+      <p class="nanda-figure-desc">Detailed mechanics of the NANDA Adaptive Resolver performing recursive hierarchical resolution across federated namespace authorities and corporate registries.</p>
     </div>
   </div>
 
+  <!-- Figure 8: Connection Negotiation -->
   <div class="nanda-figure-card">
     <div class="nanda-figure-image-wrap">
       <img src="assets/diagrams/ss7.png" alt="Connection Negotiation Flow" loading="lazy">
     </div>
     <div class="nanda-figure-content">
-      <h3>Connection Negotiation</h3>
-      <p>The detailed sequence for establishing mutual cryptographic trust, capability negotiation, and verified transport specs.</p>
+      <div class="nanda-figure-tag">Handshake Protocol</div>
+      <h3 class="nanda-figure-title">Connection Negotiation &amp; Capability Verification</h3>
+      <p class="nanda-figure-desc">The negotiation protocol between discovered agents: verifying signed credentials, agreeing upon encryption ciphers, negotiating payment terms, and establishing runtime sessions.</p>
     </div>
   </div>
 </div>
@@ -365,7 +424,7 @@ Our foundational research outlines the architectural principles, threat models, 
 
 <div class="nanda-speakers-grid">
   <div class="nanda-speaker-card">
-    <img src="assets/headshots/Ramesh Raskar.jpeg" alt="Ramesh Raskar" class="nanda-speaker-img" loading="lazy">
+    <img src="assets/headshots/Ramesh Raskar.jpeg" alt="Prof. Ramesh Raskar" class="nanda-speaker-img" loading="lazy">
     <div class="nanda-speaker-info">
       <div class="nanda-speaker-name">Prof. Ramesh Raskar</div>
       <div class="nanda-speaker-title">MIT Media Lab &bull; Founder, NANDA</div>
@@ -536,14 +595,16 @@ Project NANDA works with leading research universities, global technology enterp
 
 ---
 
-## Where to go next?
+## Get Involved & Connect
 
-* **Researcher**: Learn how to contribute to research, specifications, and working groups through [Get Involved](community/index.md).
-* **Enterprise**: Explore implementations for cross-platform agent discovery and interoperability through [Open Source](developer/open-source.md).
-* **Government officials and Civic Teams**: See public-interest applications through [Civic Agents](https://civicagents.projectnanda.org/).
-* **Developers**: Explore repositories, adapters, tools, and open-source contribution opportunities on [GitHub](https://github.com/projnanda).
-* **Student**: Become a student ambassador and help bring open agent-network research and experimentation to your university through [Student Ambassadors](https://www.nandashapers.org/).
-* **Lead**: Start a local chapter and convene researchers, developers, civic institutions, and builders in your city through [Start a Chapter](community/start-a-chapter.md).
+Join researchers, builders, enterprises, and civic innovators shaping the Internet of AI Agents:
+
+<div class="nanda-action-bar">
+  <a href="community/index.md" class="nanda-action-btn nanda-action-btn--primary">Join Community &rarr;</a>
+  <a href="publication/get-involved.md" class="nanda-action-btn">Get Involved</a>
+  <a href="community/start-a-chapter.md" class="nanda-action-btn">Start a Chapter</a>
+  <a href="https://github.com/projnanda" target="_blank" rel="noopener noreferrer" class="nanda-action-btn">Trade Direct / GitHub ↗</a>
+</div>
 
 ---
 

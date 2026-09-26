@@ -2657,12 +2657,45 @@ footer.md-footer,
   text-decoration: underline;
 }
 
+.nanda-live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: nanda-pulse 1.8s infinite;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+@keyframes nanda-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 5px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
 /* Roadmap Grid */
 .nanda-roadmap-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
   margin: 1.5rem 0 2rem 0;
+}
+
+@media screen and (min-width: 60em) {
+  .nanda-roadmap-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 .nanda-roadmap-card {
@@ -4112,10 +4145,86 @@ footer.md-footer,
   margin: 0 !important;
 }
 
+@media screen and (min-width: 60em) {
+  .nanda-figures-grid,
+  .nanda-figures-grid--two-col {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
 @media screen and (max-width: 48em) {
-  .nanda-figures-grid {
+  .nanda-figures-grid,
+  .nanda-figures-grid--two-col {
     grid-template-columns: 1fr !important;
   }
+}
+
+/* Action Bar & Single-line buttons */
+.nanda-action-bar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  margin: 1.5rem 0 2rem 0 !important;
+}
+
+.nanda-action-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  padding: 0.65rem 1.35rem !important;
+  border-radius: 8px !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  color: var(--md-default-fg-color) !important;
+  background-color: var(--nanda-card-bg) !important;
+  border: 1px solid var(--nanda-border) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.18s ease !important;
+}
+
+.nanda-action-btn:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+}
+
+.nanda-action-btn--primary {
+  background-color: var(--md-default-fg-color) !important;
+  color: var(--md-default-bg-color) !important;
+  border-color: var(--md-default-fg-color) !important;
+}
+
+.nanda-action-btn--primary:hover {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-action-btn {
+  background-color: #262626 !important;
+  border-color: #383838 !important;
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-action-btn:hover {
+  background-color: #2D2D2D !important;
+  border-color: #555555 !important;
+  color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-action-btn--primary {
+  background-color: #FFFFFF !important;
+  color: #121212 !important;
+  border-color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-action-btn--primary:hover {
+  background-color: #E5E5E5 !important;
+  color: #000000 !important;
 }
 
 /* ==========================================================================
