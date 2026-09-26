@@ -1376,12 +1376,12 @@ footer.md-footer,
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
-.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):hover {
+.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):not(.nanda-social-square-btn):not(.nanda-action-btn):hover {
   color: #a16207;
   text-decoration-color: #ca8a04;
 }
 
-.md-typeset a[target="_blank"]:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):not(.nanda-has-arrow)::after {
+.md-typeset a[target="_blank"]:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):not(.nanda-social-square-btn):not(.nanda-action-btn):not(.nanda-has-arrow)::after {
   content: " ↗";
   display: inline-block;
   font-size: 0.8em;
@@ -1390,6 +1390,14 @@ footer.md-footer,
   margin-left: 0.16rem;
   color: inherit;
   opacity: 0.85;
+}
+
+.nanda-social-square-btn::after,
+.nanda-action-btn::after,
+.nanda-action-bar a::after,
+.nanda-social-square-grid a::after {
+  display: none !important;
+  content: "" !important;
 }
 
 /* ==========================================================================
@@ -4213,35 +4221,43 @@ footer.md-footer,
   color: #FFFFFF !important;
 }
 
-/* Social Square Buttons for Community Momentum (2-Row, 5-Column Grid, Sharp Corners) */
+/* Social Square Buttons for Community Momentum (2-Row, 5-Column Grid, Sharp Corners, 100% Width) */
 .nanda-social-square-grid,
 .nanda-social-square-bar {
   display: grid !important;
   grid-template-columns: repeat(5, 1fr) !important;
-  gap: 0.65rem !important;
-  max-width: 580px !important;
+  gap: 0.75rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
   margin: 1.25rem 0 2.5rem 0 !important;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .nanda-social-square-grid,
   .nanda-social-square-bar {
-    gap: 0.4rem !important;
-    max-width: 100% !important;
+    gap: 0.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nanda-social-square-grid,
+  .nanda-social-square-bar {
+    gap: 0.35rem !important;
   }
 }
 
 .nanda-social-square-btn {
+  width: 100% !important;
   aspect-ratio: 1 / 1 !important;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.35rem !important;
-  padding: 0.5rem 0.2rem !important;
+  gap: 0.45rem !important;
+  padding: 0.6rem 0.25rem !important;
   border-radius: 0 !important;
   font-family: 'Outfit', sans-serif !important;
-  font-size: 0.72rem !important;
+  font-size: clamp(0.7rem, 1.1vw, 0.88rem) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
   text-decoration: none !important;
@@ -4253,6 +4269,12 @@ footer.md-footer,
   text-align: center !important;
   white-space: nowrap !important;
   overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.nanda-social-square-btn::after {
+  display: none !important;
+  content: "" !important;
 }
 
 @media (max-width: 480px) {
@@ -4269,8 +4291,8 @@ footer.md-footer,
 
 .nanda-social-square-btn svg {
   display: block !important;
-  width: 22px !important;
-  height: 22px !important;
+  width: clamp(22px, 2.5vw, 28px) !important;
+  height: clamp(22px, 2.5vw, 28px) !important;
   flex-shrink: 0 !important;
 }
 
