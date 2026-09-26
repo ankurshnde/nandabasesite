@@ -91,6 +91,14 @@ Two core components make universal discovery possible:
 
 ## Development Roadmap
 
+Project NANDA’s roadmap describes the development of an Internet of AI Agents across three foundational phases:
+
+<div class="nanda-diagram-container" markdown="1">
+
+![Development Roadmap - Three Phases of Internet of AI Agents](assets/research/phases-diagram-1.png){ loading=lazy }
+
+</div>
+
 <div class="nanda-roadmap-grid">
   <div class="nanda-roadmap-card">
     <div class="nanda-roadmap-badge">Phase 1</div>
@@ -134,82 +142,140 @@ Two core components make universal discovery possible:
 
 ---
 
-## Why Project NANDA exists
+## What Project NANDA includes
 
-AI agents are being published through many useful systems such as AI Catalog entries, domain records, gateway registries, and sector-specific directories, each solving real problems for the community. This is a healthy innovation, but it also produces discovery islands: a client that knows an identity often has no way to tell which of these mechanisms, if any, is authoritative for it.
+Universal discovery and verified agent coordination across decentralized ecosystems:
 
-Existing domain-based lookup remains the right answer whenever a publisher already owns a domain for that identity. It falls short in three common cases:
+<div class="nanda-includes-grid">
+  <div class="nanda-include-card">
+    <div class="nanda-include-icon">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24m-14.14 0 4.24-4.24m5.66-5.66 4.24-4.24"/></svg>
+    </div>
+    <div class="nanda-include-body">
+      <h3>NANDA Index</h3>
+      <p>A federated, multi-operator directory of pointers mapping stable identity to authoritative discovery source. A resilient quilt of independently operated indexes rather than a single centralized database.</p>
+    </div>
+  </div>
 
-* **Enterprises** running mixed stacks where some divisions use AI Catalog and others use DNS-AID or legacy registries.
-* **Small and mid-sized businesses** whose agents run on one cloud provider while their agent cards are hosted by a third party.
-* **Individuals or informal projects** with no domain of their own, whose personal agent may run on any cloud while its descriptor lives elsewhere entirely.
+  <div class="nanda-include-card">
+    <div class="nanda-include-icon">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><line x1="15" y1="8" x2="17" y2="8"/><line x1="15" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="17" y2="16"/></svg>
+    </div>
+    <div class="nanda-include-body">
+      <h3>AgentFacts</h3>
+      <p>A signed, cryptographically verifiable capability record for each agent — detailing what it does, how to reach its endpoints, who published it, and whether its credentials are still valid.</p>
+    </div>
+  </div>
 
-Project NANDA's position is that the missing piece is not a new protocol but a bootstrap layer that maps identity to the right discovery mechanism before discovery even starts.
+  <div class="nanda-include-card">
+    <div class="nanda-include-icon">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/><circle cx="8" cy="12" r="2"/></svg>
+    </div>
+    <div class="nanda-include-body">
+      <h3>Federated Resolution Architecture</h3>
+      <p>Decouples <em>where to look</em> from <em>what an agent can do</em>. Eliminates monolithic gatekeepers so that no single registry or vendor holds the keys to the agent ecosystem.</p>
+    </div>
+  </div>
+
+  <div class="nanda-include-card">
+    <div class="nanda-include-icon">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    </div>
+    <div class="nanda-include-body">
+      <h3>NANDA Adapter &amp; SDK</h3>
+      <p>An open-source bridge that connects existing agents — built with LangChain, CrewAI, AutoGen, or custom runtime logic — directly to the NANDA discovery mesh, making them persistently reachable.</p>
+    </div>
+  </div>
+
+  <div class="nanda-include-card">
+    <div class="nanda-include-icon">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+    </div>
+    <div class="nanda-include-body">
+      <h3>NEST (Exchange Sandbox &amp; TestNet)</h3>
+      <p>An execution engine and CLI for simulating, testing, and replaying complex multi-agent interactions against common discovery, identity, and coordination infrastructure before live web deployment.</p>
+    </div>
+  </div>
+
+  <div class="nanda-include-card">
+    <div class="nanda-include-icon">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+    </div>
+    <div class="nanda-include-body">
+      <h3>Nanda Town</h3>
+      <p>An open-source multi-agent simulation sandbox built on NEST. Configure agents, roles, failure modes, and protocol choices in declarative YAML, and inspect interaction telemetry traces as structured JSON.</p>
+    </div>
+  </div>
+</div>
 
 ---
 
-## Key Voices Leading the Agentic Web
+## Words from Advisors
 
-<div class="nanda-video-grid">
-  <div class="nanda-video-card">
-    <div class="nanda-video-embed">
-      <iframe src="https://www.youtube.com/embed/S2ksXKHbOUU" title="Nick Cooper - Composable MCP" allowfullscreen loading="lazy"></iframe>
+Insights and perspectives on the emerging Agentic Web from leaders across AI research, industry, and governance:
+
+<div class="nanda-advisors-marquee-container">
+  <div class="nanda-advisors-marquee-track">
+    <div class="nanda-advisor-card">
+      <img src="assets/words-from-advisors/abhishek-mehta.png" alt="Abhishek Mehta" loading="lazy">
     </div>
-    <div class="nanda-video-body">
-      <div class="nanda-video-speaker">Nick Cooper</div>
-      <div class="nanda-video-role">Member of Technical Staff, OpenAI</div>
+    <div class="nanda-advisor-card">
+      <img src="assets/words-from-advisors/jessica-rosenworcel.png" alt="Jessica Rosenworcel" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card">
+      <img src="assets/words-from-advisors/nick-cooper.png" alt="Nick Cooper" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card">
+      <img src="assets/words-from-advisors/pradyumna-chari.png" alt="Pradyumna Chari" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card">
+      <img src="assets/words-from-advisors/raghu-bala.png" alt="Raghu Bala" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card">
+      <img src="assets/words-from-advisors/rao-surapaneni.png" alt="Rao Surapaneni" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card">
+      <img src="assets/words-from-advisors/santi-garces.png" alt="Santi Garces" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card">
+      <img src="assets/words-from-advisors/vijay-guntur.png" alt="Vijay Guntur" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card">
+      <img src="assets/words-from-advisors/zafer-sahinoglu.png" alt="Zafer Sahinoglu" loading="lazy">
+    </div>
+    
+    <div class="nanda-advisor-card" aria-hidden="true">
+      <img src="assets/words-from-advisors/abhishek-mehta.png" alt="" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card" aria-hidden="true">
+      <img src="assets/words-from-advisors/jessica-rosenworcel.png" alt="" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card" aria-hidden="true">
+      <img src="assets/words-from-advisors/nick-cooper.png" alt="" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card" aria-hidden="true">
+      <img src="assets/words-from-advisors/pradyumna-chari.png" alt="" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card" aria-hidden="true">
+      <img src="assets/words-from-advisors/raghu-bala.png" alt="" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card" aria-hidden="true">
+      <img src="assets/words-from-advisors/rao-surapaneni.png" alt="" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card" aria-hidden="true">
+      <img src="assets/words-from-advisors/santi-garces.png" alt="" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card" aria-hidden="true">
+      <img src="assets/words-from-advisors/vijay-guntur.png" alt="" loading="lazy">
+    </div>
+    <div class="nanda-advisor-card" aria-hidden="true">
+      <img src="assets/words-from-advisors/zafer-sahinoglu.png" alt="" loading="lazy">
     </div>
   </div>
+</div>
 
-  <div class="nanda-video-card">
-    <div class="nanda-video-embed">
-      <iframe src="https://www.youtube.com/embed/yXxHb3LMygw" title="Prof. Ramesh Raskar - Project NANDA" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="nanda-video-body">
-      <div class="nanda-video-speaker">Prof. Ramesh Raskar</div>
-      <div class="nanda-video-role">MIT Media Lab &bull; Founder, Project NANDA</div>
-    </div>
-  </div>
-
-  <div class="nanda-video-card">
-    <div class="nanda-video-embed">
-      <iframe src="https://www.youtube.com/embed/4oBITv0hbs" title="Rao Surapaneni - A2A Protocol Standard" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="nanda-video-body">
-      <div class="nanda-video-speaker">Rao Surapaneni</div>
-      <div class="nanda-video-role">VP &amp; GM, Google Cloud</div>
-    </div>
-  </div>
-
-  <div class="nanda-video-card">
-    <div class="nanda-video-embed">
-      <iframe src="https://www.youtube.com/embed/MFWHSwD-EZ8" title="Paul V. Mockapetris - DNS & Agents" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="nanda-video-body">
-      <div class="nanda-video-speaker">Paul V. Mockapetris</div>
-      <div class="nanda-video-role">Inventor of the Domain Name System (DNS)</div>
-    </div>
-  </div>
-
-  <div class="nanda-video-card">
-    <div class="nanda-video-embed">
-      <iframe src="https://www.youtube.com/embed/SA3n2o5q07c" title="Prof. Pattie Maes - History of Autonomous Agents" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="nanda-video-body">
-      <div class="nanda-video-speaker">Prof. Pattie Maes</div>
-      <div class="nanda-video-role">Professor, MIT Media Lab</div>
-    </div>
-  </div>
-
-  <div class="nanda-video-card">
-    <div class="nanda-video-embed">
-      <iframe src="https://www.youtube.com/embed/lrklrvn8P7A" title="Fatih Porikli - On-Device Agentic AI" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="nanda-video-body">
-      <div class="nanda-video-speaker">Fatih Porikli</div>
-      <div class="nanda-video-role">Senior Director of Engineering, Qualcomm</div>
-    </div>
-  </div>
+<div style="text-align: center; margin: 1.5rem 0 2.5rem 0;">
+  <a href="people/team/" class="nanda-action-btn">See More Advisors &amp; Key Voices &rarr;</a>
 </div>
 
 ---
@@ -288,15 +354,16 @@ Our foundational research outlines the architectural principles, threat models, 
     <div class="nanda-pub-title">Using the NANDA Index Architecture in Practice: An Enterprise Perspective</div>
   </a>
 
+  <a href="https://github.com/projnanda/research/blob/main/v0.2%20NANDA%20%2B%20ANS%20Security%20Blueprint_%20A%20Federated%20Registry%20Architecture%20for%20Secure%2C%20Capability-Aware%20Agent%20Discovery.pdf" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">OCT 22, 2025</div>
+    <div class="nanda-pub-title">NANDA+ANS Security Blueprint: A Federated Registry Architecture for Secure, Capability-Aware Agent Discovery</div>
+  </a>
+
   <a href="https://arxiv.org/abs/2508.03095" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
     <div class="nanda-pub-date">AUG 02, 2025</div>
     <div class="nanda-pub-title">A Survey of AI Agent Registry Solutions</div>
   </a>
-</div>
 
-### Interpretable & Specialized Research Papers
-
-<div class="nanda-pub-list">
   <a href="https://arxiv.org/abs/2505.21550" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
     <div class="nanda-pub-date">MAY 27, 2025</div>
     <div class="nanda-pub-title">Collaborative Agentic AI Needs Interoperability Across Ecosystems</div>
@@ -306,10 +373,24 @@ Our foundational research outlines the architectural principles, threat models, 
     <div class="nanda-pub-date">OCT 15, 2025</div>
     <div class="nanda-pub-title">Towards Sandboxes for the Internet of Agents</div>
   </a>
+</div>
 
+### Interpretable & Specialized Research Papers
+
+<div class="nanda-pub-list">
   <a href="https://arxiv.org/abs/2510.16572" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
     <div class="nanda-pub-date">OCT 19, 2025</div>
     <div class="nanda-pub-title">Ripple Effect Protocol: Coordinating Agent Populations</div>
+  </a>
+
+  <a href="https://arxiv.org/abs/2510.25137" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">OCT 28, 2025</div>
+    <div class="nanda-pub-title">The Iceberg Index: Measuring Workforce Exposure in the AI Economy</div>
+  </a>
+
+  <a href="https://arxiv.org/abs/2406.04257" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">JUN 07, 2024</div>
+    <div class="nanda-pub-title">Data Measurements for Decentralized Data Markets</div>
   </a>
 
   <a href="https://arxiv.org/abs/2208.12354" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
@@ -317,10 +398,14 @@ Our foundational research outlines the architectural principles, threat models, 
     <div class="nanda-pub-title">Fundamentals of Task-Agnostic Data Valuation</div>
   </a>
 
-  <a href="https://arxiv.org/abs/2406.04257" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
-    <div class="nanda-pub-date">JUN 07, 2024</div>
-    <div class="nanda-pub-title">Data Measurements for Decentralized Data Markets</div>
+  <a href="https://arxiv.org/abs/1812.00564" target="_blank" rel="noopener noreferrer" class="nanda-pub-item">
+    <div class="nanda-pub-date">DEC 03, 2018</div>
+    <div class="nanda-pub-title">Split Learning for Health: Distributed Deep Learning Without Sharing Raw Patient Data</div>
   </a>
+</div>
+
+<div style="text-align: center; margin: 1.75rem 0 2.5rem 0;">
+  <a href="publication/get-involved/" class="nanda-action-btn">Get Involved in Research Lab &rarr;</a>
 </div>
 
 ---
@@ -328,22 +413,6 @@ Our foundational research outlines the architectural principles, threat models, 
 ## System Architectures and Framework
 
 Core system blueprints, runtime handshakes, and architectural frameworks:
-
-<div class="nanda-presentation-container">
-  <div class="nanda-presentation-toolbar">
-    <div class="nanda-presentation-info">
-      <span class="nanda-presentation-badge">Master Deck</span>
-      <strong>Project NANDA Architecture &amp; Ecosystem</strong>
-    </div>
-    <div class="nanda-presentation-actions">
-      <a href="assets/NANDA.pdf" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn">Download PDF <span class="nanda-btn-arrow">↗</span></a>
-      <a href="https://www.youtube.com/watch?v=-S51FOnqF0o" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn nanda-presentation-btn--video">Demo &amp; Intro Video <span class="nanda-btn-arrow">↗</span></a>
-    </div>
-  </div>
-  <div class="nanda-pdf-frame-wrapper">
-    <iframe src="assets/NANDA.pdf" width="100%" height="580px" style="border: none; display: block;" allowfullscreen="true"></iframe>
-  </div>
-</div>
 
 <div class="nanda-figures-grid nanda-figures-grid--two-col">
   
@@ -361,79 +430,79 @@ Core system blueprints, runtime handshakes, and architectural frameworks:
   
   <div class="nanda-figure-card">
     <div class="nanda-figure-image-wrap">
-      <img src="assets/diagrams/ss8.png" alt="Lifecycle Management: Domain vs Agent Registration" loading="lazy">
+      <img src="assets/diagrams/ss8.png" alt="The Core Problem: Today's Discovery Bottleneck" loading="lazy">
     </div>
     <div class="nanda-figure-content">
-      <div class="nanda-figure-tag">Lifecycle &amp; Setup</div>
-      <h3 class="nanda-figure-title">Lifecycle Management: Domain vs. Agent Registration</h3>
-      <p class="nanda-figure-desc">The parallel architectural processes of traditional web domain registration vs. decentralized agent discovery, AgentFacts publishing, and live endpoint resolution.</p>
+      <div class="nanda-figure-tag">Bottleneck Analysis</div>
+      <h3 class="nanda-figure-title">The Core Problem: Fragmentation &amp; Discovery Bottlenecks</h3>
+      <p class="nanda-figure-desc">Isolated proprietary catalogs and static registries create vendor lock-in. Project NANDA decouples discovery from execution through open identity mapping.</p>
     </div>
   </div>
 
   
   <div class="nanda-figure-card">
     <div class="nanda-figure-image-wrap">
-      <img src="assets/diagrams/ss3.png" alt="NANDA Index and AgentFacts System Architecture" loading="lazy">
+      <img src="assets/diagrams/ss3.png" alt="Universal Agent Registry Architecture" loading="lazy">
     </div>
     <div class="nanda-figure-content">
-      <div class="nanda-figure-tag">Core Architecture</div>
-      <h3 class="nanda-figure-title">NANDA Index &amp; AgentFacts System Architecture</h3>
-      <p class="nanda-figure-desc">The three-layer discovery stack: Lean Index Anchor Tier (&le;120 bytes), AgentFacts Metadata Tier (signed JSON-LD), and Dynamic Resolution Layer with adaptive load-balancing.</p>
+      <div class="nanda-figure-tag">Registry Architecture</div>
+      <h3 class="nanda-figure-title">Universal Agent Registry &amp; Resolution Chain</h3>
+      <p class="nanda-figure-desc">How client agents resolve natural-language and cryptographically signed identifiers to authoritative AgentCards across disparate distributed registries.</p>
     </div>
   </div>
 
   
   <div class="nanda-figure-card">
     <div class="nanda-figure-image-wrap">
-      <img src="assets/diagrams/ss4.png" alt="Resolution Protocol and Dual-Path Lookup" loading="lazy">
+      <img src="assets/diagrams/ss4.png" alt="The Agent-to-Agent Communication Stack" loading="lazy">
     </div>
     <div class="nanda-figure-content">
-      <div class="nanda-figure-tag">Protocol Flow</div>
-      <h3 class="nanda-figure-title">Resolution Protocol &amp; Dual-Path Lookup</h3>
-      <p class="nanda-figure-desc">Step-by-step cryptographic handshake and dual-path resolution routing through PrimaryFactsURL (direct) and PrivateFactsURL (anonymous/zero-knowledge).</p>
+      <div class="nanda-figure-tag">Protocol Stack</div>
+      <h3 class="nanda-figure-title">The Agent-to-Agent (A2A) Communication Stack</h3>
+      <p class="nanda-figure-desc">Multi-layer networking hierarchy mapping semantic application intents, capability negotiation, JSON-RPC messaging, and underlying secure transport layers.</p>
     </div>
   </div>
 
   
   <div class="nanda-figure-card">
     <div class="nanda-figure-image-wrap">
-      <img src="assets/diagrams/ss9.png" alt="Enterprise Infrastructure Transformation" loading="lazy">
-    </div>
-    <div class="nanda-figure-content">
-      <div class="nanda-figure-tag">Enterprise Architecture</div>
-      <h3 class="nanda-figure-title">Enterprise Infrastructure Transformation</h3>
-      <p class="nanda-figure-desc">Transitioning from legacy enterprise stacks (Firewalls, Reverse Proxies, WAF, CDN) to Agentic Zero-Trust Architectures (ZTAA) with A2A, MCP, and authenticated mesh gateways.</p>
-    </div>
-  </div>
-
-  
-  <div class="nanda-figure-card">
-    <div class="nanda-figure-image-wrap">
-      <img src="assets/diagrams/ss10.png" alt="Applied Operations Workflow" loading="lazy">
-    </div>
-    <div class="nanda-figure-content">
-      <div class="nanda-figure-tag">Implementation Case</div>
-      <h3 class="nanda-figure-title">Applied Product Operations Workflow</h3>
-      <p class="nanda-figure-desc">Real-world operational scenario illustrating how Product Operations agents autonomously coordinate tasks, invoke MCP tool servers, and exchange data via A2A protocols.</p>
-    </div>
-  </div>
-
-  
-  <div class="nanda-figure-card">
-    <div class="nanda-figure-image-wrap">
-      <img src="assets/diagrams/ss6.png" alt="Recursive Resolution Architecture" loading="lazy">
+      <img src="assets/diagrams/ss9.png" alt="NANDA Adaptive Resolver Pipeline" loading="lazy">
     </div>
     <div class="nanda-figure-content">
       <div class="nanda-figure-tag">Resolution Engine</div>
-      <h3 class="nanda-figure-title">Recursive Resolution &amp; Namespace Intermediates</h3>
-      <p class="nanda-figure-desc">Detailed mechanics of the NANDA Adaptive Resolver performing recursive hierarchical resolution across federated namespace authorities and corporate registries.</p>
+      <h3 class="nanda-figure-title">Adaptive Resolver: Multi-Stage Query Pipeline</h3>
+      <p class="nanda-figure-desc">Step-by-step resolution lifecycle: request parsing, local cache lookup, DHT broadcast query, signature verification, and secure endpoint handshake.</p>
     </div>
   </div>
 
   
   <div class="nanda-figure-card">
     <div class="nanda-figure-image-wrap">
-      <img src="assets/diagrams/ss7.png" alt="Connection Negotiation Flow" loading="lazy">
+      <img src="assets/diagrams/ss10.png" alt="Zero-Trust Attestation Framework" loading="lazy">
+    </div>
+    <div class="nanda-figure-content">
+      <div class="nanda-figure-tag">Security &amp; Attestation</div>
+      <h3 class="nanda-figure-title">Zero-Trust Agent Verification &amp; Security Blueprint</h3>
+      <p class="nanda-figure-desc">Decentralized PKI, cryptographic credentials, dynamic reputation scores, and capability-aware sandboxes preventing rogue agent impersonation.</p>
+    </div>
+  </div>
+
+  
+  <div class="nanda-figure-card">
+    <div class="nanda-figure-image-wrap">
+      <img src="assets/diagrams/ss6.png" alt="End-to-End Agent Discovery Lifecycle" loading="lazy">
+    </div>
+    <div class="nanda-figure-content">
+      <div class="nanda-figure-tag">Lifecycle Model</div>
+      <h3 class="nanda-figure-title">End-to-End Discovery, Negotiation &amp; Invocation</h3>
+      <p class="nanda-figure-desc">Complete runtime flow from initial query, capability matching, policy verification, and mutual TLS authentication to autonomous task delegation.</p>
+    </div>
+  </div>
+
+  
+  <div class="nanda-figure-card">
+    <div class="nanda-figure-image-wrap">
+      <img src="assets/diagrams/ss7.png" alt="Cryptographic Handshake Protocol" loading="lazy">
     </div>
     <div class="nanda-figure-content">
       <div class="nanda-figure-tag">Handshake Protocol</div>
@@ -443,178 +512,71 @@ Core system blueprints, runtime handshakes, and architectural frameworks:
   </div>
 </div>
 
----
-
-## Voices Shaping the Agentic Web
-
-<div class="nanda-speakers-grid">
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Ramesh Raskar.jpeg" alt="Prof. Ramesh Raskar" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">Prof. Ramesh Raskar</div>
-      <div class="nanda-speaker-title">MIT Media Lab &bull; Founder, NANDA</div>
-      <a href="https://youtu.be/yXxHb3LMygw" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
+<div class="nanda-presentation-container">
+  <div class="nanda-presentation-toolbar">
+    <div class="nanda-presentation-info">
+      <span class="nanda-presentation-badge">Master Deck</span>
+      <strong>Project NANDA Architecture &amp; Ecosystem</strong>
+    </div>
+    <div class="nanda-presentation-actions">
+      <a href="assets/NANDA.pdf" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn">Download PDF <span class="nanda-btn-arrow">↗</span></a>
+      <a href="https://www.youtube.com/watch?v=-S51FOnqF0o" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn nanda-presentation-btn--video">Demo &amp; Intro Video <span class="nanda-btn-arrow">↗</span></a>
     </div>
   </div>
-
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/John Roese.jpeg" alt="John Roese" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">John Roese</div>
-      <div class="nanda-speaker-title">Global CTO &amp; Chief AI Officer, Dell</div>
-      <a href="https://youtu.be/WJ3xGAKqmGs" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
-    </div>
-  </div>
-
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Guha.jpg" alt="R.V. Guha" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">R.V. Guha</div>
-      <div class="nanda-speaker-title">Technical Fellow, Microsoft &bull; NLWeb</div>
-      <a href="https://www.youtube.com/watch?v=P0YKIRD8eQk" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
-    </div>
-  </div>
-
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Jessica Rosenworcel.jpg" alt="Jessica Rosenworcel" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">Jessica Rosenworcel</div>
-      <div class="nanda-speaker-title">Former Chair, FCC</div>
-      <a href="https://youtu.be/qQebYJcITno" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
-    </div>
-  </div>
-
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Peeyush Aggarwal.jpeg" alt="Peeyush Aggarwal" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">Peeyush Aggarwal</div>
-      <div class="nanda-speaker-title">Partner, Deloitte UK</div>
-      <a href="https://www.youtube.com/watch?v=AZQKop8kPV4" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
-    </div>
-  </div>
-
-  <div class="nanda-speaker-card">
-    <img src="assets/headshots/Nick Cooper.jpeg" alt="Nick Cooper" class="nanda-speaker-img" loading="lazy">
-    <div class="nanda-speaker-info">
-      <div class="nanda-speaker-name">Nick Cooper</div>
-      <div class="nanda-speaker-title">MTS, OpenAI</div>
-      <a href="https://youtu.be/S2ksXKHbOUU" target="_blank" rel="noopener noreferrer" class="nanda-speaker-link">Watch Keynote ↗</a>
-    </div>
+  <div class="nanda-pdf-frame-wrapper">
+    <iframe src="assets/NANDA.pdf" width="100%" height="580px" style="border: none; display: block;" allowfullscreen="true"></iframe>
   </div>
 </div>
 
 ---
 
-## Collaborators & Contributors
+## Collaborators &amp; Contributors
 
 Project NANDA works with leading research universities, global technology enterprises, standards bodies, and open-source ecosystems:
 
-<div class="nanda-partners-grid">
-  <div class="nanda-partner-item" title="MIT">
-    <img src="assets/companylogos/mit_logo.png" alt="MIT" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Google">
-    <img src="assets/companylogos/google_logo.png" alt="Google" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Microsoft">
-    <img src="assets/companylogos/microsoft_logo.png" alt="Microsoft" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="OpenAI">
-    <img src="assets/companylogos/openai_logo.png" alt="OpenAI" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Dell Technologies">
-    <img src="assets/companylogos/dell_technologies_logo.png" alt="Dell Technologies" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Deloitte">
-    <img src="assets/companylogos/deloitte_logo.png" alt="Deloitte" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="AWS">
-    <img src="assets/companylogos/aws_logo.png" alt="AWS" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Qualcomm">
-    <img src="assets/companylogos/qualcomm_logo.png" alt="Qualcomm" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="HCLTech">
-    <img src="assets/companylogos/hcltech.jpg" alt="HCLTech" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Cisco">
-    <img src="assets/companylogos/cisco_logo.png" alt="Cisco" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Akamai">
-    <img src="assets/companylogos/akamai_logo.png" alt="Akamai" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Meta">
-    <img src="assets/companylogos/meta_logo.png" alt="Meta" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Salesforce">
-    <img src="assets/companylogos/salesforce_logo.png" alt="Salesforce" loading="lazy">
-  </div>
-  <div class="nanda-partner-item" title="Snowflake">
-    <img src="assets/companylogos/snowflake_logo.png" alt="Snowflake" loading="lazy">
-  </div>
-</div>
-
----
-
-## Words from Advisors
-
-<div class="nanda-advisors-marquee-container">
-  <div class="nanda-advisors-marquee-track">
-    <div class="nanda-advisor-card">
-      <img src="assets/words-from-advisors/abhishek-mehta.png" alt="Abhishek Mehta" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card">
-      <img src="assets/words-from-advisors/jessica-rosenworcel.png" alt="Jessica Rosenworcel" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card">
-      <img src="assets/words-from-advisors/nick-cooper.png" alt="Nick Cooper" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card">
-      <img src="assets/words-from-advisors/pradyumna-chari.png" alt="Pradyumna Chari" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card">
-      <img src="assets/words-from-advisors/raghu-bala.png" alt="Raghu Bala" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card">
-      <img src="assets/words-from-advisors/rao-surapaneni.png" alt="Rao Surapaneni" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card">
-      <img src="assets/words-from-advisors/santi-garces.png" alt="Santi Garces" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card">
-      <img src="assets/words-from-advisors/vijay-guntur.png" alt="Vijay Guntur" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card">
-      <img src="assets/words-from-advisors/zafer-sahinoglu.png" alt="Zafer Sahinoglu" loading="lazy">
-    </div>
+<div class="nanda-logos-marquee-container">
+  <div class="nanda-logos-marquee-track">
+    <div class="nanda-logo-roll-item" title="MIT"><img src="assets/companylogos/mit_logo.png" alt="MIT" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Google"><img src="assets/companylogos/google_logo.png" alt="Google" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Microsoft"><img src="assets/companylogos/microsoft_logo.png" alt="Microsoft" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="OpenAI"><img src="assets/companylogos/openai_logo.png" alt="OpenAI" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Dell Technologies"><img src="assets/companylogos/dell_technologies_logo.png" alt="Dell Technologies" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Deloitte"><img src="assets/companylogos/deloitte_logo.png" alt="Deloitte" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="AWS"><img src="assets/companylogos/aws_logo.png" alt="AWS" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Qualcomm"><img src="assets/companylogos/qualcomm_logo.png" alt="Qualcomm" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Meta"><img src="assets/companylogos/meta_logo.png" alt="Meta" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Cisco"><img src="assets/companylogos/cisco_logo.png" alt="Cisco" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="HCLTech"><img src="assets/companylogos/hcltech.jpg" alt="HCLTech" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="NVIDIA"><img src="assets/companylogos/nvidia_logo.png" alt="NVIDIA" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Stanford"><img src="assets/companylogos/stanford_logo.png" alt="Stanford" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="UC Berkeley"><img src="assets/companylogos/uc_berkeley_logo.png" alt="UC Berkeley" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Akamai"><img src="assets/companylogos/akamai_logo.png" alt="Akamai" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Salesforce"><img src="assets/companylogos/salesforce_logo.png" alt="Salesforce" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Snowflake"><img src="assets/companylogos/snowflake_logo.png" alt="Snowflake" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Intel"><img src="assets/companylogos/intel_logo.png" alt="Intel" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="Zscaler"><img src="assets/companylogos/zscaler_logo.png" alt="Zscaler" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" title="EPFL"><img src="assets/companylogos/epfl_logo.png" alt="EPFL" loading="lazy"></div>
     
-    <div class="nanda-advisor-card" aria-hidden="true">
-      <img src="assets/words-from-advisors/abhishek-mehta.png" alt="" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card" aria-hidden="true">
-      <img src="assets/words-from-advisors/jessica-rosenworcel.png" alt="" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card" aria-hidden="true">
-      <img src="assets/words-from-advisors/nick-cooper.png" alt="" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card" aria-hidden="true">
-      <img src="assets/words-from-advisors/pradyumna-chari.png" alt="" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card" aria-hidden="true">
-      <img src="assets/words-from-advisors/raghu-bala.png" alt="" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card" aria-hidden="true">
-      <img src="assets/words-from-advisors/rao-surapaneni.png" alt="" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card" aria-hidden="true">
-      <img src="assets/words-from-advisors/santi-garces.png" alt="" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card" aria-hidden="true">
-      <img src="assets/words-from-advisors/vijay-guntur.png" alt="" loading="lazy">
-    </div>
-    <div class="nanda-advisor-card" aria-hidden="true">
-      <img src="assets/words-from-advisors/zafer-sahinoglu.png" alt="" loading="lazy">
-    </div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/mit_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/google_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/microsoft_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/openai_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/dell_technologies_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/deloitte_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/aws_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/qualcomm_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/meta_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/cisco_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/hcltech.jpg" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/nvidia_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/stanford_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/uc_berkeley_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/akamai_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/salesforce_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/snowflake_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/intel_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/zscaler_logo.png" alt="" loading="lazy"></div>
+    <div class="nanda-logo-roll-item" aria-hidden="true"><img src="assets/companylogos/epfl_logo.png" alt="" loading="lazy"></div>
   </div>
 </div>
 
@@ -625,10 +587,10 @@ Project NANDA works with leading research universities, global technology enterp
 Join researchers, builders, enterprises, and civic innovators shaping the Internet of AI Agents:
 
 <div class="nanda-action-bar">
-  <a href="community/index.md" class="nanda-action-btn nanda-action-btn--primary">Join Community &rarr;</a>
-  <a href="publication/get-involved.md" class="nanda-action-btn">Get Involved</a>
-  <a href="community/start-a-chapter.md" class="nanda-action-btn">Start a Chapter</a>
-  <a href="https://github.com/projnanda" target="_blank" rel="noopener noreferrer" class="nanda-action-btn">Trade Direct / GitHub ↗</a>
+  <a href="community/" class="nanda-action-btn">Join Community &rarr;</a>
+  <a href="publication/get-involved/" class="nanda-action-btn">Get Involved</a>
+  <a href="community/start-a-chapter/" class="nanda-action-btn">Start a Chapter</a>
+  <a href="developer/open-source/" class="nanda-action-btn">Open Source Repositories ↗</a>
 </div>
 
 ### Follow &amp; Connect

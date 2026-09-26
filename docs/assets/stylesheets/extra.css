@@ -4274,6 +4274,198 @@ footer.md-footer,
   border-color: #555555 !important;
   color: #FFFFFF !important;
 }
+/* Logo Marquee (Reverse Roll - Left to Right) */
+.nanda-logos-marquee-container {
+  overflow: hidden !important;
+  position: relative !important;
+  width: calc(100% + 4.5rem) !important;
+  margin-left: -2.25rem !important;
+  margin-right: -2.25rem !important;
+  padding: 1rem 0 1.5rem 0 !important;
+  mask-image: linear-gradient(to right, transparent 0%, black 5.5rem, black calc(100% - 5.5rem), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5.5rem, black calc(100% - 5.5rem), transparent 100%);
+}
+
+.nanda-logos-marquee-container::before,
+.nanda-logos-marquee-container::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 5.5rem !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+.nanda-logos-marquee-container::before {
+  left: 0 !important;
+  background: linear-gradient(to right, var(--md-default-bg-color, #FAFAF9) 0%, rgba(250, 250, 249, 0) 100%) !important;
+}
+
+.nanda-logos-marquee-container::after {
+  right: 0 !important;
+  background: linear-gradient(to left, var(--md-default-bg-color, #FAFAF9) 0%, rgba(250, 250, 249, 0) 100%) !important;
+}
+
+@media screen and (max-width: 76.24em) {
+  .nanda-logos-marquee-container {
+    width: calc(100% + 2rem) !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    mask-image: linear-gradient(to right, transparent 0%, black 2.5rem, black calc(100% - 2.5rem), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 2.5rem, black calc(100% - 2.5rem), transparent 100%);
+  }
+
+  .nanda-logos-marquee-container::before,
+  .nanda-logos-marquee-container::after {
+    width: 2.5rem !important;
+  }
+}
+
+.nanda-logos-marquee-track {
+  display: flex !important;
+  gap: 1.25rem !important;
+  width: max-content !important;
+  animation: nandaLogosRollReverse 40s linear infinite !important;
+  will-change: transform !important;
+}
+
+.nanda-logos-marquee-container:hover .nanda-logos-marquee-track {
+  animation-play-state: paused !important;
+}
+
+@keyframes nandaLogosRollReverse {
+  0% {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.nanda-logo-roll-item {
+  flex: 0 0 auto !important;
+  width: 140px !important;
+  height: 64px !important;
+  background-color: var(--nanda-card-bg) !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.75rem 1rem !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+.nanda-logo-roll-item:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.nanda-logo-roll-item img {
+  max-height: 32px !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  filter: grayscale(100%) !important;
+  opacity: 0.75 !important;
+  transition: filter 0.2s ease, opacity 0.2s ease !important;
+}
+
+.nanda-logo-roll-item:hover img {
+  filter: grayscale(0%) !important;
+  opacity: 1 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-logos-marquee-container::before {
+  background: linear-gradient(to right, #1F1F1F 0%, rgba(31, 31, 31, 0) 100%) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-logos-marquee-container::after {
+  background: linear-gradient(to left, #1F1F1F 0%, rgba(31, 31, 31, 0) 100%) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-logo-roll-item {
+  background-color: #262626 !important;
+  border-color: #383838 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-logo-roll-item:hover {
+  background-color: #2D2D2D !important;
+  border-color: #555555 !important;
+}
+
+/* What Project NANDA Includes Grid */
+.nanda-includes-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)) !important;
+  gap: 1.25rem !important;
+  margin: 1.5rem 0 2rem 0 !important;
+}
+
+.nanda-include-card {
+  display: flex !important;
+  gap: 1rem !important;
+  padding: 1.25rem !important;
+  background-color: var(--nanda-card-bg) !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+.nanda-include-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) !important;
+}
+
+.nanda-include-icon {
+  flex-shrink: 0 !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 10px !important;
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: var(--md-default-fg-color) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.nanda-include-body {
+  flex: 1 1 auto !important;
+}
+
+.nanda-include-body h3 {
+  margin: 0 0 0.4rem 0 !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: var(--md-default-fg-color) !important;
+}
+
+.nanda-include-body p {
+  margin: 0 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  color: var(--md-default-fg-color--light) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-include-card {
+  background-color: #262626 !important;
+  border-color: #383838 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-include-card:hover {
+  background-color: #2D2D2D !important;
+  border-color: #555555 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-include-icon {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+}
 
 /* ==========================================================================
    ABOUT PAGE: FOOTER COMPONENT

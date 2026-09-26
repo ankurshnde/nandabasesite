@@ -86,6 +86,18 @@ def on_post_page(output, page, config):
                     classes.append("nanda-has-arrow")
                 a["class"] = classes
         else:
+            # Internal links ending with .md -> translate to clean directory URL
+            clean_href = href.split("#")[0].split("?")[0]
+            if clean_href.endswith(".md"):
+                fragment = ("#" + href.split("#", 1)[1]) if "#" in href else ""
+                query = ("?" + href.split("?", 1)[1].split("#")[0]) if "?" in href else ""
+                if clean_href.endswith("/index.md") or clean_href == "index.md":
+                    clean_target = clean_href[:-8] or "./"
+                else:
+                    clean_target = clean_href[:-3] + "/"
+                a["href"] = f"{clean_target}{query}{fragment}"
+                href = a["href"]
+
             # Internal documents (e.g. PDF) should open in a new tab
             if href.lower().endswith(".pdf"):
                 a["target"] = "_blank"
