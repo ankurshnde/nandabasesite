@@ -4253,13 +4253,8 @@ footer.md-footer,
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.45rem !important;
-  padding: 0.6rem 0.25rem !important;
+  padding: 0.5rem !important;
   border-radius: 0 !important;
-  font-family: 'Outfit', sans-serif !important;
-  font-size: clamp(0.7rem, 1.1vw, 0.88rem) !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.01em !important;
   text-decoration: none !important;
   color: var(--md-default-fg-color) !important;
   background-color: var(--nanda-card-bg) !important;
@@ -4267,7 +4262,6 @@ footer.md-footer,
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease !important;
   text-align: center !important;
-  white-space: nowrap !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
 }
@@ -4277,35 +4271,40 @@ footer.md-footer,
   content: "" !important;
 }
 
-@media (max-width: 480px) {
-  .nanda-social-square-btn {
-    font-size: 0.62rem !important;
-    padding: 0.35rem 0.1rem !important;
-    gap: 0.25rem !important;
-  }
-  .nanda-social-square-btn svg {
-    width: 19px !important;
-    height: 19px !important;
-  }
-}
-
 .nanda-social-square-btn svg {
   display: block !important;
-  width: clamp(22px, 2.5vw, 28px) !important;
-  height: clamp(22px, 2.5vw, 28px) !important;
+  width: clamp(28px, 2.8vw, 36px) !important;
+  height: clamp(28px, 2.8vw, 36px) !important;
+  max-width: 100% !important;
   flex-shrink: 0 !important;
+  transition: transform 0.18s ease !important;
 }
 
-.nanda-social-square-btn span {
-  display: block !important;
-  line-height: 1.1 !important;
-  font-size: inherit !important;
+.nanda-social-square-btn svg.nanda-arxiv-svg {
+  width: clamp(48px, 4.8vw, 62px) !important;
+  height: auto !important;
+  max-height: clamp(28px, 2.8vw, 36px) !important;
+}
+
+@media (max-width: 480px) {
+  .nanda-social-square-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .nanda-social-square-btn svg.nanda-arxiv-svg {
+    width: 42px !important;
+    max-height: 24px !important;
+  }
 }
 
 .nanda-social-square-btn:hover {
   transform: translateY(-3px) !important;
   border-color: rgba(0, 0, 0, 0.25) !important;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+.nanda-social-square-btn:hover svg {
+  transform: scale(1.08) !important;
 }
 
 [data-md-color-scheme="slate"] .nanda-social-square-btn {
@@ -4318,6 +4317,10 @@ footer.md-footer,
   background-color: #2D2D2D !important;
   border-color: #555555 !important;
   color: #FFFFFF !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-social-square-btn svg path[fill="#7c7469"] {
+  fill: #D4D4D4 !important;
 }
 /* Logo Marquee (Reverse Roll - Left to Right) */
 .nanda-logos-marquee-container {
