@@ -180,7 +180,7 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-role">Former Chairwoman</div>
       <div class="nanda-portrait-org">FCC (Federal Communications Commission)</div>
       <div class="nanda-portrait-actions">
-        <a href="https://youtu.be/qQebYJcITno" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
+        <a href="https://youtu.be/qQebYJclTno" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           <span>Watch Keynote</span>
         </a>
