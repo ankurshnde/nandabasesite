@@ -4227,6 +4227,54 @@ footer.md-footer,
   color: #000000 !important;
 }
 
+/* Social Buttons for Community Momentum */
+.nanda-social-buttons-wrap {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.65rem !important;
+  margin: 1.25rem 0 2.5rem 0 !important;
+}
+
+.nanda-social-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.55rem 1.05rem !important;
+  border-radius: 8px !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  color: var(--md-default-fg-color) !important;
+  background-color: var(--nanda-card-bg) !important;
+  border: 1px solid var(--nanda-border) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+.nanda-social-btn svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.nanda-social-btn:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-social-btn {
+  background-color: #262626 !important;
+  border-color: #383838 !important;
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-social-btn:hover {
+  background-color: #2D2D2D !important;
+  border-color: #555555 !important;
+  color: #FFFFFF !important;
+}
+
 /* ==========================================================================
    ABOUT PAGE: FOOTER COMPONENT
    ========================================================================== */
