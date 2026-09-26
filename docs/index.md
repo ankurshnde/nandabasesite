@@ -46,10 +46,10 @@ Two core components make universal discovery possible:
 
 ## Latest Updates
 
-<div class="nanda-updates-grid">
+<div class="nanda-updates-list">
   <!-- 1. NandaHack -->
-  <div class="nanda-update-card">
-    <div>
+  <div class="nanda-update-row">
+    <div class="nanda-update-main">
       <div class="nanda-update-meta">
         <span class="nanda-update-context">MIT Media Lab</span>
         <span class="nanda-update-sep">/</span>
@@ -58,14 +58,14 @@ Two core components make universal discovery possible:
       <div class="nanda-update-title">NandaHack: Agentic AI Hackathon</div>
       <p class="nanda-update-desc">Hosted by MIT Media Lab &amp; HCLTech. Building services that autonomous AI agents can discover and use independently; competing online with an in-person finale at MIT.</p>
     </div>
-    <div class="nanda-update-footer">
+    <div class="nanda-update-side">
       <a href="https://nandahack.media.mit.edu/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">Apply now</a>
     </div>
   </div>
 
   <!-- 2. DataFacts -->
-  <div class="nanda-update-card">
-    <div>
+  <div class="nanda-update-row">
+    <div class="nanda-update-main">
       <div class="nanda-update-meta">
         <span class="nanda-update-context">Provenance Layer</span>
         <span class="nanda-update-sep">/</span>
@@ -74,14 +74,14 @@ Two core components make universal discovery possible:
       <div class="nanda-update-title">Introducing DataFacts</div>
       <p class="nanda-update-desc">As AI agents move from answering questions to executing autonomous actions, data provenance is essential. DataFacts documents dataset availability, freshness, authenticity, and access permissions — turning the Agentic Web into a verifiable data-to-decision ecosystem.</p>
     </div>
-    <div class="nanda-update-footer">
+    <div class="nanda-update-side">
       <a href="https://www.linkedin.com/company/projectnanda/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">Read on LinkedIn</a>
     </div>
   </div>
 
   <!-- 3. An Agent for Every Bostonian -->
-  <div class="nanda-update-card">
-    <div>
+  <div class="nanda-update-row">
+    <div class="nanda-update-main">
       <div class="nanda-update-meta">
         <span class="nanda-update-context">Massachusetts Pilot</span>
         <span class="nanda-update-sep">/</span>
@@ -90,7 +90,7 @@ Two core components make universal discovery possible:
       <div class="nanda-update-title">An Agent for Every Bostonian</div>
       <p class="nanda-update-desc">A civic pilot for sovereign AI agents — empowering residents with personal agents that navigate municipal services while keeping their personal data confidential and under their control.</p>
     </div>
-    <div class="nanda-update-footer">
+    <div class="nanda-update-side">
       <a href="https://civicagents.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">Explore Civic Agents</a>
     </div>
   </div>

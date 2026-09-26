@@ -1376,12 +1376,12 @@ footer.md-footer,
   transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
-.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):not(.nanda-social-square-btn):not(.nanda-action-btn):not(.nanda-update-action):not(.nanda-update-card a):hover {
+.md-typeset a:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):not(.nanda-social-square-btn):not(.nanda-action-btn):not(.nanda-update-action):not(.nanda-update-card a):not(.nanda-update-row a):hover {
   color: #a16207;
   text-decoration-color: #ca8a04;
 }
 
-.md-typeset a[target="_blank"]:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):not(.nanda-social-square-btn):not(.nanda-action-btn):not(.nanda-update-action):not(.nanda-update-card a):not(.nanda-has-arrow)::after {
+.md-typeset a[target="_blank"]:not(.headerlink):not(.nanda-page-nav__link):not(.nanda-back-to-top):not([class*="md-button"]):not(.nanda-advisor-talk):not(.nanda-advisor-talk-pill):not(.nanda-pub-btn):not(.nanda-pub-item):not(.nanda-journey-card):not(.nanda-project-btn):not(.nanda-social-card):not(.nanda-project-row):not(.nanda-chapter-btn):not(.nanda-bayarea-link-btn):not(.nanda-bayarea-leader-company):not(.nanda-hackathon-card):not(.nanda-fellowship-card):not(.nanda-talk-card):not(.nanda-presentation-btn):not(.nanda-about-footer-link):not(.nanda-social-square-btn):not(.nanda-action-btn):not(.nanda-update-action):not(.nanda-update-card a):not(.nanda-update-row a):not(.nanda-has-arrow)::after {
   content: " ↗";
   display: inline-block;
   font-size: 0.8em;
@@ -1398,7 +1398,9 @@ footer.md-footer,
 .nanda-social-square-grid a::after,
 .nanda-update-action::after,
 .nanda-update-card a::after,
-.nanda-updates-grid a::after {
+.nanda-updates-grid a::after,
+.nanda-update-row a::after,
+.nanda-updates-list a::after {
   display: none !important;
   content: "" !important;
 }
@@ -2595,56 +2597,57 @@ footer.md-footer,
 }
 
 /* ==========================================================================
-   LATEST UPDATES SECTION (MINIMALIST 3-CARD GRID)
+   LATEST UPDATES SECTION (HORIZONTAL ROWS UNDERNEATH EACH OTHER)
    ========================================================================== */
 
-.nanda-updates-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.15rem;
+.nanda-updates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
   margin: 1.5rem 0 2.25rem 0;
+  width: 100%;
 }
 
-@media screen and (min-width: 60em) {
-  .nanda-updates-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
-
-.nanda-update-card {
+.nanda-update-row {
   background: var(--nanda-card-bg);
   border: 1px solid var(--nanda-border);
   border-radius: 12px;
-  padding: 1.4rem 1.45rem;
+  padding: 1.35rem 1.6rem;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  gap: 1.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nanda-update-card:hover {
-  transform: translateY(-2px);
+.nanda-update-row:hover {
+  transform: translateY(-1px);
   border-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
 }
 
-[data-md-color-scheme="slate"] .nanda-update-card {
+[data-md-color-scheme="slate"] .nanda-update-row {
   background-color: #262626;
   border-color: #383838;
 }
 
-[data-md-color-scheme="slate"] .nanda-update-card:hover {
+[data-md-color-scheme="slate"] .nanda-update-row:hover {
   background-color: #2d2d2d;
   border-color: #555555;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.nanda-update-main {
+  flex: 1;
+  min-width: 0;
 }
 
 .nanda-update-meta {
   display: flex;
   align-items: center;
   gap: 0.45rem;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.4rem;
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -2669,29 +2672,26 @@ footer.md-footer,
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--md-default-fg-color);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.35rem 0;
   line-height: 1.35;
 }
 
 .nanda-update-desc {
   font-size: 0.88rem;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--md-default-fg-color--light);
-  margin: 0 0 1.25rem 0;
-  flex-grow: 1;
+  margin: 0;
 }
 
-.nanda-update-footer {
-  margin-top: auto;
-  display: flex;
-  align-items: center;
+.nanda-update-side {
+  flex-shrink: 0;
 }
 
 .nanda-update-action {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 0.38rem 0.9rem !important;
+  padding: 0.45rem 1.15rem !important;
   font-size: 0.82rem !important;
   font-weight: 600 !important;
   color: var(--md-default-fg-color) !important;
@@ -2699,7 +2699,7 @@ footer.md-footer,
   border: 1px solid var(--nanda-border) !important;
   border-radius: 6px !important;
   text-decoration: none !important;
-  width: fit-content !important;
+  white-space: nowrap !important;
   transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
 }
 
@@ -2718,6 +2718,38 @@ footer.md-footer,
   border-color: rgba(255, 255, 255, 0.65) !important;
   background-color: rgba(255, 255, 255, 0.05) !important;
   color: #ffffff !important;
+}
+
+@media screen and (max-width: 48em) {
+  .nanda-update-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.3rem;
+  }
+}
+
+.nanda-updates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.15rem;
+  margin: 1.5rem 0 2.25rem 0;
+}
+
+.nanda-update-card {
+  background: var(--nanda-card-bg);
+  border: 1px solid var(--nanda-border);
+  border-radius: 12px;
+  padding: 1.4rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nanda-update-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
 }
 
 .nanda-live-dot {
