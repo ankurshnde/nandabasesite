@@ -103,69 +103,12 @@ Project NANDA’s roadmap describes the development of an Internet of AI Agents 
 
 ## What Project NANDA includes
 
-Universal discovery and verified agent coordination across decentralized ecosystems:
-
-<div class="nanda-includes-grid">
-  <div class="nanda-include-card">
-    <div class="nanda-include-icon">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24m5.66 5.66 4.24 4.24m-14.14 0 4.24-4.24m5.66-5.66 4.24-4.24"/></svg>
-    </div>
-    <div class="nanda-include-body">
-      <h3>NANDA Index</h3>
-      <p>A federated, multi-operator directory of pointers from identity to authoritative source. Think of it as a quilt of independently run indexes, not one central database.</p>
-    </div>
-  </div>
-
-  <div class="nanda-include-card">
-    <div class="nanda-include-icon">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><line x1="15" y1="8" x2="17" y2="8"/><line x1="15" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="17" y2="16"/></svg>
-    </div>
-    <div class="nanda-include-body">
-      <h3>AgentFacts</h3>
-      <p>A signed capability record for each agent: what it does, how to reach it, and whether it's still valid.</p>
-    </div>
-  </div>
-
-  <div class="nanda-include-card">
-    <div class="nanda-include-icon">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"/><path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"/><circle cx="8" cy="12" r="2"/></svg>
-    </div>
-    <div class="nanda-include-body">
-      <h3>Federated Resolution Architecture</h3>
-      <p>Separates <em>where to look</em> from <em>what an agent can do</em>, so no single registry has to hold every answer.</p>
-    </div>
-  </div>
-
-  <div class="nanda-include-card">
-    <div class="nanda-include-icon">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-    </div>
-    <div class="nanda-include-body">
-      <h3>NANDA Adapter</h3>
-      <p>An open-source bridge that brings an existing agent — built with frameworks like LangChain or CrewAI, or custom logic — onto the network and makes it discoverable.</p>
-    </div>
-  </div>
-
-  <div class="nanda-include-card">
-    <div class="nanda-include-icon">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-    </div>
-    <div class="nanda-include-body">
-      <h3>NEST (Exchange Sandbox &amp; Testnet)</h3>
-      <p>An engine and command-line interface for building, testing, and replaying multi-agent scenarios. It is a test and integration environment, not the universal runtime required to invoke an agent on the open web.</p>
-    </div>
-  </div>
-
-  <div class="nanda-include-card">
-    <div class="nanda-include-icon">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-    </div>
-    <div class="nanda-include-body">
-      <h3>Nanda Town</h3>
-      <p>An open-source sandbox built around NEST for designing and running multi-agent experiments. A scenario defines agents, roles, rules, failures, protocol-layer choices, and metrics in YAML; Nanda Town runs it and records interaction traces as JSON for inspection or replay.</p>
-    </div>
-  </div>
-</div>
+* **NANDA Index**: A federated, multi-operator directory of pointers from identity to authoritative source. Think of it as a quilt of independently run indexes, not one central database.   
+* **AgentFacts**: A signed capability record for each agent: what it does, how to reach it, and whether it's still valid.   
+* **Federated resolution architecture**: Separates *where to look* from *what an agent can do*, so no single registry has to hold every answer.   
+* **NANDA Adapter**: An open-source bridge that brings an existing agent — built with frameworks like LangChain or CrewAI, or custom logic — onto the network and makes it discoverable.   
+* **NEST (NANDA Exchange Sandbox & Testnet)**: An engine and command-line interface for building, testing, and replaying multi-agent scenarios. It is a test and integration environment, not the universal runtime required to invoke an agent on the open web.  
+* **Nanda Town**: An open-source sandbox built around NEST for designing and running multi-agent experiments. A scenario defines agents, roles, rules, failures, protocol-layer choices, and metrics in YAML; Nanda Town runs it and records interaction traces as JSON for inspection or replay.
 
 ---
 
@@ -687,12 +630,6 @@ Join researchers, builders, enterprises, and civic innovators shaping the Intern
     <svg viewBox="0 0 24 24" fill="#0284C7"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4.25l-8 5-8-5V6.75l8 5 8-5v1.5z"/></svg>
   </a>
 </div>
-
----
-
-## Who maintains this?
-
-Project NANDA originated as research at the MIT Media Lab and continues to draw on that research, alongside contributors from industry and academic partners. It sits within the [Foundation for Agentic Networks (FAN)](https://www.agenticnet.org/) providing a public-benefit, standards-oriented home for the broader open-agent-network effort.
 
 ---
 
