@@ -4213,21 +4213,25 @@ footer.md-footer,
   color: #FFFFFF !important;
 }
 
-/* Social Square Buttons for Community Momentum (One Line) */
+/* Social Square Buttons for Community Momentum (2-Row, 5-Column Grid, Sharp Corners) */
+.nanda-social-square-grid,
 .nanda-social-square-bar {
-  display: flex !important;
-  flex-wrap: nowrap !important;
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
   gap: 0.65rem !important;
-  overflow-x: auto !important;
-  padding-bottom: 0.5rem !important;
+  max-width: 580px !important;
   margin: 1.25rem 0 2.5rem 0 !important;
-  -webkit-overflow-scrolling: touch !important;
+}
+
+@media (max-width: 600px) {
+  .nanda-social-square-grid,
+  .nanda-social-square-bar {
+    gap: 0.4rem !important;
+    max-width: 100% !important;
+  }
 }
 
 .nanda-social-square-btn {
-  flex: 1 1 0 !important;
-  min-width: 68px !important;
-  max-width: 88px !important;
   aspect-ratio: 1 / 1 !important;
   display: flex !important;
   flex-direction: column !important;
@@ -4235,10 +4239,11 @@ footer.md-footer,
   justify-content: center !important;
   gap: 0.35rem !important;
   padding: 0.5rem 0.2rem !important;
-  border-radius: 12px !important;
+  border-radius: 0 !important;
   font-family: 'Outfit', sans-serif !important;
   font-size: 0.72rem !important;
   font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
   text-decoration: none !important;
   color: var(--md-default-fg-color) !important;
   background-color: var(--nanda-card-bg) !important;
@@ -4247,6 +4252,19 @@ footer.md-footer,
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease !important;
   text-align: center !important;
   white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 480px) {
+  .nanda-social-square-btn {
+    font-size: 0.62rem !important;
+    padding: 0.35rem 0.1rem !important;
+    gap: 0.25rem !important;
+  }
+  .nanda-social-square-btn svg {
+    width: 19px !important;
+    height: 19px !important;
+  }
 }
 
 .nanda-social-square-btn svg {
@@ -4259,7 +4277,7 @@ footer.md-footer,
 .nanda-social-square-btn span {
   display: block !important;
   line-height: 1.1 !important;
-  font-size: 0.72rem !important;
+  font-size: inherit !important;
 }
 
 .nanda-social-square-btn:hover {

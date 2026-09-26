@@ -351,7 +351,7 @@ Our research outlines the architectural and strategic foundations of the Agentic
 </div>
 
 <div style="text-align: center; margin: 1.75rem 0 2.5rem 0;">
-  <a href="publication/get-involved/" class="nanda-action-btn">Get Involved in Research Lab &rarr;</a>
+  <a href="publication/get-involved/" class="nanda-action-btn">Get Involved in Research Lab</a>
 </div>
 
 ---
@@ -607,7 +607,7 @@ Join researchers, builders, enterprises, and civic innovators shaping the Intern
 
 ### Follow &amp; Connect
 
-<div class="nanda-social-square-bar">
+<div class="nanda-social-square-grid">
   <a href="https://www.linkedin.com/company/projectnanda/" target="_blank" rel="noopener noreferrer" class="nanda-social-square-btn">
     <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64a1.64 1.64 0 1 0 1.63 1.64c0-.9-.73-1.64-1.63-1.64Z"/></svg>
     <span>LinkedIn</span>
@@ -643,6 +643,10 @@ Join researchers, builders, enterprises, and civic innovators shaping the Intern
   <a href="https://lu.ma/nanda" target="_blank" rel="noopener noreferrer" class="nanda-social-square-btn">
     <svg viewBox="0 0 24 24" fill="#FF9900"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>
     <span>Luma</span>
+  </a>
+  <a href="mailto:contact@projectnanda.org" class="nanda-social-square-btn">
+    <svg viewBox="0 0 24 24" fill="#0284C7"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4.25l-8 5-8-5V6.75l8 5 8-5v1.5z"/></svg>
+    <span>Email</span>
   </a>
 </div>
 
