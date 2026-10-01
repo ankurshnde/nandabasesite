@@ -5690,92 +5690,51 @@ footer.md-footer,
   opacity: 0.95;
 }
 
-.nanda-lightbox-modal {
+/* ==========================================================================
+   MEDIUM-ZOOM STYLES & FLOATING CLOSE BUTTON (PROJECT NANDA / APPLE STYLE)
+   ========================================================================== */
+
+.medium-zoom-overlay {
   position: fixed !important;
   inset: 0 !important;
-  z-index: 99999 !important;
-  display: none;
-  align-items: center !important;
-  justify-content: center !important;
+  z-index: 99998 !important;
   opacity: 0;
-  transition: opacity 0.24s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
 }
 
-.nanda-lightbox-modal--visible {
+body.medium-zoom--opened .medium-zoom-overlay {
+  cursor: pointer !important;
+  cursor: zoom-out !important;
   opacity: 1 !important;
 }
 
-.nanda-lightbox-backdrop {
-  position: absolute !important;
-  inset: 0 !important;
-  background-color: rgba(10, 10, 12, 0.82) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+.medium-zoom-image {
+  cursor: pointer !important;
+  cursor: zoom-in !important;
+  transition: transform 0.32s cubic-bezier(0.2, 0, 0.2, 1) !important;
+}
+
+.medium-zoom-image--opened {
+  z-index: 99999 !important;
+  cursor: pointer !important;
   cursor: zoom-out !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45), 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 8px !important;
 }
 
-.nanda-lightbox-content {
-  position: relative !important;
-  z-index: 2 !important;
-  max-width: 95vw !important;
-  max-height: 94vh !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  outline: none !important;
-  transform: scale(0.96);
-  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.nanda-lightbox-modal--visible .nanda-lightbox-content {
-  transform: scale(1) !important;
-}
-
-.nanda-lightbox-figure {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  max-width: 100% !important;
-  max-height: 90vh !important;
-}
-
-.nanda-lightbox-img {
-  max-width: 90vw !important;
-  max-height: 84vh !important;
-  width: auto !important;
-  height: auto !important;
-  object-fit: contain !important;
-  border-radius: 12px !important;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.3) !important;
-  background-color: #FFFFFF !important;
-  user-select: none !important;
-  cursor: default !important;
-}
-
-.nanda-lightbox-caption {
-  margin-top: 0.85rem !important;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Outfit", sans-serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 500 !important;
-  color: rgba(255, 255, 255, 0.9) !important;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
-  text-align: center !important;
-  max-width: 82vw !important;
-  line-height: 1.4 !important;
-  user-select: none !important;
-}
-
-.nanda-lightbox-close {
+/* Floating Apple Close Button when zoomed in */
+.nanda-zoom-close-btn {
   position: fixed !important;
   top: 1.5rem !important;
   right: 1.5rem !important;
-  z-index: 100001 !important;
-  width: 42px !important;
-  height: 42px !important;
+  z-index: 100000 !important;
+  width: 40px !important;
+  height: 40px !important;
   border-radius: 50% !important;
-  background: rgba(255, 255, 255, 0.22) !important;
-  border: 1px solid rgba(255, 255, 255, 0.32) !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
   backdrop-filter: blur(16px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
   color: #FFFFFF !important;
@@ -5786,28 +5745,45 @@ footer.md-footer,
   padding: 0 !important;
   outline: none !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
-  transition: all 0.2s cubic-bezier(0.32, 0.72, 0, 1) !important;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9);
+  transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.32, 0.72, 0, 1), visibility 0.22s !important;
 }
 
-.nanda-lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.38) !important;
+.nanda-zoom-close-btn--visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: scale(1) !important;
+}
+
+.nanda-zoom-close-btn:hover {
+  background: rgba(255, 255, 255, 0.4) !important;
   border-color: rgba(255, 255, 255, 0.55) !important;
   transform: scale(1.08) !important;
 }
 
-.nanda-lightbox-close:active {
+.nanda-zoom-close-btn:active {
   transform: scale(0.92) !important;
 }
 
+[data-md-color-scheme="default"] .nanda-zoom-close-btn {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.14) !important;
+  color: #1D1D1F !important;
+}
+
+[data-md-color-scheme="default"] .nanda-zoom-close-btn:hover {
+  background: rgba(0, 0, 0, 0.16) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+  color: #000000 !important;
+}
+
 @media screen and (max-width: 640px) {
-  .nanda-lightbox-close {
+  .nanda-zoom-close-btn {
     top: 1rem !important;
     right: 1rem !important;
     width: 36px !important;
     height: 36px !important;
-  }
-  .nanda-lightbox-img {
-    max-width: 95vw !important;
-    max-height: 80vh !important;
   }
 }
