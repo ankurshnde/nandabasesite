@@ -605,6 +605,8 @@ function setupEcosystemModal() {
 }
 
 // First-Principles Fullscreen Lightbox Controller
+var _lightboxLastOpenedAt = 0;
+
 window.getOrCreateNandaLightbox = function() {
   var modal = document.getElementById("nandaLightboxModal");
   if (!modal) {
@@ -616,7 +618,7 @@ window.getOrCreateNandaLightbox = function() {
     modal.setAttribute("aria-hidden", "true");
     modal.innerHTML = [
       '<div class="nanda-lightbox-backdrop" id="nandaLightboxBackdrop"></div>',
-      '<button class="nanda-lightbox-close" id="nandaLightboxClose" aria-label="Close fullscreen view">',
+      '<button class="nanda-lightbox-close" id="nandaLightboxClose" aria-label="Close fullscreen view" type="button">',
       '  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">',
       '    <line x1="18" y1="6" x2="6" y2="18"></line>',
       '    <line x1="6" y1="6" x2="18" y2="18"></line>',
@@ -630,22 +632,23 @@ window.getOrCreateNandaLightbox = function() {
 
     document.body.appendChild(modal);
 
-    modal.querySelector("#nandaLightboxClose").addEventListener("click", function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      window.closeNandaLightbox();
-    });
+    var closeBtn = modal.querySelector("#nandaLightboxClose");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeNandaLightbox(true);
+      });
+    }
 
-    modal.querySelector("#nandaLightboxBackdrop").addEventListener("click", function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      window.closeNandaLightbox();
-    });
-
-    modal.querySelector("#nandaLightboxStage").addEventListener("click", function(e) {
-      // Close when clicking backdrop or stage
-      window.closeNandaLightbox();
-    });
+    var backdrop = modal.querySelector("#nandaLightboxBackdrop");
+    if (backdrop) {
+      backdrop.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeNandaLightbox(false);
+      });
+    }
   } else if (modal.parentNode !== document.body) {
     document.body.appendChild(modal);
   }
@@ -658,6 +661,7 @@ window.openNandaLightbox = function(src, alt) {
   var caption = modal.querySelector("#nandaLightboxCaption");
   if (!modal || !img) return;
 
+  _lightboxLastOpenedAt = Date.now();
   img.src = src;
   img.alt = alt || "";
 
@@ -678,7 +682,11 @@ window.openNandaLightbox = function(src, alt) {
   modal.setAttribute("aria-hidden", "false");
 };
 
-window.closeNandaLightbox = function() {
+window.closeNandaLightbox = function(force) {
+  if (!force && Date.now() - _lightboxLastOpenedAt < 300) {
+    return; // Guard against closing on the same click event that opened the modal
+  }
+
   var modal = document.getElementById("nandaLightboxModal");
   if (!modal || !modal.classList.contains("nanda-lightbox-modal--visible")) return;
 
@@ -746,6 +754,9 @@ function setupImageLightbox() {
     }
   }, true);
 }
+
+// Attach image lightbox immediately at script load
+setupImageLightbox();
 
 function setupBayAreaModal() {
   var currentPath = window.location.pathname.replace(/\/$/, "");
