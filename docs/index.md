@@ -7,7 +7,7 @@ description: Project NANDA is an open initiative building foundational discovery
 
 **Project NANDA** is an open initiative for building infrastructure for the Internet of AI Agents.
 
-**Core Problem:** How can billions of AI agents discover each other, verify capabilities, and coordinate tasks without creating centralized bottlenecks or security vulnerabilities?
+**Core Problem:** Project NANDA is focusing on how billions of AI agents can discover each other, verify capabilities, and coordinate tasks without creating bottlenecks or security vulnerabilities.
 
 ---
 
