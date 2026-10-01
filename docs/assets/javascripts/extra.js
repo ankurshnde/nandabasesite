@@ -98,8 +98,12 @@ window.toggleBayAreaModal = function(open, shouldUpdateUrl) {
 // Global Escape Key Listener
 document.addEventListener("keydown", function(e) {
   if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
-    if (window._nandaMediumZoom) {
-      try { window._nandaMediumZoom.close(); } catch (err) {}
+    if (typeof window.closeNandaLightbox === "function") {
+      var lbModal = document.getElementById("nandaLightboxModal");
+      if (lbModal && lbModal.classList.contains("nanda-lightbox-modal--visible")) {
+        window.closeNandaLightbox();
+        return;
+      }
     }
     if (typeof window.toggleNandaEcosystem === "function") {
       var ecoModal = document.getElementById("nandaEcosystemModal");
@@ -600,44 +604,126 @@ function setupEcosystemModal() {
   });
 }
 
-function setupImageLightbox() {
-  if (typeof mediumZoom !== "function") return;
+// First-Principles Fullscreen Lightbox Controller
+window.getOrCreateNandaLightbox = function() {
+  var modal = document.getElementById("nandaLightboxModal");
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "nandaLightboxModal";
+    modal.className = "nanda-lightbox-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-hidden", "true");
+    modal.innerHTML = [
+      '<div class="nanda-lightbox-backdrop" id="nandaLightboxBackdrop"></div>',
+      '<button class="nanda-lightbox-close" id="nandaLightboxClose" aria-label="Close fullscreen view">',
+      '  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">',
+      '    <line x1="18" y1="6" x2="6" y2="18"></line>',
+      '    <line x1="6" y1="6" x2="18" y2="18"></line>',
+      '  </svg>',
+      '</button>',
+      '<div class="nanda-lightbox-stage" id="nandaLightboxStage">',
+      '  <img class="nanda-lightbox-img" id="nandaLightboxImg" src="" alt="" />',
+      '  <div class="nanda-lightbox-caption" id="nandaLightboxCaption"></div>',
+      '</div>'
+    ].join("\n");
 
-  if (window._nandaMediumZoom) {
-    try {
-      window._nandaMediumZoom.detach();
-    } catch (e) {}
-  }
+    document.body.appendChild(modal);
 
-  // Floating Apple cross close button
-  let closeBtn = document.getElementById("nandaZoomCloseBtn");
-  if (!closeBtn) {
-    closeBtn = document.createElement("button");
-    closeBtn.id = "nandaZoomCloseBtn";
-    closeBtn.className = "nanda-zoom-close-btn";
-    closeBtn.setAttribute("aria-label", "Close image preview");
-    closeBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
-    closeBtn.addEventListener("click", function(e) {
+    modal.querySelector("#nandaLightboxClose").addEventListener("click", function(e) {
       e.preventDefault();
       e.stopPropagation();
-      if (window._nandaMediumZoom) {
-        window._nandaMediumZoom.close();
-      }
+      window.closeNandaLightbox();
     });
-    document.body.appendChild(closeBtn);
+
+    modal.querySelector("#nandaLightboxBackdrop").addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.closeNandaLightbox();
+    });
+
+    modal.querySelector("#nandaLightboxStage").addEventListener("click", function(e) {
+      // Close when clicking backdrop or stage
+      window.closeNandaLightbox();
+    });
+  } else if (modal.parentNode !== document.body) {
+    document.body.appendChild(modal);
+  }
+  return modal;
+};
+
+window.openNandaLightbox = function(src, alt) {
+  var modal = window.getOrCreateNandaLightbox();
+  var img = modal.querySelector("#nandaLightboxImg");
+  var caption = modal.querySelector("#nandaLightboxCaption");
+  if (!modal || !img) return;
+
+  img.src = src;
+  img.alt = alt || "";
+
+  if (caption) {
+    if (alt && alt.trim() && alt !== "diagram" && alt !== "image") {
+      caption.textContent = alt;
+      caption.style.display = "block";
+    } else {
+      caption.textContent = "";
+      caption.style.display = "none";
+    }
   }
 
-  // Filter content diagrams and figures (exclude portraits, team, logos, advisors)
-  const allImgs = Array.from(document.querySelectorAll(
-    ".nanda-figure-image-wrap img, .nanda-figures-grid img, .nanda-diagram-container img, .nanda-figure-card img, .nanda-roadmap-card img, .nanda-zoomable-img, .md-content img"
-  ));
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+  void modal.offsetWidth; // Force layout reflow
+  modal.classList.add("nanda-lightbox-modal--visible");
+  modal.setAttribute("aria-hidden", "false");
+};
 
-  const validImgs = allImgs.filter(img => {
-    if (img.id === "nandaZoomCloseBtn") return false;
-    if (img.closest(".nanda-portrait-img, .nanda-leader-avatar, .nanda-bayarea-leader-img, .nanda-advisor-img, .nanda-logo-roll, .nanda-logo-roll-item, .nanda-marquee-track, .md-header__button, .nanda-header-socials, .nanda-social-square-btn")) {
-      return false;
+window.closeNandaLightbox = function() {
+  var modal = document.getElementById("nandaLightboxModal");
+  if (!modal || !modal.classList.contains("nanda-lightbox-modal--visible")) return;
+
+  modal.classList.remove("nanda-lightbox-modal--visible");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+
+  setTimeout(function() {
+    if (!modal.classList.contains("nanda-lightbox-modal--visible")) {
+      modal.style.display = "none";
+      var img = modal.querySelector("#nandaLightboxImg");
+      if (img) img.src = "";
     }
-    const src = img.getAttribute("src") || "";
+  }, 220);
+};
+
+function setupImageLightbox() {
+  if (window._nandaLightboxAttached) return;
+  window._nandaLightboxAttached = true;
+
+  // Use capture phase so no ancestor can stop propagation or prevent default
+  document.addEventListener("click", function(e) {
+    var el = e.target;
+    if (!el) return;
+
+    // Resolve img target (clicked directly on img or on figure container)
+    var img = el.tagName === "IMG" ? el : null;
+    if (!img && el.closest) {
+      var wrap = el.closest(".nanda-figure-image-wrap, .nanda-diagram-container");
+      if (wrap) {
+        img = wrap.querySelector("img");
+      }
+    }
+
+    if (!img) return;
+
+    // Never trigger on the modal itself
+    if (img.id === "nandaLightboxImg" || img.closest("#nandaLightboxModal")) return;
+
+    // Never trigger on portraits, advisors, speakers, team, logos, social icons
+    if (img.closest(".nanda-portrait-img, .nanda-leader-avatar, .nanda-bayarea-leader-img, .nanda-advisor-img, .nanda-logo-roll, .nanda-logo-roll-item, .nanda-marquee-track, .md-header__button, .nanda-header-socials, .nanda-social-square-btn")) {
+      return;
+    }
+
+    var src = img.getAttribute("src") || "";
     if (
       src.includes("companylogos") ||
       src.includes("words-from-advisors") ||
@@ -645,29 +731,20 @@ function setupImageLightbox() {
       src.includes("advisors") ||
       src.includes("team")
     ) {
-      return false;
+      return;
     }
-    return true;
-  });
 
-  if (validImgs.length === 0) return;
+    // Match diagrams and documentation visuals
+    var isDiagram = img.closest(".nanda-figure-image-wrap, .nanda-figures-grid, .nanda-diagram-container, .nanda-figure-card, .nanda-roadmap-card, .nanda-zoomable-img, .md-content");
 
-  const isDark = (document.body.getAttribute("data-md-color-scheme") === "slate");
-  const overlayBg = isDark ? "rgba(10, 10, 12, 0.9)" : "rgba(250, 250, 250, 0.94)";
-
-  window._nandaMediumZoom = mediumZoom(validImgs, {
-    margin: 32,
-    background: overlayBg,
-    scrollOffset: 40
-  });
-
-  window._nandaMediumZoom.on("open", () => {
-    if (closeBtn) closeBtn.classList.add("nanda-zoom-close-btn--visible");
-  });
-
-  window._nandaMediumZoom.on("close", () => {
-    if (closeBtn) closeBtn.classList.remove("nanda-zoom-close-btn--visible");
-  });
+    if (isDiagram) {
+      e.preventDefault();
+      e.stopPropagation();
+      var fullSrc = img.currentSrc || img.src;
+      var alt = img.alt || img.getAttribute("title") || "";
+      window.openNandaLightbox(fullSrc, alt);
+    }
+  }, true);
 }
 
 function setupBayAreaModal() {
