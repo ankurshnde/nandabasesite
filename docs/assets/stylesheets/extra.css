@@ -5822,3 +5822,323 @@ footer.md-footer,
     max-height: 80vh !important;
   }
 }
+
+/* ==========================================================================
+   Project NANDA Video Vault Components (Apple Aesthetic)
+   ========================================================================== */
+
+.nanda-vault-hero {
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.8), rgba(255, 255, 255, 0.95)) !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-left: 4px solid var(--nanda-yellow) !important;
+  border-radius: 14px !important;
+  padding: 24px 28px !important;
+  margin: 1.5rem 0 2rem 0 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-hero {
+  background: linear-gradient(135deg, rgba(36, 36, 36, 0.8), rgba(28, 28, 28, 0.95)) !important;
+  border-color: #383838 !important;
+  border-left-color: var(--nanda-yellow) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+.nanda-vault-hero-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 10px !important;
+}
+
+.nanda-vault-hero-title {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--md-default-fg-color) !important;
+  letter-spacing: -0.02em !important;
+}
+
+.nanda-vault-hero-desc {
+  font-size: 0.95rem !important;
+  color: #64748b !important;
+  line-height: 1.6 !important;
+  margin: 0 0 16px 0 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-hero-desc {
+  color: #94a3b8 !important;
+}
+
+.nanda-vault-tags {
+  display: flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.nanda-vault-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  padding: 4px 12px !important;
+  border-radius: 9999px !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+}
+
+.nanda-vault-tag:hover {
+  border-color: rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(-1px) !important;
+  color: #0f172a !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-tag {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-tag:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.nanda-vault-section-title {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--md-default-fg-color) !important;
+  border-bottom: 2px solid var(--nanda-yellow) !important;
+  padding-bottom: 8px !important;
+  margin: 2.5rem 0 8px 0 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.nanda-vault-section-desc {
+  color: #64748b !important;
+  font-size: 0.92rem !important;
+  margin: 0 0 20px 0 !important;
+  line-height: 1.55 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-section-desc {
+  color: #94a3b8 !important;
+}
+
+.nanda-vault-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+  gap: 20px !important;
+  margin: 1.5rem 0 3rem 0 !important;
+}
+
+.nanda-vault-card {
+  background: #ffffff !important;
+  border: 1px solid var(--nanda-border) !important;
+  border-radius: 14px !important;
+  padding: 14px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease !important;
+}
+
+.nanda-vault-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: rgba(234, 179, 8, 0.5) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(234, 179, 8, 0.08) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-card {
+  background: #242424 !important;
+  border-color: #383838 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-card:hover {
+  background: #282828 !important;
+  border-color: rgba(234, 179, 8, 0.6) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+.nanda-vault-player {
+  position: relative !important;
+  width: 100% !important;
+  padding-top: 56.25% !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  background: #0b0f19 !important;
+}
+
+.nanda-vault-player iframe {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+}
+
+.nanda-vault-linkedin-player {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--nanda-border) !important;
+  background: #f8fafc !important;
+  width: 100% !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-linkedin-player {
+  background: #1e1e1e !important;
+  border-color: #383838 !important;
+}
+
+.nanda-vault-body {
+  margin-top: 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+.nanda-vault-badge-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+.nanda-vault-badge {
+  display: inline-block !important;
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  padding: 2px 8px !important;
+  border-radius: 6px !important;
+  border: 1px solid #e2e8f0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-badge {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #cbd5e1 !important;
+}
+
+.nanda-vault-badge--linkedin {
+  background: #0a66c2 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-badge--linkedin {
+  background: #0a66c2 !important;
+  color: #ffffff !important;
+}
+
+.nanda-vault-date {
+  color: #64748b !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-date {
+  color: #94a3b8 !important;
+}
+
+.nanda-vault-card-title {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  margin: 0 0 8px 0 !important;
+  font-size: 1.02rem !important;
+  line-height: 1.4 !important;
+  color: var(--md-default-fg-color) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.nanda-vault-card-desc {
+  margin: 0 0 14px 0 !important;
+  font-size: 0.85rem !important;
+  color: #64748b !important;
+  line-height: 1.5 !important;
+  flex-grow: 1 !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-card-desc {
+  color: #94a3b8 !important;
+}
+
+.nanda-vault-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+  padding-top: 10px !important;
+  margin-top: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-footer {
+  border-top-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.nanda-vault-pill-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 0.32rem 0.85rem !important;
+  font-size: 0.76rem !important;
+  font-weight: 500 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif !important;
+  letter-spacing: -0.01em !important;
+  border-radius: 9999px !important;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  background-color: #F5F5F7 !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #1D1D1F !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+}
+
+.nanda-vault-pill-btn:hover {
+  background-color: #E8E8ED !important;
+  border-color: rgba(0, 0, 0, 0.16) !important;
+  color: #000000 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(-1px) !important;
+}
+
+.nanda-vault-pill-btn:active {
+  transform: translateY(1px) scale(0.985) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-pill-btn {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #F5F5F7 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-vault-pill-btn:hover {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45) !important;
+  transform: translateY(-1px) !important;
+}
+
+.nanda-vault-pill-btn svg {
+  flex-shrink: 0 !important;
+}
+

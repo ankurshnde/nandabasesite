@@ -148,6 +148,7 @@ const SITE_PAGES = [
   { path: "/developer/fellowships/", title: "Fellowships", section: "Contribute" },
   { path: "/resources/faq/", title: "FAQ", section: "Resources" },
   { path: "/resources/talks-archive/", title: "Talks & Archive", section: "Resources" },
+  { path: "/resources/video-vault/", title: "Video Vault", section: "Resources" },
   { path: "/people/advisors/", title: "Advisors & Speakers", section: "People & Talent" },
   { path: "/people/team/", title: "Team", section: "People & Talent" },
   { path: "/about/project-nanda/", title: "Project NANDA", section: "About" }
