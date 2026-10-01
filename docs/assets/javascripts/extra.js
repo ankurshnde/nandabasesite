@@ -3,6 +3,7 @@ window.toggleNandaEcosystem = function(open) {
   var modal = document.getElementById("nandaEcosystemModal");
   if (!modal) return;
   if (open) {
+    modal.classList.add("nanda-ecosystem-modal--open");
     modal.style.display = "flex";
     document.body.style.overflow = "hidden";
     // Force layout reflow so the CSS transition begins from initial state
@@ -15,10 +16,48 @@ window.toggleNandaEcosystem = function(open) {
     document.body.style.overflow = "";
     setTimeout(function() {
       if (!modal.classList.contains("nanda-ecosystem-modal--visible")) {
+        modal.classList.remove("nanda-ecosystem-modal--open");
         modal.style.display = "none";
       }
     }, 300);
   }
+};
+
+// NANDA Image Lightbox Controller
+window.openNandaLightbox = function(src, alt) {
+  var modal = document.getElementById("nandaLightboxModal");
+  var img = document.getElementById("nandaLightboxImg");
+  var caption = document.getElementById("nandaLightboxCaption");
+  if (!modal || !img) return;
+
+  img.src = src;
+  img.alt = alt || "";
+  if (caption) {
+    caption.textContent = alt || "";
+    caption.style.display = alt ? "block" : "none";
+  }
+
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+  void modal.offsetWidth;
+  modal.classList.add("nanda-lightbox-modal--visible");
+  modal.setAttribute("aria-hidden", "false");
+};
+
+window.closeNandaLightbox = function() {
+  var modal = document.getElementById("nandaLightboxModal");
+  if (!modal) return;
+
+  modal.classList.remove("nanda-lightbox-modal--visible");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  setTimeout(function() {
+    if (!modal.classList.contains("nanda-lightbox-modal--visible")) {
+      modal.style.display = "none";
+      var img = document.getElementById("nandaLightboxImg");
+      if (img) img.src = "";
+    }
+  }, 250);
 };
 
 window._bayAreaSavedScrollY = null;
@@ -96,8 +135,18 @@ window.toggleBayAreaModal = function(open, shouldUpdateUrl) {
 // Global Escape Key Listener
 document.addEventListener("keydown", function(e) {
   if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+    if (typeof window.closeNandaLightbox === "function") {
+      var lbModal = document.getElementById("nandaLightboxModal");
+      if (lbModal && lbModal.classList.contains("nanda-lightbox-modal--visible")) {
+        window.closeNandaLightbox();
+        return;
+      }
+    }
     if (typeof window.toggleNandaEcosystem === "function") {
-      window.toggleNandaEcosystem(false);
+      var ecoModal = document.getElementById("nandaEcosystemModal");
+      if (ecoModal && (ecoModal.classList.contains("nanda-ecosystem-modal--open") || ecoModal.classList.contains("nanda-ecosystem-modal--visible"))) {
+        window.toggleNandaEcosystem(false);
+      }
     }
     if (typeof window.toggleBayAreaModal === "function") {
       var bayModal = document.getElementById("nandaBayAreaModal");
@@ -579,12 +628,7 @@ function setupEcosystemModal() {
     const trigger = e.target.closest("#nandaEcosystemTrigger");
     if (trigger) {
       e.preventDefault();
-      const modal = document.getElementById("nandaEcosystemModal");
-      if (modal) {
-        modal.classList.add("nanda-ecosystem-modal--open");
-        modal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      }
+      window.toggleNandaEcosystem(true);
       return;
     }
 
@@ -592,23 +636,46 @@ function setupEcosystemModal() {
     const backdrop = e.target.closest("#nandaEcosystemBackdrop");
     if (closeBtn || backdrop) {
       e.preventDefault();
-      const modal = document.getElementById("nandaEcosystemModal");
-      if (modal) {
-        modal.classList.remove("nanda-ecosystem-modal--open");
-        modal.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-      }
+      window.toggleNandaEcosystem(false);
     }
   });
+}
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      const modal = document.getElementById("nandaEcosystemModal");
-      if (modal && modal.classList.contains("nanda-ecosystem-modal--open")) {
-        modal.classList.remove("nanda-ecosystem-modal--open");
-        modal.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-      }
+function setupImageLightbox() {
+  if (window._nandaLightboxInitialized) return;
+  window._nandaLightboxInitialized = true;
+
+  document.addEventListener("click", function(e) {
+    var target = e.target;
+    if (!target || target.tagName !== "IMG") return;
+
+    // Do not zoom modal images or headshots/logos/avatars
+    if (target.id === "nandaLightboxImg" || target.closest("#nandaLightboxModal")) return;
+
+    var isExcluded = target.closest(".nanda-portrait-img, .nanda-leader-avatar, .nanda-bayarea-leader-img, .nanda-advisor-img, .nanda-logo-roll, .nanda-logo-roll-item, .nanda-marquee-track, .md-header__button, .nanda-header-socials");
+    if (isExcluded) return;
+
+    var src = target.getAttribute("src") || "";
+    if (
+      src.includes("companylogos") ||
+      src.includes("words-from-advisors") ||
+      src.includes("headshots") ||
+      src.includes("advisors") ||
+      src.includes("team")
+    ) {
+      return;
+    }
+
+    var isDiagram = target.closest(".nanda-figure-image-wrap, .nanda-figures-grid, .nanda-diagram-container, .nanda-figure-card, .nanda-roadmap-card, .nanda-zoomable-img") ||
+      src.includes("diagrams") ||
+      src.includes("phases-diagram") ||
+      src.includes("architecture") ||
+      target.closest(".md-content");
+
+    if (isDiagram) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.openNandaLightbox(target.currentSrc || target.src, target.alt || "");
     }
   });
 }
@@ -724,6 +791,7 @@ function initNanda() {
   setupHeaderScrollFade();
   setupEcosystemModal();
   setupBayAreaModal();
+  setupImageLightbox();
 }
 
 if (document.readyState === "loading") {
