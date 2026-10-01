@@ -5400,10 +5400,70 @@ footer.md-footer,
   color: #71717A !important;
 }
 
+/* ==========================================================================
+   Phase 1 Goals - About Project NANDA
+   ========================================================================== */
+.nanda-phase-goals-wrap {
+  margin: 1.5rem 0 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  background-color: #FAFAFA;
+  border: 1px solid var(--nanda-border);
+  border-radius: 12px;
+}
 
+.nanda-phase-goals-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  margin-bottom: 0.85rem;
+}
 
+.nanda-phase-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
 
+@media (max-width: 768px) {
+  .nanda-phase-goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+.nanda-phase-goal-item {
+  background-color: #FFFFFF;
+  border: 1px solid var(--nanda-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--md-default-fg-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
 
+.nanda-phase-goal-item:hover {
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
 
+[data-md-color-scheme="slate"] .nanda-phase-goals-wrap {
+  background-color: #1A1A1A !important;
+  border-color: #2D2D2D !important;
+}
 
+[data-md-color-scheme="slate"] .nanda-phase-goal-item {
+  background-color: #242424 !important;
+  border-color: #383838 !important;
+  color: #EDEDED !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-phase-goal-item:hover {
+  background-color: #2D2D2D !important;
+  border-color: #555555 !important;
+  color: #FFFFFF !important;
+}

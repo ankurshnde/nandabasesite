@@ -109,9 +109,21 @@ Project NANDA’s roadmap describes the development of an Internet of AI Agents 
 
 ---
 
-## About NANDA
+## About Project NANDA
 
-Project NANDA is foundational infrastructure for the open agentic web that lets any client (person or other AI Agent) resolve a stable agent identity to the record it needs to reach that agent — no matter which registry, protocol, or cloud host its owner uses. Originated at MIT, Project NANDA addresses four critical infrastructure choke points through consensus-driven innovation: **DNS**, **Certificate Authorities (CA)**, **Orchestration**, and **Attestation**.
+Project NANDA (Networked AI Agents in Decentralized Architecture) originated at MIT and aims to dismantle the four critical choke points within this ecosystem's infrastructure by focusing on consensus-driven innovation:
+
+<div class="nanda-phase-goals-wrap">
+  <div class="nanda-phase-goals-title">Phase 1 Goals:</div>
+  <div class="nanda-phase-goals-grid">
+    <div class="nanda-phase-goal-item">DNS</div>
+    <div class="nanda-phase-goal-item">CA</div>
+    <div class="nanda-phase-goal-item">Orchestration</div>
+    <div class="nanda-phase-goal-item">Attestation</div>
+  </div>
+</div>
+
+We are pioneering the foundational infrastructure for the Internet of AI Agents – enabling autonomous systems to **interact, transact, and collaborate seamlessly.**
 
 ### What Project NANDA includes
 
@@ -163,14 +175,32 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">Founder, Project NANDA</div>
       <div class="nanda-portrait-actions">
         <a href="https://youtu.be/yXxHb3LMygw" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- 2. John Roese -->
+  <!-- 2. Paul Mockapetris -->
+  <div class="nanda-portrait-card">
+    <div class="nanda-portrait-media">
+      <img src="assets/advisors/paul-mockapetris.png" alt="Paul Mockapetris" class="nanda-portrait-img" loading="lazy">
+    </div>
+    <div class="nanda-portrait-content">
+      <div class="nanda-portrait-name">Paul Mockapetris</div>
+      <div class="nanda-portrait-role">Inventor of DNS</div>
+      <div class="nanda-portrait-org">Internet Pioneer &bull; Advisor, Project NANDA</div>
+      <div class="nanda-portrait-actions">
+        <a href="https://www.youtube.com/shorts/MFWHSwD-EZ8" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <span>Watch Keynote</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. John Roese -->
   <div class="nanda-portrait-card">
     <div class="nanda-portrait-media">
       <img src="assets/advisors/John%20Roese.jpeg" alt="John Roese" class="nanda-portrait-img" loading="lazy">
@@ -181,14 +211,14 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">Dell Technologies</div>
       <div class="nanda-portrait-actions">
         <a href="https://youtu.be/WJ3xGAKqmGs" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- 3. R.V. Guha -->
+  <!-- 4. R.V. Guha -->
   <div class="nanda-portrait-card">
     <div class="nanda-portrait-media">
       <img src="assets/advisors/Guha.jpg" alt="R.V. Guha" class="nanda-portrait-img" loading="lazy">
@@ -199,14 +229,14 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">Microsoft &bull; Creator, NLWeb</div>
       <div class="nanda-portrait-actions">
         <a href="https://www.youtube.com/watch?v=P0YKIRD8eQk" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- 4. Jessica Rosenworcel -->
+  <!-- 5. Jessica Rosenworcel -->
   <div class="nanda-portrait-card">
     <div class="nanda-portrait-media">
       <img src="assets/advisors/Jessica%20Rosenworcel.jpg" alt="Jessica Rosenworcel" class="nanda-portrait-img" loading="lazy">
@@ -217,25 +247,7 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">FCC (Federal Communications Commission)</div>
       <div class="nanda-portrait-actions">
         <a href="https://youtu.be/qQebYJclTno" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          <span>Watch Keynote</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5. Peeyush Aggarwal -->
-  <div class="nanda-portrait-card">
-    <div class="nanda-portrait-media">
-      <img src="assets/advisors/Peeyush%20Aggarwal.jpeg" alt="Peeyush Aggarwal" class="nanda-portrait-img" loading="lazy">
-    </div>
-    <div class="nanda-portrait-content">
-      <div class="nanda-portrait-name">Peeyush Aggarwal</div>
-      <div class="nanda-portrait-role">Partner</div>
-      <div class="nanda-portrait-org">Deloitte UK</div>
-      <div class="nanda-portrait-actions">
-        <a href="https://www.youtube.com/watch?v=AZQKop8kPV4" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
@@ -253,7 +265,7 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">OpenAI</div>
       <div class="nanda-portrait-actions">
         <a href="https://youtu.be/S2ksXKHbOUU" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>

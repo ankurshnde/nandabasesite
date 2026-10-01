@@ -22,6 +22,16 @@ Project NANDA is guided by an international collective of academic researchers, 
   </div>
   <div class="nanda-portrait-card">
     <div class="nanda-portrait-media">
+      <img src="/assets/advisors/paul-mockapetris.png" alt="Paul Mockapetris" class="nanda-portrait-img" loading="lazy">
+    </div>
+    <div class="nanda-portrait-content">
+      <div class="nanda-portrait-name">Paul Mockapetris</div>
+      <div class="nanda-portrait-role">Inventor of DNS</div>
+      <div class="nanda-portrait-org">Internet Pioneer &amp; Advisor, Project NANDA</div>
+    </div>
+  </div>
+  <div class="nanda-portrait-card">
+    <div class="nanda-portrait-media">
       <img src="/assets/advisors/danielaruss.jpg" alt="Daniela Rus" class="nanda-portrait-img" loading="lazy">
     </div>
     <div class="nanda-portrait-content">
