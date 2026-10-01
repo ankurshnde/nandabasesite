@@ -37,7 +37,7 @@ Recorded keynote addresses, architectural deep dives, and expert panel sessions 
 
 <div class="nanda-talks-grid">
   <!-- Talk 1: Rao Surapaneni -->
-  <a href="https://www.youtube.com/watch?v=4oBITv0hbs" target="_blank" rel="noopener noreferrer" class="nanda-talk-card">
+  <a href="https://youtu.be/_4oBITv0hbs" target="_blank" rel="noopener noreferrer" class="nanda-talk-card">
     <div class="nanda-talk-header">
       <span class="nanda-talk-tag">Protocol Standards</span>
       <span class="nanda-btn-arrow">↗</span>

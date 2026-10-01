@@ -18,7 +18,7 @@ description: Curated keynotes, summit lectures, technical panels, and podcast co
   </div>
   <div class="nanda-vault-tags">
     <a href="#nanda-summits" class="nanda-vault-tag">NANDA Summits &amp; Keynotes (16)</a>
-    <a href="#protocol-standards" class="nanda-vault-tag">Protocol Standards (5)</a>
+    <a href="#protocol-standards" class="nanda-vault-tag">Protocol Standards (3)</a>
     <a href="#global-stages" class="nanda-vault-tag">Keynotes &amp; Panels (10)</a>
     <a href="#podcasts-docs" class="nanda-vault-tag">Podcasts &amp; Docs (8)</a>
     <a href="#linkedin-spotlights" class="nanda-vault-tag">LinkedIn Highlights (5)</a>
@@ -282,46 +282,16 @@ description: Curated keynotes, summit lectures, technical panels, and podcast co
 <div class="nanda-vault-grid">
   <div class="nanda-vault-card">
     <div class="nanda-vault-player">
-      <iframe src="https://www.youtube.com/embed/4oBITv0hbs" title="Rao Surapaneni: Agent-to-Agent (A2A) Protocol Standard" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/_4oBITv0hbs" title="Rao Surapaneni: Agent-to-Agent (A2A) Protocol Standard" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="nanda-vault-body">
       <div class="nanda-vault-badge-row">
         <span class="nanda-vault-badge">Google Cloud A2A</span>
       </div>
       <div class="nanda-vault-card-title">Rao Surapaneni: Agent-to-Agent (A2A) Protocol Standard</div>
-      <div class="nanda-vault-card-desc">VP & GM of A2A at Google Cloud introduces the Agent-to-Agent (A2A) protocol wire specification, JSON-RPC communication patterns, and standardized messaging for cross-platform agent autonomy.</div>
+      <div class="nanda-vault-card-desc">VP &amp; GM of A2A at Google Cloud introduces the Agent-to-Agent (A2A) protocol wire specification, JSON-RPC communication patterns, and standardized messaging for cross-platform agent autonomy.</div>
       <div class="nanda-vault-footer">
-        <a href="https://www.youtube.com/watch?v=4oBITv0hbs" target="_blank" rel="noopener noreferrer" class="nanda-vault-pill-btn"><svg width="15" height="11" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M66.52 7.74C65.74 4.82 63.46 2.54 60.54 1.76C55.26 0.34 34 0.34 34 0.34C34 0.34 12.74 0.34 7.46 1.76C4.54 2.54 2.26 4.82 1.48 7.74C0.06 13.02 0.06 24 0.06 24C0.06 24 0.06 34.98 1.48 40.26C2.26 43.18 4.54 45.46 7.46 46.24C12.74 47.66 34 47.66 34 47.66C34 47.66 55.26 47.66 60.54 46.24C63.46 45.46 65.74 43.18 66.52 40.26C67.94 34.98 67.94 24 67.94 24C67.94 24 67.94 13.02 66.52 7.74Z" fill="#FF0000"/><path d="M27.06 34.14L44.74 24L27.06 13.86V34.14Z" fill="white"/></svg> <span>Watch on YouTube</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-      </div>
-    </div>
-  </div>
-  <div class="nanda-vault-card">
-    <div class="nanda-vault-player">
-      <iframe src="https://www.youtube.com/embed/nqJySV2LQGw" title="Zafer Sahinoglu: Directed Multi-Agent Task Execution" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-    <div class="nanda-vault-body">
-      <div class="nanda-vault-badge-row">
-        <span class="nanda-vault-badge">Industrial Multi-Agent</span>
-      </div>
-      <div class="nanda-vault-card-title">Zafer Sahinoglu: Directed Multi-Agent Task Execution</div>
-      <div class="nanda-vault-card-desc">VP at Mitsubishi Electric Research Laboratories demonstrates autonomous agent coordination, task decomposition, and targeted execution within complex industrial automation systems.</div>
-      <div class="nanda-vault-footer">
-        <a href="https://youtu.be/nqJySV2LQGw" target="_blank" rel="noopener noreferrer" class="nanda-vault-pill-btn"><svg width="15" height="11" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M66.52 7.74C65.74 4.82 63.46 2.54 60.54 1.76C55.26 0.34 34 0.34 34 0.34C34 0.34 12.74 0.34 7.46 1.76C4.54 2.54 2.26 4.82 1.48 7.74C0.06 13.02 0.06 24 0.06 24C0.06 24 0.06 34.98 1.48 40.26C2.26 43.18 4.54 45.46 7.46 46.24C12.74 47.66 34 47.66 34 47.66C34 47.66 55.26 47.66 60.54 46.24C63.46 45.46 65.74 43.18 66.52 40.26C67.94 34.98 67.94 24 67.94 24C67.94 24 67.94 13.02 66.52 7.74Z" fill="#FF0000"/><path d="M27.06 34.14L44.74 24L27.06 13.86V34.14Z" fill="white"/></svg> <span>Watch on YouTube</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-      </div>
-    </div>
-  </div>
-  <div class="nanda-vault-card">
-    <div class="nanda-vault-player">
-      <iframe src="https://www.youtube.com/embed/Vl3jR6uE4b8" title="Raghu Bala: Decentralized Identifiers &amp; Agent Registries" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-    <div class="nanda-vault-body">
-      <div class="nanda-vault-badge-row">
-        <span class="nanda-vault-badge">Decentralized Identity</span>
-      </div>
-      <div class="nanda-vault-card-title">Raghu Bala: Decentralized Identifiers &amp; Agent Registries</div>
-      <div class="nanda-vault-card-desc">CEO of NetObjex examines verifiable credentials, decentralized identity (DID) standards, and immutable registry architectures for autonomous software agents.</div>
-      <div class="nanda-vault-footer">
-        <a href="https://www.youtube.com/watch?v=Vl3jR6uE4b8" target="_blank" rel="noopener noreferrer" class="nanda-vault-pill-btn"><svg width="15" height="11" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M66.52 7.74C65.74 4.82 63.46 2.54 60.54 1.76C55.26 0.34 34 0.34 34 0.34C34 0.34 12.74 0.34 7.46 1.76C4.54 2.54 2.26 4.82 1.48 7.74C0.06 13.02 0.06 24 0.06 24C0.06 24 0.06 34.98 1.48 40.26C2.26 43.18 4.54 45.46 7.46 46.24C12.74 47.66 34 47.66 34 47.66C34 47.66 55.26 47.66 60.54 46.24C63.46 45.46 65.74 43.18 66.52 40.26C67.94 34.98 67.94 24 67.94 24C67.94 24 67.94 13.02 66.52 7.74Z" fill="#FF0000"/><path d="M27.06 34.14L44.74 24L27.06 13.86V34.14Z" fill="white"/></svg> <span>Watch on YouTube</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+        <a href="https://youtu.be/_4oBITv0hbs" target="_blank" rel="noopener noreferrer" class="nanda-vault-pill-btn"><svg width="15" height="11" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M66.52 7.74C65.74 4.82 63.46 2.54 60.54 1.76C55.26 0.34 34 0.34 34 0.34C34 0.34 12.74 0.34 7.46 1.76C4.54 2.54 2.26 4.82 1.48 7.74C0.06 13.02 0.06 24 0.06 24C0.06 24 0.06 34.98 1.48 40.26C2.26 43.18 4.54 45.46 7.46 46.24C12.74 47.66 34 47.66 34 47.66C34 47.66 55.26 47.66 60.54 46.24C63.46 45.46 65.74 43.18 66.52 40.26C67.94 34.98 67.94 24 67.94 24C67.94 24 67.94 13.02 66.52 7.74Z" fill="#FF0000"/><path d="M27.06 34.14L44.74 24L27.06 13.86V34.14Z" fill="white"/></svg> <span>Watch on YouTube</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
       </div>
     </div>
   </div>
@@ -389,7 +359,7 @@ description: Curated keynotes, summit lectures, technical panels, and podcast co
       <div class="nanda-vault-card-title">Decentralised AI: The Future Beyond Centralized Model</div>
       <div class="nanda-vault-card-desc">Addressing the dangers of monopolistic AI and why sovereign nations and enterprises require open, decentralized protocols.</div>
       <div class="nanda-vault-footer">
-        <a href="https://www.youtube.com/watch?v=tGgST_LVR70" target="_blank" rel="noopener noreferrer" class="nanda-vault-pill-btn"><svg width="15" height="11" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M66.52 7.74C65.74 4.82 63.46 2.54 60.54 1.76C55.26 0.34 34 0.34 34 0.34C34 0.34 12.74 0.34 7.46 1.76C4.54 2.54 2.26 4.82 1.48 7.74C0.06 13.02 0.06 24 0.06 24C0.06 24 0.06 34.98 1.48 40.26C2.26 43.18 4.54 45.46 7.46 46.24C12.74 47.66 34 47.66 34 47.66C34 47.66 55.26 47.66 60.54 46.24C63.46 45.46 65.74 43.18 66.52 40.26C67.94 34.98 67.94 24 67.94 24C67.94 24 67.94 13.02 66.52 7.74Z" fill="#FF0000"/><path d="M27.06 34.14L44.74 24L27.06 13.86V34.14Z" fill="white"/></svg> <span>Watch on YouTube</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+        <a href="https://www.youtube.com/live/tGgST_LVR70?si=ookdNt_m-7R5v84k" target="_blank" rel="noopener noreferrer" class="nanda-vault-pill-btn"><svg width="15" height="11" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M66.52 7.74C65.74 4.82 63.46 2.54 60.54 1.76C55.26 0.34 34 0.34 34 0.34C34 0.34 12.74 0.34 7.46 1.76C4.54 2.54 2.26 4.82 1.48 7.74C0.06 13.02 0.06 24 0.06 24C0.06 24 0.06 34.98 1.48 40.26C2.26 43.18 4.54 45.46 7.46 46.24C12.74 47.66 34 47.66 34 47.66C34 47.66 55.26 47.66 60.54 46.24C63.46 45.46 65.74 43.18 66.52 40.26C67.94 34.98 67.94 24 67.94 24C67.94 24 67.94 13.02 66.52 7.74Z" fill="#FF0000"/><path d="M27.06 34.14L44.74 24L27.06 13.86V34.14Z" fill="white"/></svg> <span>Watch on YouTube</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
       </div>
     </div>
   </div>
@@ -744,13 +714,13 @@ description: Curated keynotes, summit lectures, technical panels, and podcast co
   </div>
   <div class="nanda-vault-card">
     <div class="nanda-vault-player">
-      <iframe src="https://www.youtube.com/embed/Yxlb0-zTURo" title="Ramesh Raskar: &#x27;Every Indian Citizen Should Have a Personal AI Agent&#x27;" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/Yxlb0-zTURo" title="Ramesh Raskar: 'Every Indian Citizen Should Have a Personal AI Agent'" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
     <div class="nanda-vault-body">
       <div class="nanda-vault-badge-row">
         <span class="nanda-vault-badge">India Today AI Summit</span>
       </div>
-      <div class="nanda-vault-card-title">Ramesh Raskar: &#x27;Every Indian Citizen Should Have a Personal AI Agent&#x27;</div>
+      <div class="nanda-vault-card-title">Ramesh Raskar: 'Every Indian Citizen Should Have a Personal AI Agent'</div>
       <div class="nanda-vault-card-desc">Articulating the transformative democratic potential of individual personal AI agents working on behalf of every citizen.</div>
       <div class="nanda-vault-footer">
         <a href="https://youtu.be/Yxlb0-zTURo" target="_blank" rel="noopener noreferrer" class="nanda-vault-pill-btn"><svg width="15" height="11" viewBox="0 0 68 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;"><path d="M66.52 7.74C65.74 4.82 63.46 2.54 60.54 1.76C55.26 0.34 34 0.34 34 0.34C34 0.34 12.74 0.34 7.46 1.76C4.54 2.54 2.26 4.82 1.48 7.74C0.06 13.02 0.06 24 0.06 24C0.06 24 0.06 34.98 1.48 40.26C2.26 43.18 4.54 45.46 7.46 46.24C12.74 47.66 34 47.66 34 47.66C34 47.66 55.26 47.66 60.54 46.24C63.46 45.46 65.74 43.18 66.52 40.26C67.94 34.98 67.94 24 67.94 24C67.94 24 67.94 13.02 66.52 7.74Z" fill="#FF0000"/><path d="M27.06 34.14L44.74 24L27.06 13.86V34.14Z" fill="white"/></svg> <span>Watch on YouTube</span> <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
