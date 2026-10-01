@@ -2691,33 +2691,72 @@ footer.md-footer,
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  gap: 0.4rem !important;
   padding: 0.45rem 1.15rem !important;
-  font-size: 0.82rem !important;
-  font-weight: 600 !important;
-  color: var(--md-default-fg-color) !important;
-  background: transparent !important;
-  border: 1px solid var(--nanda-border) !important;
-  border-radius: 6px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Outfit", sans-serif !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  color: #1D1D1F !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 20px rgba(0, 0, 0, 0.07) !important;
   text-decoration: none !important;
   white-space: nowrap !important;
-  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
+  cursor: pointer !important;
+  outline: none !important;
+  user-select: none !important;
+  transition: background-color 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              border-color 0.2s ease,
+              color 0.2s ease !important;
 }
 
 .nanda-update-action:hover {
-  border-color: var(--md-default-fg-color) !important;
-  background-color: rgba(0, 0, 0, 0.03) !important;
-  color: var(--md-default-fg-color) !important;
+  background-color: #FBFBFC !important;
+  border-color: rgba(0, 0, 0, 0.16) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.11) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+.nanda-update-action:active {
+  background-color: #F0F0F2 !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(1px) scale(0.985) !important;
+}
+
+.nanda-update-action svg {
+  flex-shrink: 0 !important;
+  color: currentColor !important;
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1) !important;
+}
+
+.nanda-update-action:hover svg {
+  transform: translateX(1.5px) !important;
 }
 
 [data-md-color-scheme="slate"] .nanda-update-action {
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  color: #ededed !important;
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #F5F5F7 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-md-color-scheme="slate"] .nanda-update-action:hover {
-  border-color: rgba(255, 255, 255, 0.65) !important;
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45), 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-update-action:active {
   background-color: rgba(255, 255, 255, 0.05) !important;
-  color: #ffffff !important;
+  transform: translateY(1px) scale(0.985) !important;
 }
 
 @media screen and (max-width: 48em) {
@@ -3001,32 +3040,49 @@ footer.md-footer,
 .nanda-advisor-talk-pill {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 0.35rem !important;
-  font-size: 0.74rem !important;
-  font-weight: 600 !important;
-  font-family: 'Outfit', sans-serif !important;
-  color: var(--md-default-fg-color) !important;
-  background-color: #F4F4F5 !important;
-  border: 1px solid var(--nanda-border) !important;
-  padding: 0.3rem 0.75rem !important;
-  border-radius: 6px !important;
+  gap: 0.4rem !important;
+  font-size: 0.76rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Outfit", sans-serif !important;
+  color: #1D1D1F !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding: 0.35rem 0.85rem !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 20px rgba(0, 0, 0, 0.07) !important;
   text-decoration: none !important;
-  transition: all 0.18s ease !important;
+  cursor: pointer !important;
+  outline: none !important;
+  user-select: none !important;
   width: fit-content !important;
+  transition: background-color 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              border-color 0.2s ease,
+              color 0.2s ease !important;
 }
 
 .nanda-advisor-talk-pill:hover {
-  background-color: #E4E4E7 !important;
-  border-color: rgba(0, 0, 0, 0.25) !important;
+  background-color: #FBFBFC !important;
+  border-color: rgba(0, 0, 0, 0.16) !important;
   color: #000000 !important;
-  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.11) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+.nanda-advisor-talk-pill:active {
+  background-color: #F0F0F2 !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(1px) scale(0.985) !important;
 }
 
 .nanda-advisor-talk-pill svg {
   flex-shrink: 0 !important;
-  width: 11px !important;
-  height: 11px !important;
-  fill: #E11D48 !important;
+  width: 13px !important;
+  height: 13px !important;
+  color: currentColor !important;
 }
 
 .nanda-advisor-talk-pill::after {
@@ -3050,15 +3106,23 @@ footer.md-footer,
 }
 
 [data-md-color-scheme="slate"] .nanda-advisor-talk-pill {
-  background-color: #1F1F1F !important;
-  border-color: #383838 !important;
-  color: #EDEDED !important;
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #F5F5F7 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-md-color-scheme="slate"] .nanda-advisor-talk-pill:hover {
-  background-color: #2D2D2D !important;
-  border-color: #555555 !important;
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
   color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45), 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-advisor-talk-pill:active {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  transform: translateY(1px) scale(0.985) !important;
 }
 
 .nanda-speakers-grid {
@@ -4188,36 +4252,81 @@ footer.md-footer,
 .nanda-presentation-btn {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 0.35rem !important;
-  font-family: 'Outfit', sans-serif !important;
+  gap: 0.4rem !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Outfit", sans-serif !important;
   font-size: 0.8rem !important;
-  font-weight: 600 !important;
-  padding: 0.4rem 0.85rem !important;
-  border-radius: 8px !important;
-  border: 1px solid #cbd5e1 !important;
-  background-color: #ffffff !important;
-  color: #0f172a !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  padding: 0.42rem 1.05rem !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background-color: #FFFFFF !important;
+  color: #1D1D1F !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 20px rgba(0, 0, 0, 0.07) !important;
   text-decoration: none !important;
-  transition: all 0.18s ease !important;
+  outline: none !important;
+  user-select: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              border-color 0.2s ease,
+              color 0.2s ease !important;
 }
 
 .nanda-presentation-btn:hover {
-  border-color: #ca8a04 !important;
-  color: #ca8a04 !important;
-  background-color: #fefce8 !important;
-  transform: translateY(-1px) !important;
+  background-color: #FBFBFC !important;
+  border-color: rgba(0, 0, 0, 0.16) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.11) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+.nanda-presentation-btn:active {
+  background-color: #F0F0F2 !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(1px) scale(0.985) !important;
+}
+
+.nanda-presentation-btn svg {
+  flex-shrink: 0 !important;
+  color: currentColor !important;
 }
 
 .nanda-presentation-btn--video {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  border-color: #000000 !important;
+  background-color: #FFFFFF !important;
+  color: #1D1D1F !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .nanda-presentation-btn--video:hover {
-  background-color: #27272a !important;
-  color: #fef08a !important;
-  border-color: #27272a !important;
+  background-color: #FBFBFC !important;
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.16) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-presentation-btn,
+[data-md-color-scheme="slate"] .nanda-presentation-btn--video {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #F5F5F7 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-presentation-btn:hover,
+[data-md-color-scheme="slate"] .nanda-presentation-btn--video:hover {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45), 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-presentation-btn:active,
+[data-md-color-scheme="slate"] .nanda-presentation-btn--video:active {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  transform: translateY(1px) scale(0.985) !important;
 }
 
 /* ==========================================================================
@@ -4422,40 +4531,83 @@ footer.md-footer,
   text-align: center !important;
 }
 
-.nanda-action-btn {
+.nanda-action-btn,
+.md-button {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.4rem !important;
-  padding: 0.65rem 1.35rem !important;
-  border-radius: 8px !important;
-  font-family: 'Outfit', sans-serif !important;
-  font-size: 0.9rem !important;
-  font-weight: 600 !important;
+  gap: 0.45rem !important;
+  padding: 0.65rem 1.45rem !important;
+  border-radius: 9999px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Outfit", sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
   text-decoration: none !important;
-  color: var(--md-default-fg-color) !important;
-  background-color: var(--nanda-card-bg) !important;
-  border: 1px solid var(--nanda-border) !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
-  transition: all 0.18s ease !important;
+  color: #1D1D1F !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 20px rgba(0, 0, 0, 0.07) !important;
+  outline: none !important;
+  user-select: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              border-color 0.2s ease,
+              color 0.2s ease !important;
 }
 
-.nanda-action-btn:hover {
-  transform: translateY(-2px) !important;
-  border-color: rgba(0, 0, 0, 0.25) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08) !important;
+.nanda-action-btn:hover,
+.md-button:hover {
+  background-color: #FBFBFC !important;
+  border-color: rgba(0, 0, 0, 0.16) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.11) !important;
+  transform: translateY(-1.5px) !important;
 }
 
-[data-md-color-scheme="slate"] .nanda-action-btn {
-  background-color: #262626 !important;
-  border-color: #383838 !important;
-  color: #EDEDED !important;
+.nanda-action-btn:active,
+.md-button:active {
+  background-color: #F0F0F2 !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(1px) scale(0.985) !important;
 }
 
-[data-md-color-scheme="slate"] .nanda-action-btn:hover {
-  background-color: #2D2D2D !important;
-  border-color: #555555 !important;
+.nanda-action-btn svg,
+.md-button svg {
+  flex-shrink: 0 !important;
+  color: currentColor !important;
+  transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1) !important;
+}
+
+.nanda-action-btn:hover svg,
+.md-button:hover svg {
+  transform: translateX(1.5px) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-action-btn,
+[data-md-color-scheme="slate"] .md-button {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #F5F5F7 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-action-btn:hover,
+[data-md-color-scheme="slate"] .md-button:hover {
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
   color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45), 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+[data-md-color-scheme="slate"] .nanda-action-btn:active,
+[data-md-color-scheme="slate"] .md-button:active {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  transform: translateY(1px) scale(0.985) !important;
 }
 
 /* Social Square Buttons for Community Momentum (2-Row, 5-Column Grid, Sharp Corners, 100% Width) */
@@ -5115,16 +5267,6 @@ footer.md-footer,
   color: #A1A1AA !important;
 }
 
-[data-md-color-scheme="slate"] .nanda-advisor-talk-pill {
-  background-color: #1F1F1F !important;
-  border-color: #383838 !important;
-  color: #EDEDED !important;
-}
-
-[data-md-color-scheme="slate"] .nanda-advisor-talk-pill:hover {
-  background-color: #2D2D2D !important;
-  color: #FFFFFF !important;
-}
 
 /* Advisors Marquee */
 [data-md-color-scheme="slate"] .nanda-advisor-card {
@@ -5273,12 +5415,6 @@ footer.md-footer,
 [data-md-color-scheme="slate"] .nanda-presentation-toolbar {
   background-color: #1F1F1F !important;
   border-bottom-color: #333333 !important;
-}
-
-[data-md-color-scheme="slate"] .nanda-presentation-btn {
-  background-color: #262626 !important;
-  border-color: #383838 !important;
-  color: #EDEDED !important;
 }
 
 /* Ecosystem Trigger Button */
@@ -5432,23 +5568,30 @@ footer.md-footer,
 }
 
 .nanda-phase-goal-item {
-  background-color: #FFFFFF;
-  border: 1px solid var(--nanda-border);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  text-align: center;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  font-size: 0.92rem;
-  color: var(--md-default-fg-color);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-  transition: all 0.2s ease;
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 9999px !important;
+  padding: 0.65rem 1.25rem !important;
+  text-align: center !important;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Outfit", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: -0.01em !important;
+  color: #1D1D1F !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 8px 20px rgba(0, 0, 0, 0.07) !important;
+  cursor: default !important;
+  transition: background-color 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              box-shadow 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              transform 0.2s cubic-bezier(0.32, 0.72, 0, 1),
+              border-color 0.2s ease,
+              color 0.2s ease !important;
 }
 
 .nanda-phase-goal-item:hover {
-  border-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  transform: translateY(-1px);
+  background-color: #FBFBFC !important;
+  border-color: rgba(0, 0, 0, 0.16) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.11) !important;
+  transform: translateY(-1.5px) !important;
 }
 
 [data-md-color-scheme="slate"] .nanda-phase-goals-wrap {
@@ -5457,13 +5600,16 @@ footer.md-footer,
 }
 
 [data-md-color-scheme="slate"] .nanda-phase-goal-item {
-  background-color: #242424 !important;
-  border-color: #383838 !important;
-  color: #EDEDED !important;
+  background-color: rgba(255, 255, 255, 0.09) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #F5F5F7 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.3) !important;
 }
 
 [data-md-color-scheme="slate"] .nanda-phase-goal-item:hover {
-  background-color: #2D2D2D !important;
-  border-color: #555555 !important;
+  background-color: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
   color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45), 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-1.5px) !important;
 }

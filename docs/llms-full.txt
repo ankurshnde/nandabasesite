@@ -35,7 +35,10 @@
       <p class="nanda-update-desc">Co-located with IEEE TPS 2026 in San Jose, CA. Organized by Project NANDA &amp; MIT Media Lab, focusing on sandboxes, zero-trust security, privacy, and evaluation for decentralized agent networks with proceedings in IEEE Xplore.</p>
     </div>
     <div class="nanda-update-side">
-      <a href="https://projectnanda.org/workshops/ieeetps26/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">View Workshop &amp; CFP</a>
+      <a href="https://projectnanda.org/workshops/ieeetps26/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">
+        <span>View Workshop &amp; CFP</span>
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
   </div>
 
@@ -51,7 +54,10 @@
       <p class="nanda-update-desc">Hosted by MIT Media Lab &amp; HCLTech. Building services that autonomous AI agents can discover and use independently; competing online with an in-person finale at MIT.</p>
     </div>
     <div class="nanda-update-side">
-      <a href="https://nandahack.media.mit.edu/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">Apply now</a>
+      <a href="https://nandahack.media.mit.edu/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">
+        <span>Apply now</span>
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
   </div>
 
@@ -67,7 +73,10 @@
       <p class="nanda-update-desc">An open-source testnet and sandbox built around NEST for designing and running multi-agent experiments, verifying protocol choices, and capturing JSON interaction traces.</p>
     </div>
     <div class="nanda-update-side">
-      <a href="https://nandatown.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">Explore Nanda Town</a>
+      <a href="https://nandatown.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">
+        <span>Explore Nanda Town</span>
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
   </div>
 
@@ -83,7 +92,10 @@
       <p class="nanda-update-desc">As AI agents move from answering questions to executing autonomous actions, data provenance is essential. DataFacts documents dataset availability, freshness, authenticity, and access permissions — turning the Agentic Web into a verifiable data-to-decision ecosystem.</p>
     </div>
     <div class="nanda-update-side">
-      <a href="https://www.linkedin.com/company/projectnanda/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">Read on LinkedIn</a>
+      <a href="https://www.linkedin.com/company/projectnanda/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">
+        <span>Read on LinkedIn</span>
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
   </div>
 
@@ -99,7 +111,10 @@
       <p class="nanda-update-desc">A civic pilot for sovereign AI agents — empowering residents with personal agents that navigate municipal services while keeping their personal data confidential and under their control.</p>
     </div>
     <div class="nanda-update-side">
-      <a href="https://civicagents.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">Explore Civic Agents</a>
+      <a href="https://civicagents.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">
+        <span>Explore Civic Agents</span>
+        <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
   </div>
 </div>
@@ -184,7 +199,7 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">Founder, Project NANDA</div>
       <div class="nanda-portrait-actions">
         <a href="https://youtu.be/yXxHb3LMygw" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
@@ -202,7 +217,7 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">Internet Pioneer &bull; Advisor, Project NANDA</div>
       <div class="nanda-portrait-actions">
         <a href="https://www.youtube.com/shorts/MFWHSwD-EZ8" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
@@ -220,7 +235,7 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">Dell Technologies</div>
       <div class="nanda-portrait-actions">
         <a href="https://youtu.be/WJ3xGAKqmGs" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
@@ -238,7 +253,7 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">Microsoft &bull; Creator, NLWeb</div>
       <div class="nanda-portrait-actions">
         <a href="https://www.youtube.com/watch?v=P0YKIRD8eQk" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
@@ -256,7 +271,7 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">FCC (Federal Communications Commission)</div>
       <div class="nanda-portrait-actions">
         <a href="https://youtu.be/qQebYJclTno" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
@@ -274,7 +289,7 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
       <div class="nanda-portrait-org">OpenAI</div>
       <div class="nanda-portrait-actions">
         <a href="https://youtu.be/S2ksXKHbOUU" target="_blank" rel="noopener noreferrer" class="nanda-advisor-talk-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
           <span>Watch Keynote</span>
         </a>
       </div>
@@ -283,7 +298,10 @@ Cloud, research, infrastructure, safety, and venture leaders building the agent 
 </div>
 
 <div style="text-align: center; margin: 1.5rem 0 2.5rem 0;">
-  <a href="people/team/" class="nanda-action-btn">See More Advisors and Key Voices</a>
+  <a href="people/team/" class="nanda-action-btn">
+    <span>See More Advisors and Key Voices</span>
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
 </div>
 
 ---
@@ -398,7 +416,10 @@ Our research outlines the architectural and strategic foundations of the Agentic
 </div>
 
 <div style="text-align: center; margin: 1.75rem 0 2.5rem 0;">
-  <a href="publication/get-involved/" class="nanda-action-btn">Get Involved in Research Lab</a>
+  <a href="publication/get-involved/" class="nanda-action-btn">
+    <span>Get Involved in Research Lab</span>
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
 </div>
 
 ---
@@ -518,9 +539,18 @@ The core architectural overview of Project NANDA, detailing the transition from 
       <strong>Project NANDA Architecture &amp; Ecosystem</strong>
     </div>
     <div class="nanda-presentation-actions">
-      <a href="assets/NANDA.pdf" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn">Download PDF</a>
-      <a href="https://www.youtube.com/watch?v=-S51FOnqF0o" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn nanda-presentation-btn--video">Intro Video</a>
-      <a href="https://youtu.be/nqJySV2LQGw" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn nanda-presentation-btn--video">Watch Demo</a>
+      <a href="assets/NANDA.pdf" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+        <span>Download PDF</span>
+      </a>
+      <a href="https://www.youtube.com/watch?v=-S51FOnqF0o" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3.5"/><polygon points="10 8.5 16 12 10 15.5 10 8.5" fill="currentColor"/></svg>
+        <span>Intro Video</span>
+      </a>
+      <a href="https://youtu.be/nqJySV2LQGw" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/></svg>
+        <span>Watch Demo</span>
+      </a>
     </div>
   </div>
   <div class="nanda-pdf-frame-wrapper">
@@ -653,10 +683,22 @@ Insights and perspectives on the emerging Agentic Web from leaders across AI res
 Join researchers, builders, enterprises, and civic innovators shaping the Internet of AI Agents:
 
 <div class="nanda-action-bar">
-  <a href="community/" class="nanda-action-btn">Join Community</a>
-  <a href="publication/get-involved/" class="nanda-action-btn">Get Involved</a>
-  <a href="community/start-a-chapter/" class="nanda-action-btn">Start a Chapter</a>
-  <a href="developer/open-source/" class="nanda-action-btn">Open Source Repositories</a>
+  <a href="community/" class="nanda-action-btn">
+    <span>Join Community</span>
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+  <a href="publication/get-involved/" class="nanda-action-btn">
+    <span>Get Involved</span>
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+  <a href="community/start-a-chapter/" class="nanda-action-btn">
+    <span>Start a Chapter</span>
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+  <a href="developer/open-source/" class="nanda-action-btn">
+    <span>Open Source Repositories</span>
+    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
 </div>
 
 ### Follow &amp; Connect
