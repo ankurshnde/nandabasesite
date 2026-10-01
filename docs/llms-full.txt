@@ -118,7 +118,11 @@ Project NANDA’s roadmap describes the development of an Internet of AI Agents 
 
 ---
 
-## What Project NANDA includes
+## About NANDA
+
+Project NANDA is foundational infrastructure for the open agentic web that lets any client (person or other AI Agent) resolve a stable agent identity to the record it needs to reach that agent — no matter which registry, protocol, or cloud host its owner uses. Originated at MIT, Project NANDA addresses four critical infrastructure choke points through consensus-driven innovation: **DNS**, **Certificate Authorities (CA)**, **Orchestration**, and **Attestation**.
+
+### What Project NANDA includes
 
 * **[NANDA Index ↗](https://nandaindex.org/)** A federated, multi-operator directory of pointers from identity to authoritative source. Think of it as a quilt of independently run indexes, not one central database.   
 * **[AgentFacts ↗](https://host39.org/)** A signed capability record for each agent: what it does, how to reach it, and whether it's still valid.   
@@ -128,7 +132,31 @@ Project NANDA’s roadmap describes the development of an Internet of AI Agents 
 
 ---
 
-## Voices Shaping the Agentic Web
+## Our Three-Pronged Approach
+
+<div class="nanda-pillars-grid">
+  <div class="nanda-pillar-card">
+    <div class="nanda-pillar-num">1</div>
+    <div class="nanda-pillar-title">Technology</div>
+    <p class="nanda-pillar-desc">Building open discovery technology, interoperability standards, and reference implementations through a collective of top minds across academia and industry.</p>
+  </div>
+  <div class="nanda-pillar-card">
+    <div class="nanda-pillar-num">2</div>
+    <div class="nanda-pillar-title">Social Mission</div>
+    <p class="nanda-pillar-desc">Working to maintain an open, neutral Agentic Web for independent innovators while ensuring robust safety, transparency, and data sovereignty.</p>
+  </div>
+  <div class="nanda-pillar-card">
+    <div class="nanda-pillar-num">3</div>
+    <div class="nanda-pillar-title">Venture Ecosystem</div>
+    <p class="nanda-pillar-desc">Fostering a wide coalition of founders, academic labs, and investors building autonomous agents, tooling, and decentralized services.</p>
+  </div>
+</div>
+
+> **Built on Proven MIT Research:** Drawing on breakthroughs in AutoML, split learning, privacy-preserving architectures, and decentralized multi-agent coordination. Coalition partners gain early access to emerging standards, reference implementations, and collaborative working groups.
+
+---
+
+## Voices Shaping the Open Agentic Web
 
 Cloud, research, infrastructure, safety, and venture leaders building the agent ecosystem:
 
@@ -465,6 +493,12 @@ Core system blueprints, runtime handshakes, and architectural frameworks:
   </div>
 </div>
 
+---
+
+## Project NANDA Architecture & Ecosystem (masterdeck, intro and demo)
+
+The core architectural overview of Project NANDA, detailing the transition from static web infrastructure to a decentralized Internet of AI Agents:
+
 <div class="nanda-presentation-container">
   <div class="nanda-presentation-toolbar">
     <div class="nanda-presentation-info">
@@ -472,8 +506,9 @@ Core system blueprints, runtime handshakes, and architectural frameworks:
       <strong>Project NANDA Architecture &amp; Ecosystem</strong>
     </div>
     <div class="nanda-presentation-actions">
-      <a href="assets/NANDA.pdf" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn">Download PDF <span class="nanda-btn-arrow">↗</span></a>
-      <a href="https://www.youtube.com/watch?v=-S51FOnqF0o" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn nanda-presentation-btn--video">Demo &amp; Intro Video <span class="nanda-btn-arrow">↗</span></a>
+      <a href="assets/NANDA.pdf" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn">Download PDF</a>
+      <a href="https://www.youtube.com/watch?v=-S51FOnqF0o" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn nanda-presentation-btn--video">Intro Video</a>
+      <a href="https://youtu.be/nqJySV2LQGw" target="_blank" rel="noopener noreferrer" class="nanda-presentation-btn nanda-presentation-btn--video">Watch Demo</a>
     </div>
   </div>
   <div class="nanda-pdf-frame-wrapper">
