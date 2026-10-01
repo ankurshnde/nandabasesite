@@ -11,43 +11,26 @@ description: Project NANDA is an open initiative building foundational discovery
 
 ---
 
-## What is Project NANDA?
-
-Project NANDA is foundational infrastructure for the open agentic web that lets any client (person or other AI Agent) resolve a stable agent identity to the record it needs to reach that agent — no matter which registry, protocol, or cloud host its owner uses. Originated at MIT, Project NANDA addresses four critical infrastructure choke points through consensus-driven innovation: **DNS**, **Certificate Authorities (CA)**, **Orchestration**, and **Attestation**.
-
-Two core components make universal discovery possible:
-
-* [NANDA Index](http://nandaindex.org) A lightweight directory that only points: identity in, location out. It does not host, run, or store agent data itself.
-* [AgentFacts](https://host39.org/) A signed, verifiable record, similar to an ID card, that tells a client what an agent does, where to reach it, who published it, and whether that information is still current.
-
-### Three-Pronged Approach
-
-<div class="nanda-pillars-grid">
-  <div class="nanda-pillar-card">
-    <div class="nanda-pillar-num">1</div>
-    <div class="nanda-pillar-title">Technology</div>
-    <p class="nanda-pillar-desc">Building open discovery technology, interoperability standards, and reference implementations through a collective of top minds across academia and industry.</p>
-  </div>
-  <div class="nanda-pillar-card">
-    <div class="nanda-pillar-num">2</div>
-    <div class="nanda-pillar-title">Social Mission</div>
-    <p class="nanda-pillar-desc">Working to maintain an open, neutral Agentic Web for independent innovators while ensuring robust safety, transparency, and data sovereignty.</p>
-  </div>
-  <div class="nanda-pillar-card">
-    <div class="nanda-pillar-num">3</div>
-    <div class="nanda-pillar-title">Venture Ecosystem</div>
-    <p class="nanda-pillar-desc">Fostering a wide coalition of founders, academic labs, and investors building autonomous agents, tooling, and decentralized services.</p>
-  </div>
-</div>
-
-> **Built on Proven MIT Research:** Drawing on breakthroughs in AutoML, split learning, privacy-preserving architectures, and decentralized multi-agent coordination. Coalition partners gain early access to emerging standards, reference implementations, and collaborative working groups.
-
----
-
 ## Latest Updates
 
 <div class="nanda-updates-list">
-  <!-- 1. NandaHack -->
+  <!-- 1. IEEE TPS 2026 Workshop -->
+  <div class="nanda-update-row">
+    <div class="nanda-update-main">
+      <div class="nanda-update-meta">
+        <span class="nanda-update-context">IEEE TPS 2026</span>
+        <span class="nanda-update-sep">/</span>
+        <span class="nanda-update-type">Workshop &amp; CFP</span>
+      </div>
+      <div class="nanda-update-title">1st IEEE Workshop on Networked AI Agents (NANDA)</div>
+      <p class="nanda-update-desc">Co-located with IEEE TPS 2026 in San Jose, CA. Organized by Project NANDA &amp; MIT Media Lab, focusing on sandboxes, zero-trust security, privacy, and evaluation for decentralized agent networks with proceedings in IEEE Xplore.</p>
+    </div>
+    <div class="nanda-update-side">
+      <a href="https://projectnanda.org/workshops/ieeetps26/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">View Workshop &amp; CFP</a>
+    </div>
+  </div>
+
+  <!-- 2. NandaHack -->
   <div class="nanda-update-row">
     <div class="nanda-update-main">
       <div class="nanda-update-meta">
@@ -63,7 +46,23 @@ Two core components make universal discovery possible:
     </div>
   </div>
 
-  <!-- 2. DataFacts -->
+  <!-- 3. Nanda Town & NEST Sandbox -->
+  <div class="nanda-update-row">
+    <div class="nanda-update-main">
+      <div class="nanda-update-meta">
+        <span class="nanda-update-context">Simulation Engine</span>
+        <span class="nanda-update-sep">/</span>
+        <span class="nanda-update-type">Testnet</span>
+      </div>
+      <div class="nanda-update-title">Nanda Town &amp; NEST Multi-Agent Sandbox</div>
+      <p class="nanda-update-desc">An open-source testnet and sandbox built around NEST for designing and running multi-agent experiments, verifying protocol choices, and capturing JSON interaction traces.</p>
+    </div>
+    <div class="nanda-update-side">
+      <a href="https://nandatown.projectnanda.org/" target="_blank" rel="noopener noreferrer" class="nanda-update-action">Explore Nanda Town</a>
+    </div>
+  </div>
+
+  <!-- 4. DataFacts -->
   <div class="nanda-update-row">
     <div class="nanda-update-main">
       <div class="nanda-update-meta">
@@ -79,7 +78,7 @@ Two core components make universal discovery possible:
     </div>
   </div>
 
-  <!-- 3. An Agent for Every Bostonian -->
+  <!-- 5. An Agent for Every Bostonian -->
   <div class="nanda-update-row">
     <div class="nanda-update-main">
       <div class="nanda-update-meta">
